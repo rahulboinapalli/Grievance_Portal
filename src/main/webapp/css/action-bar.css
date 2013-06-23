@@ -1,0 +1,685 @@
+
+.center {
+  text-align: center;
+}
+body {
+  padding-top: 52px;
+}
+@media (min-width: 960px) {
+  body {
+    padding-top: 83px;
+  }
+}
+.oldie body {
+  padding-top: 83px;
+}
+#nav.logo-link{
+    background: #333;
+}
+#action-bar {
+  background: #333;
+  color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 0;
+}
+#action-bar .social-native {
+  display: none;
+}
+#action-bar .logo-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  /*border-bottom: 2px solid #fff;*/
+
+  background: #00446a;
+  z-index: 999;
+}
+#action-bar .wrap {
+  background: #fff;
+  position: relative;
+  padding: 0;
+}
+#action-bar a {
+  color: #fff;
+}
+#action-bar .logo {
+  height: 30px;
+  width: 300px;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  overflow: visible;
+  margin: 0;
+  background: url('../images/ofa4-logo-white.png') no-repeat 50% 50%;
+  position: relative;
+  z-index: 10;
+  left: 7px;
+  float: left;
+  -moz-transition: margin 0.5s, width 0.5s;
+  -ms-transition: margin 0.5s, width 0.5s;
+  -webkit-transition: margin 0.5s, width 0.5s;
+  transition: margin 0.5s, width 0.5s;
+}
+#action-bar .quick-signup,
+#action-bar .donate {
+  display: block;
+  float: left;
+  width: 100%;
+  border-radius: 0;
+}
+#action-bar .donate {
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  float: right;
+  font-weight: 700;
+}
+#action-bar .quick-signup {
+  position: relative;
+}
+#action-bar .quick-signup .button {
+  display: block;
+  border-radius: 0;
+  text-align: center;
+  font-weight: 700;
+}
+#action-bar .quick-signup .panel {
+  background: #7eb0cc;
+  max-width: 280px;
+  padding: 20px;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  top: -999em;
+  left: 0;
+  width: 280px;
+  z-index: 998;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#action-bar .quick-signup .panel p {
+  margin: 0 0 10px;
+}
+#action-bar .quick-signup .panel #qs_email {
+  width: 280px;
+}
+#action-bar .quick-signup .panel .email {
+  margin: 0 0 10px;
+}
+#action-bar .quick-signup .panel .social-follows {
+  margin: 0;
+  overflow: hidden;
+}
+#action-bar .quick-signup .panel .social-follows li {
+  list-style: none;
+  float: left;
+  overflow: hidden;
+}
+#action-bar .quick-signup .panel .social-follows .twitter {
+  width: 60px;
+}
+#action-bar .quick-signup .panel .social-follows .facebook {
+  width: 169px;
+  text-align: center;
+  min-height: 1px;
+}
+#action-bar .quick-signup .panel .social-follows .youtube {
+  width: 51px;
+}
+#action-bar .quick-signup .panel .social-follows .youtube a {
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  width: 51px;
+  height: 24px;
+  margin: 0 auto;
+  background: url('../images/youtube-follow.png') no-repeat 50% 50%;
+}
+#action-bar .quick-signup .panel form + .social-follows {
+  margin-top: 20px;
+}
+#action-bar .sotu u {
+  display: inline-block;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+  width: 130px;
+  height: 10px;
+  line-height: 1;
+  background: url('../images/quick-signup-sotu.png') no-repeat 50% 50%;
+}
+#action-bar .sotu .panel p {
+  text-align: center;
+  margin: 0 0 20px;
+}
+#action-bar .sotu .ribbons {
+  margin: -5px -25px 20px;
+  padding: 5px 0 0;
+  overflow: hidden;
+}
+#action-bar .sotu .ribbons li {
+  list-style: none;
+  margin: 0 40px 4px 0;
+  background: url('../images/ribbon-blue.png') repeat-x 100% 0;
+  position: relative;
+}
+#action-bar .sotu .ribbons li a {
+  padding: 13px 40px 13px 80px;
+  color: #fff;
+  font-family: 'Sentinel 7r', 'Sentinel A', 'Sentinel B', "jubilat", Georgia, serif;
+  background: no-repeat 34px 50%;
+  font-size: 18px;
+  display: block;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: normal !important;
+}
+#action-bar .sotu .ribbons li a i {
+  font-style: normal;
+}
+#action-bar .sotu .ribbons li:before {
+  content: " ";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  display: block;
+  background: url('../images/ribbon-corner.png');
+}
+#action-bar .sotu .ribbons .host-event {
+  background-image: url('../images/ribbon-red.png');
+  z-index: 2;
+}
+#action-bar .sotu .ribbons .host-event a {
+  background-image: url('../images/sotu-icon-host.png');
+}
+#action-bar .sotu .ribbons .attend-event a {
+  background-image: url('../images/sotu-icon-attend.png');
+}
+#action-bar .auth {
+  position: fixed;
+  right: 10px;
+  top: 17px;
+  z-index: 999;
+  font-size: 11px;
+  font-weight: 700;
+}
+#action-bar form {
+  display: block;
+  overflow: hidden;
+}
+#action-bar form ol {
+  margin: 0;
+  padding: 0;
+}
+#action-bar form ol li {
+  display: inline;
+  list-style: none;
+  float: left;
+  margin: 0 10px 0 0;
+}
+#action-bar form ol li.button {
+  margin-right: 0;
+}
+#action-bar input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]) {
+  background: #fff;
+  border: 0;
+  font-size: 14px;
+  color: #00446a;
+  padding: 9px 5px 8px;
+  border-radius: 3px;
+  box-shadow: none;
+  width: 12em;
+}
+#action-bar input:-moz-placeholder {
+  color: #aaa;
+}
+#action-bar input::-webkit-input-placeholder {
+  color: #aaa;
+}
+#action-bar input:focus {
+  font-weight: normal;
+}
+#action-bar #qs_zip {
+  width: 50px;
+}
+#action-bar .auth {
+  text-align: right;
+}
+#action-bar .auth li {
+  display: inline;
+  padding-left: 10px;
+  border-left: 1px solid #99b0bd;
+  margin-left: 10px;
+}
+#action-bar .auth li:first-child {
+  padding-left: 0;
+  border-left: 0;
+  margin-left: 0;
+}
+.show-nav #action-bar .logo-link {
+  left: 270px;
+}
+.show-nav #action-bar .auth {
+  right: -260px;
+}
+#action-bar.logo-only .wrap {
+  min-height: 0;
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #action-bar .sotu u {
+    background-image: url('../images/quick-signup-sotu@260x20.png');
+    -webkit-background-size: 130px 10px;
+  }
+}
+@media (min-width: 960px) {
+  #action-bar .logo-link {
+    left: 0;
+  }
+  #action-bar .logo {
+    overflow: hidden;
+  }
+  #action-bar .auth {
+    right: 0;
+  }
+  #action-bar .sotu .button {
+    height: 21px;
+  }
+  #action-bar .sotu b {
+    padding-top: 2px;
+    display: block;
+  }
+  #action-bar .sotu u {
+    width: 190px;
+    height: 14px;
+    background-image: url('../images/quick-signup-sotu@190x14.png');
+  }
+  .show-nav #action-bar .logo-link {
+    left: 0;
+  }
+  .show-nav #action-bar .auth {
+    right: 0;
+  }
+  html:lang(es) #action-bar {
+    padding: 15px 0;
+  }
+  html:lang(es) #action-bar .logo {
+    background: url('../images/ofa4-logo-white.png') no-repeat 50% 50%;
+    height: 50px;
+  }
+  html:lang(es) #action-bar .donate {
+    bottom: -60px;
+  }
+  html:lang(es) #action-bar .quick-signup {
+    top: 10px;
+  }
+  html:lang(es) #action-bar .auth {
+    top: 17px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 960px) {
+  #action-bar .sotu u {
+    background-image: url('../images/quick-signup-sotu@380x28.png');
+    -webkit-background-size: 190px 14px;
+  }
+}
+.show-quick-signup #action-bar .quick-signup {
+  z-index: 1002;
+}
+.show-quick-signup #action-bar .quick-signup .panel {
+  top: 100%;
+  opacity: 1;
+}
+.show-quick-signup #action-bar .quick-signup .button {
+  background-image: none;
+  position: relative;
+  z-index: 999;
+  background-color: #7eb0cc;
+}
+.placeholder #action-bar label,
+.placeholder-polyfilled #action-bar label,
+.js.placeholder #action-bar label {
+  display: none;
+}
+.no-placeholder #action-bar label {
+  margin-right: 5px;
+}
+.ie7 #action-bar label {
+  position: relative;
+  top: -6px;
+}
+@media (min-width: 480px) {
+  #action-bar .quick-signup .button b {
+    padding-right: 14px;
+    background: url('../images/arrow-down.png') no-repeat 100% 50%;
+  }
+  .show-quick-signup #action-bar .quick-signup .button b {
+    background-image: url('../images/arrow-up.png');
+  }
+}
+@media (max-width: 959px) {
+  #action-bar .logo-link i:after {
+    content: "Menu";
+    color: #c3dce9;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    position: absolute;
+    left: 50px;
+    cursor: pointer;
+  }
+  #action-bar.logo-only .logo-link i:after {
+    content: "";
+  }
+  .wrap {
+    width: auto;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2) {
+  #action-bar .logo {
+    background-image: url('../images/ofa4-logo-large-white.png');
+    -webkit-background-size: 300px 30px;
+  }
+}
+#header_small {
+max-width: 1000px;
+float: none;
+margin: 2px auto 0px auto;
+}
+@media (min-width: 960px) {
+  #action-bar {
+    padding: 15px 0;
+    border-bottom: 5px solid #fff;
+    position: fixed;
+  }
+  #action-bar .wrap {
+    background: transparent;
+    position: relative;
+    min-height: 30px;
+  }
+  #action-bar .social-native {
+    position: absolute;
+    top: 4px;
+    display: block;
+  }
+  #action-bar .social-native .twitter {
+    display: block;
+    float: left;
+    min-width: 60px;
+    padding-left: 15px;
+    border-left: 1px solid #99B0BD;
+    margin: 0;
+    height: 24px;
+    padding-top: 2px;
+  }
+  #action-bar .social-native .facebook {
+    display: block;
+    min-width: 96px;
+    float: left;
+    height: 21px;
+    margin-right: 14px;
+    position: relative;
+    top: 2px;
+  }
+  #action-bar .logo-link {
+    position: static;
+    border: 0;
+    padding: 0;
+  }
+  #action-bar .auth {
+    position: absolute;
+    top: 9px;
+  }
+  #action-bar .logo {
+    margin: 0 auto;
+    width: 300px;
+    left: 0;
+    float: none;
+  }
+  #action-bar .quick-signup {
+    float: none;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #action-bar .quick-signup a.button {
+    border-radius: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+  #action-bar .quick-signup .panel {
+    border-radius: 5px;
+    border-top-left-radius: 0;
+  }
+  #action-bar .donate {
+    display: none;
+  }
+  #action-bar .auth li {
+    display: inline;
+    margin: 0 0 0 12px;
+  }
+  #action-bar .auth li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+  }
+  #action-bar .auth a {
+    white-space: nowrap;
+  }
+  .show-quick-signup #action-bar {
+    z-index: 1003;
+    /* gets this above the overlay */
+  
+  }
+  .show-quick-signup #action-bar .quick-signup .button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .show-quick-signup #action-bar .quick-signup .button b {
+    background-image: url('../images/arrow-up.png');
+  }
+  .auth li {
+    display: inline;
+    margin: 0 0 0 12px;
+  }
+  .auth li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: 0;
+  }
+  .auth a {
+    white-space: nowrap;
+  }
+}
+.oldie #action-bar {
+  padding: 25px 0;
+  border-bottom: 5px solid #fff;
+  position: fixed;
+}
+.oldie #action-bar .wrap {
+  background: transparent;
+  position: relative;
+  min-height: 30px;
+}
+.oldie #action-bar .social-native {
+  position: absolute;
+  top: 4px;
+  display: block;
+}
+.oldie #action-bar .social-native .twitter {
+  display: block;
+  float: left;
+  min-width: 60px;
+  padding-left: 15px;
+  border-left: 1px solid #99B0BD;
+  margin: 0;
+  height: 24px;
+  padding-top: 2px;
+}
+.oldie #action-bar .social-native .facebook {
+  display: block;
+  min-width: 96px;
+  float: left;
+  height: 21px;
+  margin-right: 14px;
+  position: relative;
+  top: 2px;
+}
+.oldie #action-bar .logo-link {
+  position: static;
+  border: 0;
+  padding: 0;
+}
+.oldie #action-bar .auth {
+  position: absolute;
+  top: 6px;
+}
+.oldie #action-bar .logo {
+  margin: 0 auto;
+  width: 300px;
+  left: 0;
+  float: none;
+}
+.oldie #action-bar .quick-signup {
+  float: none;
+  width: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.oldie #action-bar .quick-signup a.button {
+  border-radius: 5px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.oldie #action-bar .quick-signup a.button b {
+  padding-right: 14px;
+  background: url('../images/arrow-down.png') no-repeat 100% 50%;
+}
+.oldie #action-bar .quick-signup .panel {
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border: 2px solid #fff;
+  border-top: 0;
+}
+.oldie #action-bar .sotu .button {
+  height: 21px;
+}
+.oldie #action-bar .sotu b {
+  padding-top: 2px;
+  display: block;
+}
+.oldie #action-bar .sotu u {
+  width: 190px;
+  height: 14px;
+  background-image: url('../images/quick-signup-sotu@190x14.png');
+}
+.oldie #action-bar .donate {
+  display: none;
+}
+.oldie #action-bar .auth li {
+  display: inline;
+  margin: 0 0 0 12px;
+}
+.oldie #action-bar .auth li:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  border-left: 0;
+}
+.oldie #action-bar .auth a {
+  white-space: nowrap;
+}
+.oldie .show-quick-signup #action-bar {
+  z-index: 1003;
+  /* gets this above the overlay */
+
+}
+.oldie .show-quick-signup #action-bar .quick-signup .button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.oldie .actions,
+.oldie .auth {
+  font-size: 13px;
+  font-weight: 700;
+}
+.oldie .auth li {
+  display: inline;
+  margin: 0 0 0 12px;
+}
+.oldie .auth li:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  border-left: 0;
+}
+.oldie .auth a {
+  white-space: nowrap;
+}
+.oldie #action-bar.es {
+  padding: 15px 0;
+}
+.oldie #action-bar.es .logo {
+  background: url('../images/ofa4-logo-white.png') no-repeat 50% 50%;
+  height: 50px;
+}
+.oldie #action-bar.es .donate {
+  bottom: -60px;
+}
+.oldie #action-bar.es .quick-signup {
+  top: 10px;
+}
+.oldie #action-bar.es .auth {
+  top: 17px;
+}
+.ie7 #action-bar input {
+  background: #fff;
+  border: 0;
+  font-size: 14px;
+  color: #00446a;
+  padding: 9px 5px 8px;
+  border-radius: 3px;
+  box-shadow: none;
+  width: 12em;
+}
+.ie7 #action-bar .sotu u {
+  display: block;
+  height: 18px;
+  zoom: 1;
+}
+.ie7 #action-bar .sotu b {
+  height: 18px;
+}
+.ie7 #action-bar.es {
+  padding: 15px 0;
+}
+.ie7 #action-bar.es .logo {
+  background: url('../images/ofa4-logo-white.png') no-repeat 50% 50%;
+  height: 50px;
+}
+.ie7 #action-bar.es .donate {
+  bottom: -60px;
+}
+.ie7 #action-bar.es .quick-signup {
+  top: 10px;
+}
+.ie7 #action-bar.es .auth {
+  top: 17px;
+}
+/*Toggle bug Fix*/
+.oldie #action-bar .auth {
+  right: 0px;
+}

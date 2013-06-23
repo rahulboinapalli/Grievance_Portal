@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+   <constant name="struts.devMode" value="true" />
+
+	<!-- Configuration for the default package. -->
+	<package name="default" extends="struts-default" >	
+		
+		<action name="index" class="com.grievance.healthcare.action.UserAction" method="list">
+			<result name="success">/jsp/users.jsp</result>
+		</action>
+		
+	   <action name="addUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
+			<result name="input">/jsp/userForm.jsp</result>
+		</action>
+		
+		<action name="addUserSave" class="com.grievance.healthcare.action.UserAction" method="save">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="input">/jsp/userForm.jsp</result>
+		</action>
+		
+		<action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
+			<result name="input">/jsp/userForm.jsp</result>
+		</action>
+		
+		<action name="deleteUser" class="com.grievance.healthcare.action.UserAction" method="delete">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			<result name="input">/jsp/userForm.jsp</result>
+		</action>
+		
+
+	</package>
+
+
+</struts>

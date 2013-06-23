@@ -1,0 +1,23 @@
+
+.center{text-align:center;}
+#ft{margin:0 auto;font-size:12px;padding-bottom:20px;}#ft .wrap{margin-left:auto;margin-right:auto;background:#fff;}
+#ft .navs{text-align:center;}#ft .navs .title,#ft .navs ul{margin:0 20px;}
+#ft .navs .potus-record{display:none;}
+#ft .navs ul{margin-bottom:20px;}#ft .navs ul li{margin:8px 0 0;}#ft .navs ul li a:link,#ft .navs ul li a:visited{color:#555;}
+#ft .navs .learn-about-the-campaign{display:none !important;}
+#ft .disclaimer-license{text-align:center;padding:109px 0 0;background-image:url('../images/ofa4-logo-blue.png');background-repeat:no-repeat;background-position:50% 40px;}#ft .disclaimer-license .license{display:block;}
+#ft .disclaimer-license .disclaimer{display:inline-block;padding:5px;border:1px solid #999;text-transform:uppercase;margin-bottom:15px;}
+#ft .disclaimer-license small{font-size:100%;}
+#ft .social-follows{list-style:none;margin:20px 0 -10px;text-align:center;}#ft .social-follows li{margin-bottom:10px;}
+#ft .social-follows .twitter iframe{width:150px !important;}
+#ft .social-follows a{color:#555;}
+#ft .ovf-disclaimer{margin:10px auto;}
+@media (-webkit-min-device-pixel-ratio:2){#ft .disclaimer-license{-webkit-background-size:162px 19px;}}#ft.simple .disclaimer-license{top-padding:89px;}#ft.simple .disclaimer-license nav{margin:0px 0 20px;}#ft.simple .disclaimer-license nav ul{text-align:center;}#ft.simple .disclaimer-license nav ul li{display:inline;margin:0 10px;}#ft.simple .disclaimer-license nav ul li a{color:#555;}
+@media (min-width:768px){#ft{max-width:748px;}#ft .navs{text-align:left;}#ft .navs .title{margin-top:0;text-align:left;} #ft .navs .potus-record{display:block;} #ft .navs nav:first-child .title{margin-top:0;} #ft .navs nav:first-child .title,#ft .navs nav:first-child ul{margin-left:30px;} #ft .social-follows{margin-top:-18px;text-align:left;}#ft .social-follows .twitter iframe{margin-left:20px;} #ft .social-follows .facebook{text-align:right;}#ft .social-follows .facebook iframe{margin-right:20px;}}@media (min-width:960px){#ft{max-width:980px;background:rgba(231, 231, 231, 0.88);}#ft .navs{background:url('../images/ft-navs-bg-960.png') repeat-y 50% 50%;} #ft .navs .connect ul{}}@media (min-width:480px) and (max-width:767px){#ft .navs nav{float:left;width:33%;}}.oldie #ft{width:980px;}.oldie #ft .navs{background:url('../images/ft-navs-bg-960.png') repeat-y 50% 0;text-align:left;}.oldie #ft .navs .title{margin-top:0;text-align:left;}
+.oldie #ft .navs .connect ul{}
+.oldie #ft .navs .potus-record{display:block;}
+.oldie #ft .navs nav:first-child .title{margin-top:0;}
+.oldie #ft .navs nav:first-child .title,.oldie #ft .navs nav:first-child ul{margin-left:30px;}
+.oldie #ft .social-follows{margin-top:-18px;text-align:left;}.oldie #ft .social-follows .twitter iframe{margin-left:20px;}
+.oldie #ft .social-follows .facebook{text-align:right;}.oldie #ft .social-follows .facebook iframe{margin-right:20px;}
+#alex-okrent{display:block;width:312px;height:14px;margin:-25px auto 25px;}
