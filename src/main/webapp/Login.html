@@ -11,107 +11,177 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="css/core.css">
-        <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/action-bar.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <link rel="stylesheet" href="mainmedia.css" type="text/css">
+
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
         <script src="js/libs/jquery-1.9.0/jquery.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body class="flag">
+        <nav id="scom" class="slimline isNotAuthenticated" data-content-key="authenticationStatus">
+            <div class="centerWrapper">
+         <div id="templatemo_banner_wrapper">
+	
+    <div id="templatemo_banner">
+    
+    	<div id="banner_content" >
+			<table width="100%" border="0" celpadding="0" cellspacing="0">
+				<tr>
+					<td width="50%"  align="left"><img height="105" src="images/help.png"/></td>
+                            <td width="50%" align="right"><img id="noheight" src="images/home.png"/></td>
+				<tr>
+			</table>
+		
+		
+	</div>
+</div> <!-- end of templatemo_banner -->
 
-        <!-- before body block -->
-        <header role="banner" id="action-bar">
-            <!-- Start Social & Logo area -->
-
-        </header>
-
-        <!-- end before body block -->
-
-
-        <!-- body block -->
-        <section id="main" role="main" class="wrap jumpy">
-            <div class="row">
-                <div class="columns twelve">
-                    <div class="login-content module">
-                        <article class="post">
-                            <div class="form-description">
-
-                            </div>
-
-                            <!-- log in form -->
-
-
-                            <section class="login first facebook">
-
-                                <!-- begin form -->
-                                <div class="inner-form">
-
-                                    <h2 class="entry-title">Log in to GrievanceApp.com</h2>
-
-                                    <form  method="GET" id="login_form" class="main-form" action="grievancedetails.html">
-
-                                        <input id="success_to" name="success_to" type="hidden" value="/AppealGrievance/grievancedetails.html" />
-                                        <input id="fail_to" name="fail_to" type="hidden" value="/login" />
+</div>
+            </div>
+        </nav>
+        
 
 
-                                        <div class="form-label" >
+        <div id="container">
 
+            <div id="content"><div id="tabs">
+                    <ul>
+                        <li class="active"><a href="https://login.skype.com/login?">Sign in</a> </li>
+                        <li><a href="https://login.skype.com/account/signup-form?">Create an account</a></li>
+                    </ul>
+                </div>
+                <div id="mainContainer">
+                    <form id="loginForm" action="http://localhost:8080/Grievance_Portal/index.html" method="post" autocomplete="off">
+                        <label for="username">User Name</label>
+                        <input name="username" tabindex="1" id="username" type="text" maxlength="150" value=""> 
+                        <label for="password">Password</label>
+                        <input name="password" tabindex="2" id="password" type="password" maxlength="256" value="" autocomplete="off"> 
+                        <input id="ioBlackBox" type="hidden" value="0400R9HVeoYv1gs=" condition="iovation/enabled">
+                        <div class="signInContainer">
+                            <button tabindex="3" class="smallButton primaryCta" id="signIn" type="submit">
+                                <span>Sign me in</span></button>
+                        </div>
+                        <input name="timezone_field" id="timezone_field" type="hidden" value="-04|00"> 
+                        <input name="pie" id="pie" type="hidden" value="NSw7wMzIsVj9wdkJKohgEd5Ikm0Ifb94LQ3KnMJwlXRj"> 
+                        <input name="etm" id="etm" type="hidden" value="dFTJoh6cZl3Onap2nuiYy"> 
+                        <input name="js_time" id="js_time" type="hidden">
+                        <script type="text/javascript">
+                            /*<![CDATA[*/        function getCurrentTime() {
+                                return (new Date().getTime()) / 1000;
+                            }
 
-                                            <label for="username_or_email">Email</label><input autofocus="" id="username_or_email" name="username_or_email" type="email" value="" />
+                            function getTimezone() {
+                                var pad = function(n, c) {
+                                    if ((n = n + "").length < c) {
+                                        return new Array(++c - n.length).join("0") + n;
+                                    } else {
+                                        return n;
+                                    }
+                                };
+                                var sign;
+                                var timezone = new Date().getTimezoneOffset() * (-1);
+                                if (timezone >= 0) {
+                                    sign = "+";
+                                } else {
+                                    sign = "-";
+                                }
 
-                                        </div>
+                                timezone = Math.abs(timezone);
+                                var minutes = timezone % 60;
+                                var hours = (timezone - minutes) / 60;
+                                minutes = pad(minutes, 2);
+                                hours = pad(hours, 2);
 
+                                return sign + hours + "|" + minutes;
+                            }
 
-                                        <div id="recover"  class="form-label" >
+                            $(function() {
+                                $("#loginForm").submit(function() {
+                                    $("#js_time").val(getCurrentTime());
+                                    return true;
+                                });
 
-                                            <div><label for="password">Password</label></div>
+                                $("#timezone_field").val(getTimezone());
+                            });
+                            /*]]>*/
+                        </script>
+                        <input name="session_token" type="hidden"></form>
+                    <div id="partnerLogins">
+                        <div id="alternativeSignInTitle">Alternatively, sign in with</div>
+                        <a tabindex="4" id="microsoftLogin" href="https://login.skype.com/login/oauth/microsoft?application=account&amp;return_url=https%3A%2F%2Fsecure.D10">
+                            Microsoft account</a>
+                        <p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>
+                        <a tabindex="5" id="facebookLogin" href="https://login.skype.com/login/oauth/facebook?application=account&amp;return_url=https%3A%2F%2Fsecure.skype.com%2Faccount%2Floginhttp%3A%2F%2Fsearch.conduit.com%2F%3FSearchSource%3D10">
+                            Facebook</a>
+                    </div><div style="clear: both;">
 
-                                            <p class="forgot">
-                                                <a tabindex="999" href="/account/recover" data-track="" data-action="Clicked forgot password link on login page">Forgot your password?</a>
-                                            </p>
-                                            <input id="password" name="password" type="password" value=""/>
-                                        </div>
+                    </div>
 
-                                        <div id="remember">
-                                            <input checked="checked" id="remember_me" name="remember_me" type="checkbox" value="y" /> <label for="remember_me">Keep me logged in </label>
-                                        </div>
+                </div>
+                <script>
+                    $(function() {
+                        if ($("#username").val()) {
+                            $("#password").focus();
+                        } else {
+                            $("#username").focus();
+                        }
+                    });
 
+                    $(function() {
+                        // Partner login tracking
+                        // IF js redirect fails, second click should go through
+                        var tracked = false;
+                        var delayClick = function(element) {
+                            setTimeout(function() {
+                                window.location.href = $(element).attr("href");
+                            }, 400);
+                        };
+                        $("#microsoftLogin").on("click", function() {
+                            if (tracked) {
+                                return true;
+                            }
+                            try {
+                                SKYPE.login.Tracking.trackPage(SKYPE.login.Tracking.makeTrackingObject({page: "login-form/microsoftID", error: null}, {eVar73: "web: microsoftID_login"}));
+                                tracked = true;
+                            } catch (e) {
+                            }
+                            delayClick(this);
+                            return false;
+                        });
+                        $("#facebookLogin").on("click", function() {
+                            if (tracked) {
+                                return true;
+                            }
+                            try {
+                                SKYPE.login.Tracking.trackPage(SKYPE.login.Tracking.makeTrackingObject({page: "login-form/facebook", error: null}, {eVar73: "web: facebook_login"}));
+                                tracked = true;
+                            } catch (e) {
+                                alert(e);
+                            }
+                            delayClick(this);
+                            return false;
+                        });
+                    });
+                </script></div>
+            <script type="text/javascript">            var io_operation = "ioBegin";
+                var io_bbout_element_id = "ioBlackBox";
+                var io_install_flash = false;
+                var io_install_stm = false;
+                var io_max_wait = 5000;
+                var io_submit_element_id = "signIn";
+            </script>
+        </div>
+        <footer class="slimlineFooter">
 
-
-
-
-
-                                        <div>
-                                            <strong>
-                                                <input data-action="Clicked login button" data-disable-with="Logging in..." data-track="True" id="submit" name="submit" type="submit" value="Log In" />
-                                            </strong>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- end form -->
-
-
-                                <!-- log in form -->
-
-
-                                <div class="form-wrap bottom reg">
-
-
-
-                                </div>
-
-                        </article>
-                    </div><!-- end .module -->
-                </div><!-- end left column -->
-            </div><!-- end .row -->
-
-        </section>
-        <!-- end body block -->
+            <div class="bottom">
+                 Copyright © 2010 <a href="#">grievance</a> | Development
+                <div class="centered">
+                    <div class="ms-logo"></div>
+                </div>
+            </div>
+        </footer>
     </body>
 
 </html>

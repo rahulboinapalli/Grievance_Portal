@@ -1,0 +1,295 @@
+
+#heading {
+    background-color: orange;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 72px;
+}
+html.bcp #heading {
+    background-color: #4B465A;
+    margin-bottom: 50px;
+}
+#heading h1 {
+    margin: 0 auto 18px;
+    padding-top: 20px;
+    width: 960px;
+}
+html.bcp #heading h1 {
+    color: #FFFFFF;
+    padding-right: 210px;
+    width: 750px;
+}
+html.rtl.bcp #heading h1 {
+    padding-left: 210px;
+    padding-right: 0;
+}
+#heading h2 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 auto 12px;
+    width: 960px;
+}
+#bcpIconContainer {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+#bcpIcon {
+    background: url("../images/icons/bcp.png") no-repeat scroll center center transparent;
+    height: 126px;
+    position: absolute;
+    right: 72px;
+    top: -72px;
+    width: 126px;
+}
+html.rtl #bcpIcon {
+    right: 762px;
+}
+#container {
+    margin: 0 auto;
+    width: 960px;
+      margin-top: 80px;
+}
+#content {
+    float:left;
+    padding-right: 30px;
+    width: 690px;
+    padding-left:120px;
+}
+html.rtl #content {
+    float: right;
+    padding-left: 30px;
+    padding-right: 0;
+    margin-top: 30px;
+}
+#mainContainer {
+    background-color: #F4F4F4;
+}
+#tabs {
+    border-bottom: 1px solid #D8E2E6;
+    height: 46px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+#tabs ul {
+    display: inline-block;
+}
+#tabs li {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: orangered;
+    border-color: #E6F7FE #E6F7FE #D8E2E6;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 45px;
+    margin: 0 8px;
+}
+#tabs li.active {
+    background-color: white;
+    border-color: #D8E2E6 #D8E2E6 white;
+}
+#tabs a {
+    color: black;
+    display: block;
+    font-size: 18px;
+    height: 32px;
+    padding: 13px 20px 0;
+    text-decoration: none;
+}
+#tabs li.active a {
+    color: #525252;
+}
+.message {
+    color: #3A3A3A;
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding: 14px 20px 14px 38px;
+    position: relative;
+}
+html.rtl .message {
+    padding-left: 20px;
+    padding-right: 38px;
+    text-align: right;
+}
+.message_error {
+    background-color: #FFE3DF;
+}
+.message_warning {
+    background-color: #FFF5CC;
+}
+.message_info {
+    background-color: #E5F6FD;
+}
+.messageIcon {
+    background-image: url("../images/icons/icons.png");
+    height: 16px;
+    left: 12px;
+    position: absolute;
+    top: 15px;
+    width: 16px;
+}
+html.rtl .messageIcon {
+    left: auto;
+    right: 12px;
+}
+.message_error .messageIcon {
+    background-position: 0 -48px;
+}
+.message_warning .messageIcon {
+    background-position: 0 0;
+}
+.message_info .messageIcon {
+    background-position: 0 -32px;
+}
+#loginForm {
+    float: left;
+    padding: 20px 30px;
+    position: relative;
+    width: 300px;
+}
+html.rtl #loginForm {
+    float: right;
+}
+#loginForm label {
+    display: block;
+    font-weight: bold;
+    padding: 4px 0;
+}
+#loginForm input {
+    border: 1px solid #D8D8D8;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    padding: 4px;
+    width: 292px;
+}
+#forgottenUsername, #forgottenPassword {
+    display: block;
+    padding: 4px 0 10px;
+}
+#loginForm input:focus {
+    border: 1px solid #00AFF0;
+    outline: medium none;
+    padding: 4px;
+}
+.signInContainer {
+    clear: both;
+    padding-top: 14px;
+}
+#partnerLogins {
+    float: left;
+    padding: 20px 30px 20px 0;
+    width: 300px;
+}
+html.rtl #partnerLogins {
+    float: right;
+    padding: 20px 0 20px 30px;
+}
+#alternativeSignInTitle {
+    font-weight: bold;
+    padding: 4px 0;
+}
+#microsoftLogin, #facebookLogin {
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 14px;
+    padding: 0 25px;
+}
+#microsoftLogin {
+    background: url("images/msAccount.png") no-repeat scroll left center transparent;
+}
+#facebookLogin {
+    background: url("images/fb.png") no-repeat scroll left center transparent;
+}
+html.rtl #microsoftLogin, html.rtl #facebookLogin {
+    background-position: right center;
+}
+#microsoftLoginHint {
+    color: #636363;
+    font-size: 12px;
+    line-height: 19px;
+    padding-left: 26px;
+}
+html.rtl #microsoftLoginHint {
+    padding-left: 0;
+    padding-right: 26px;
+}
+#sidebar {
+    float: right;
+    width: 240px;
+}
+html.rtl #sidebar {
+    float: left;
+}
+#sidebar h2 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    padding: 10px 30px 0 17px;
+}
+html.rtl #sidebar h2 {
+    padding: 10px 17px 0 30px;
+}
+html.rtl .accountSidebar, html.rtl .bcpSidebar {
+    padding: 0 17px 0 30px;
+}
+.accountSidebar, .bcpSidebar {
+    padding: 0 30px 0 17px;
+}
+.accountSidebar li, .bcpSidebar li {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 15px;
+    padding-left: 60px;
+    position: relative;
+}
+html.rtl .accountSidebar li, html.rtl .bcpSidebar li {
+    padding-left: 0;
+    padding-right: 60px;
+}
+.sidebarIcon {
+    background-position: left center;
+    background-repeat: no-repeat;
+    left: 0;
+    margin-top: 6px;
+    overflow: hidden;
+    position: absolute;
+    width: 51px;
+}
+html.rtl .sidebarIcon {
+    right: 0;
+}
+.accountSidebar .sidebarIcon {
+    background-image: url("../images/icons/sidebar.png");
+}
+.bcpSidebar .sidebarIcon {
+    background-image: url("../images/icons/bcp_sidebar.png");
+}
+.voicemail {
+    background-position: 0 0;
+    height: 21px;
+}
+.onlineNumber {
+    background-position: 0 -21px;
+    height: 29px;
+}
+.callPhones {
+    background-position: 0 -50px;
+    height: 22px;
+}
+.whatIsManager {
+    background-position: 0 0;
+    height: 43px;
+}
+.useManager {
+    background-position: 0 -43px;
+    height: 39px;
+}
