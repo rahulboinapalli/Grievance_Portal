@@ -315,7 +315,7 @@ h6 {
 	position: relative;
 	float: left;
 	display: block;
-	width: 130px;
+	width: 200px;
 	margin-right: 2px;
 	height: 50px;
 	padding: 20px 0 0 0;
@@ -348,10 +348,12 @@ h6 {
 
 /* content */
 
+
 #templatemo_content {
 	width: 940px;
 	margin: 0 auto;
-	padding: 0px 25px;	
+	padding: 0px 25px;
+        padding-top: 5px;
 	background: url(images/templatemo_content_middle.jpg) repeat-y center top;
 }
 
@@ -380,6 +382,9 @@ h6 {
 	margin: 300 auto;
 	
 }
+.section_w940 h3{
+    margin-left: 85px;
+}
 
 
 .product_box {
@@ -387,6 +392,8 @@ h6 {
 	width: 270px;
 	padding: 15px;
 	background: url(images/templatemo_product_box.jpg) no-repeat top center;
+        margin-right: 75px;
+        margin-left: 85px;
 }
 
 .product_box1{
