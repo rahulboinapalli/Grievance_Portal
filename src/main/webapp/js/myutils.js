@@ -37,6 +37,12 @@ function links()
 			window.open("trackregistrationlist.html",'_self');
 			});
 		});
+                $("#btnstart").click(function(){
+			var myTimer = {};
+			myTimer = $.timer(2500,function(){
+			window.open("startregistration.html",'_self');
+			});
+		});
 		$("#find").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
