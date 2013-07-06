@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]><html lang="en" class=”ie6”><![endif]-->
+<!--[if IE 7]><html lang="en" class=”ie7”><![endif]-->
+<!--[if IE 8]><html lang="en" class=”ie8”><![endif]-->
+<!--[if IE 9]><html lang="en" class=”ie9”><![endif]-->
+<!--[if gt IE 9]><html lang="en"><![endif]-->
+<!--[if !IE]>--><html lang="en"><!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,7 +13,6 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="main.css" type="text/css">
         <link rel="stylesheet" href="mainmedia.css" type="text/css">
 
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
@@ -22,26 +23,26 @@
     <body class="flag">
         <nav id="scom" class="slimline isNotAuthenticated" data-content-key="authenticationStatus">
             <div class="centerWrapper">
-         <div id="templatemo_banner_wrapper">
-	
-    <div id="templatemo_banner">
-    
-    	<div id="banner_content" >
-			<table width="100%" border="0" celpadding="0" cellspacing="0">
-				<tr>
-					<td width="50%"  align="left"><img height="105" src="images/help.png"/></td>
-                            <td width="50%" align="right"><img id="noheight" src="images/home.png"/></td>
-				<tr>
-			</table>
-		
-		
-	</div>
-</div> <!-- end of templatemo_banner -->
+                <div id="templatemo_banner_wrapper">
 
-</div>
+                    <div id="templatemo_banner">
+
+                        <div id="banner_content" >
+                            <table width="100%" border="0"  cellspacing="0">
+                                <tr>
+                                    <td width="50%"  align="left"><img height="105" src="images/help.png"/></td>
+                                    <td width="50%" align="right"><img id="noheight" src="images/home.png"/></td>
+                                <tr>
+                            </table>
+
+
+                        </div>
+                    </div> <!-- end of templatemo_banner -->
+
+                </div>
             </div>
         </nav>
-        
+
 
 
         <div id="container">
@@ -58,55 +59,11 @@
                         <input name="username" tabindex="1" id="username" type="text" maxlength="150" value=""> 
                         <label for="password">Password</label>
                         <input name="password" tabindex="2" id="password" type="password" maxlength="256" value="" autocomplete="off"> 
-                        <input id="ioBlackBox" type="hidden" value="0400R9HVeoYv1gs=" condition="iovation/enabled">
                         <div class="signInContainer">
                             <button tabindex="3" class="smallButton primaryCta" id="signIn" type="submit">
                                 <span>Sign me in</span></button>
                         </div>
-                        <input name="timezone_field" id="timezone_field" type="hidden" value="-04|00"> 
-                        <input name="pie" id="pie" type="hidden" value="NSw7wMzIsVj9wdkJKohgEd5Ikm0Ifb94LQ3KnMJwlXRj"> 
-                        <input name="etm" id="etm" type="hidden" value="dFTJoh6cZl3Onap2nuiYy"> 
-                        <input name="js_time" id="js_time" type="hidden">
-                        <script type="text/javascript">
-                            /*<![CDATA[*/        function getCurrentTime() {
-                                return (new Date().getTime()) / 1000;
-                            }
 
-                            function getTimezone() {
-                                var pad = function(n, c) {
-                                    if ((n = n + "").length < c) {
-                                        return new Array(++c - n.length).join("0") + n;
-                                    } else {
-                                        return n;
-                                    }
-                                };
-                                var sign;
-                                var timezone = new Date().getTimezoneOffset() * (-1);
-                                if (timezone >= 0) {
-                                    sign = "+";
-                                } else {
-                                    sign = "-";
-                                }
-
-                                timezone = Math.abs(timezone);
-                                var minutes = timezone % 60;
-                                var hours = (timezone - minutes) / 60;
-                                minutes = pad(minutes, 2);
-                                hours = pad(hours, 2);
-
-                                return sign + hours + "|" + minutes;
-                            }
-
-                            $(function() {
-                                $("#loginForm").submit(function() {
-                                    $("#js_time").val(getCurrentTime());
-                                    return true;
-                                });
-
-                                $("#timezone_field").val(getTimezone());
-                            });
-                            /*]]>*/
-                        </script>
                         <input name="session_token" type="hidden"></form>
                     <div id="partnerLogins">
                         <div id="alternativeSignInTitle">Alternatively, sign in with</div>
@@ -128,55 +85,14 @@
                             $("#username").focus();
                         }
                     });
-
-                    $(function() {
-                        // Partner login tracking
-                        // IF js redirect fails, second click should go through
-                        var tracked = false;
-                        var delayClick = function(element) {
-                            setTimeout(function() {
-                                window.location.href = $(element).attr("href");
-                            }, 400);
-                        };
-                        $("#microsoftLogin").on("click", function() {
-                            if (tracked) {
-                                return true;
-                            }
-                            try {
-                                SKYPE.login.Tracking.trackPage(SKYPE.login.Tracking.makeTrackingObject({page: "login-form/microsoftID", error: null}, {eVar73: "web: microsoftID_login"}));
-                                tracked = true;
-                            } catch (e) {
-                            }
-                            delayClick(this);
-                            return false;
-                        });
-                        $("#facebookLogin").on("click", function() {
-                            if (tracked) {
-                                return true;
-                            }
-                            try {
-                                SKYPE.login.Tracking.trackPage(SKYPE.login.Tracking.makeTrackingObject({page: "login-form/facebook", error: null}, {eVar73: "web: facebook_login"}));
-                                tracked = true;
-                            } catch (e) {
-                                alert(e);
-                            }
-                            delayClick(this);
-                            return false;
-                        });
-                    });
-                </script></div>
-            <script type="text/javascript">            var io_operation = "ioBegin";
-                var io_bbout_element_id = "ioBlackBox";
-                var io_install_flash = false;
-                var io_install_stm = false;
-                var io_max_wait = 5000;
-                var io_submit_element_id = "signIn";
-            </script>
+                </script>
+            </div>
         </div>
+
         <footer class="slimlineFooter">
 
-            <div class="bottom">
-                 Copyright © 2010 <a href="#">grievance</a> | Development
+            <div class="bottom ">
+                <p>Copyright © 2010 <a href="#">grievance</a> | Development</p>
                 <div class="centered">
                     <div class="ms-logo"></div>
                 </div>
