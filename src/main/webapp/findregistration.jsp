@@ -81,7 +81,7 @@
                         myTimer = $.timer(2500, function() {
                             // Display hello message when timer goes off
                             //alert("hello");
-                            window.open("startregistration.html", '_self');
+                            window.open("startregistration.jsp", '_self');
                         });
                     }
                 });
@@ -106,7 +106,7 @@
                         var myTimer = {};
                         OpenProcessor();
                         myTimer = $.timer(2500, function() {
-                            window.open("startregistration.html", '_self');
+                            window.open("startregistration.jsp", '_self');
                         });
                     }
                 });

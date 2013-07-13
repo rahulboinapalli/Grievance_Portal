@@ -54,7 +54,7 @@
                     </ul>
                 </div>
                 <div id="mainContainer">
-                    <form id="loginForm" action="http://localhost:8080/Grievance_Portal/index.html" method="post" autocomplete="off">
+                    <form id="loginForm" action="http://localhost:8080/Grievance_Portal/index.jsp" method="post" autocomplete="off">
                         <label for="username">User Name</label>
                         <input name="username" tabindex="1" id="username" type="text" maxlength="150" value=""> 
                         <label for="password">Password</label>

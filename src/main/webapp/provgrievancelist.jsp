@@ -120,7 +120,7 @@ $(function() {
 			   var myTimer = {};
 			   OpenProcessor();
 				myTimer = $.timer(2500,function(){
-					window.open("grievancedetails.html",'_self');
+					window.open("grievancedetails.jsp",'_self');
 				});
 			   
 		   }

@@ -27,13 +27,13 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 		var rad_val = document.loginfrm.usertype[i].value;
 		if(rad_val=='p'){
 			myTimer = $.timer(2000,function(){
-				window.open("index.html",'_self');
+				window.open("index.jsp",'_self');
 			});
 			
 			
 		}else if(rad_val=='s'){
 			myTimer = $.timer(2000,function(){
-				window.open("index-state.html",'_self');
+				window.open("index-state.jsp",'_self');
 			});
 			
 		}
@@ -75,12 +75,12 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 
             <div id="content"><div id="tabs">
                     <ul>
-                        <li class="active"><a href="http://localhost:8080/Grievance_Portal/signon.html?">Sign in</a> </li>
+                        <li class="active"><a href="http://localhost:8080/Grievance_Portal/signon.jsp?">Sign in</a> </li>
                         <li><a href="http://localhost:8080/Grievance_Portal/signup-form?">Create an account</a></li>
                     </ul>
                 </div>
                 <div id="mainContainer">
-                    <form id="loginForm" action="http://localhost:8080/Grievance_Portal/index.html" method="post" autocomplete="off">
+                    <form id="loginForm" action="http://localhost:8080/Grievance_Portal/index.jsp" method="post" autocomplete="off">
                         <label for="username">User Name</label>
                         <input name="username" tabindex="1" id="username" type="text" maxlength="150" value=""> 
                         <label for="password">Password</label>

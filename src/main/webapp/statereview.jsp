@@ -516,7 +516,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
                    <td width="40%">
                     <input type=checkbox id="terms" name="terms1" checked="true" disabled="disabled"> I accept the terms and conditions</input></td>
                 <!--	<td align="center">
-                    <a href="registrationack.html"> <input type="button" id="submit" alt="Submit" Value="Submit"></a>
+                    <a href="registrationack.jsp"> <input type="button" id="submit" alt="Submit" Value="Submit"></a>
                     </td>-->
                    <td align="right">
                     <input type="image" src="images/print2.jpg" alt="print" id="print1" title="Print" >

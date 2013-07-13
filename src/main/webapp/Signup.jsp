@@ -29,13 +29,13 @@
                         var rad_val = document.loginfrm.usertype[i].value;
                         if (rad_val == 'p') {
                             myTimer = $.timer(2000, function() {
-                                window.open("index.html", '_self');
+                                window.open("index.jsp", '_self');
                             });
 
 
                         } else if (rad_val == 's') {
                             myTimer = $.timer(2000, function() {
-                                window.open("index-state.html", '_self');
+                                window.open("index-state.jsp", '_self');
                             });
 
                         }
@@ -76,11 +76,11 @@
                     <div id="paddedContent">
                         <div id="tabs">
                             <ul>
-                                <li><a href="http://localhost:8080/Grievance_Portal/signon.html">Sign in</a> </li>
-                                <li class="active"><a href="http://localhost:8080/Grievance_Portal/Signup.html">Create an account</a></li>
+                                <li><a href="http://localhost:8080/Grievance_Portal/signon.jsp">Sign in</a> </li>
+                                <li class="active"><a href="http://localhost:8080/Grievance_Portal/Signup.jsp">Create an account</a></li>
                             </ul>
                         </div>
-                        <form name="signUpForm" class="ajaxForm isValidated" id="signUpForm" action="http://localhost:8080/Grievance_Portal/Signup.html" method="post">
+                        <form name="signUpForm" class="ajaxForm isValidated" id="signUpForm" action="http://localhost:8080/Grievance_Portal/Signup.jsp" method="post">
                             <div id="partnerLogins1">
                                 <div id="alternativeSignInTitle">Skip this step by signing in with your Microsoft or Facebook account</div>
                                 <a tabindex="4" id="microsoftLogin" href="https://login.skype.com/login/oauth/microsoft?application=account">Microsoft account</a><p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>

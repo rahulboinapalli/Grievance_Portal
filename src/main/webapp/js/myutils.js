@@ -22,62 +22,62 @@ function links()
 		$("#homep").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("index.html",'_self');
+			window.open("index.jsp",'_self');
 			});
 		});
 		$("#track").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("trackregistrationlist.html",'_self');
+			window.open("trackregistrationlist.jsp",'_self');
 			});
 		});
 		$("#btntrack").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("trackregistrationlist.html",'_self');
+			window.open("trackregistrationlist.jsp",'_self');
 			});
 		});
                 $("#btnstart").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("startregistration.html",'_self');
+			window.open("startregistration.jsp",'_self');
 			});
 		});
 		$("#find").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("findregistration.html",'_self');
+			window.open("findregistration.jsp",'_self');
 			});
 		});
 		$("#btnfind").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("findregistration.html",'_self');
+			window.open("findregistration.jsp",'_self');
 			});
 		});
 		$("#payment").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("paymentlist.html",'_self');
+			window.open("paymentlist.jsp",'_self');
 			});
 		});
 		$("#btnpayment").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("paymentlist.html",'_self');
+			window.open("paymentlist.jsp",'_self');
 			});
 		});
 
 		$("#grievance").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("provgrievancelist.html",'_self');
+			window.open("provgrievancelist.jsp",'_self');
 			});
 		});
 		$("#btngrievance").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("provgrievancelist.html",'_self');
+			window.open("provgrievancelist.jsp",'_self');
 			});
 		});
 
@@ -85,20 +85,20 @@ function links()
 		$("#home").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("index-state.html",'_self');
+			window.open("index-state.jsp",'_self');
 			});
 		});
 		// Launch MIPP Index page
 		$("#mipp").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("mipp-index.html",'_self');
+			window.open("mipp-index.jsp",'_self');
 			});
 		});
 		$("#mipp1").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("mipp-index.html",'_self');
+			window.open("mipp-index.jsp",'_self');
 			});
 		});
 		
@@ -106,25 +106,25 @@ function links()
 		$("#btnregtraker").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("trackregistrationlist - state.html",'_self');
+			window.open("trackregistrationlist - state.jsp",'_self');
 			});
 		});
 		$("#btninitpayment").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("initpaymentlist.html",'_self');
+			window.open("initpaymentlist.jsp",'_self');
 			});
 		});
 		$("#btnviewpay").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("providerpayedlist.html",'_self');
+			window.open("providerpayedlist.jsp",'_self');
 			});
 		});
 		$("#btnMUmetadata").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("mumetadatreeview.html",'_self');
+			window.open("mumetadatreeview.jsp",'_self');
 			});
 		});
 		
@@ -132,31 +132,31 @@ function links()
 		$("#mhr").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("meaningfuluse - state.html",'_self');
+			window.open("meaningfuluse - state.jsp",'_self');
 			});
 		});
 		$("#mhr1").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(1500,function(){
-			window.open("meaningfuluse - state.html",'_self');
+			window.open("meaningfuluse - state.jsp",'_self');
 			});
 		});
 		$("#hie").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("hie-base.html",'_self');
+			window.open("hie-base.jsp",'_self');
 			});
 			});
 		$("#hie1").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("hie-base.html",'_self');
+			window.open("hie-base.jsp",'_self');
 			});
 		});
 		$("#admin").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("admin-state.html",'_self');
+			window.open("admin-state.jsp",'_self');
 			});
 		});	
 		
@@ -164,7 +164,7 @@ function links()
 			//alert('hello');
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("meaningfuluse.html",'_self');
+			window.open("meaningfuluse.jsp",'_self');
 			});
 		});	
 
@@ -172,13 +172,13 @@ function links()
 			//alert('hello');
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){	
-			window.open("reports-dash.html",'_self');
+			window.open("reports-dash.jsp",'_self');
 			});
 		});	
 		$("#btnrpt1").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){	
-			window.open("registration-report.html",'_self');
+			window.open("registration-report.jsp",'_self');
 			});
 		});
 		$("#btnrpt2").click(function(){
@@ -202,19 +202,19 @@ function links()
 		$("#pd").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("patient-discovery.html",'_self');
+			window.open("patient-discovery.jsp",'_self');
 			});
 		});
 		$("#query").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("patient_discovery_results.html",'_self');
+			window.open("patient_discovery_results.jsp",'_self');
 			});
 		});
 		$("#retrieve").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("patient-discovery.html",'_self');
+			window.open("patient-discovery.jsp",'_self');
 			});
 		});
 		$('#localpidsearch').click(function(){
@@ -264,7 +264,7 @@ function links()
 				return false;
 				}
 				else{
-				window.open("patient_discovery_results.html",'_self');
+				window.open("patient_discovery_results.jsp",'_self');
 				return false;
 				}
 				});
@@ -273,19 +273,19 @@ function links()
 		$("#QueryDocs").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("document_listing.html",'_self');
+			window.open("document_listing.jsp",'_self');
 			});
 		});
 		$("#Retrieve").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("document_Retrieved.html",'_self');
+			window.open("document_Retrieved.jsp",'_self');
 			});
 		});
 		$("#Back").click(function(){
 			var myTimer = {};
 			myTimer = $.timer(2500,function(){
-			window.open("patient_discovery_results.html",'_self');
+			window.open("patient_discovery_results.jsp",'_self');
 			});
 		});
 		

@@ -52,7 +52,7 @@ $(document).ready(function()
  ); 
  		function formateadorLink(cellvalue, options, rowObject) {
 
-            return "<a href=./trackresults.html title='View Status'><u>" + cellvalue + "</u></a>";
+            return "<a href=./trackresults.jsp title='View Status'><u>" + cellvalue + "</u></a>";
         }
 		function formateadorimg(cellvalue, options, rowObject) {
 
@@ -72,14 +72,14 @@ $(document).ready(function()
 			if (cellvalue.indexOf("Payment Approved",1)!=-1) {
 			   var myTimer = {};
 				myTimer = $.timer(2500,function(){
-				window.open("viewregistration - payment.html",'_self');
+				window.open("viewregistration - payment.jsp",'_self');
 				});
 			   		   }
 		   if (cellvalue.indexOf("State Review",1)!=-1)
 		   {
 			   var myTimer = {};
 				myTimer = $.timer(2500,function(){
-					window.open("viewregistration.html",'_self');
+					window.open("viewregistration.jsp",'_self');
 				});
 			   
 		   }

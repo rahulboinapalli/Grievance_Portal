@@ -118,7 +118,7 @@ $(document).ready(function()
 						myTimer = $.timer(2000,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							window.open("registrationack.html",'_self');
+							window.open("registrationack.jsp",'_self');
 						});
 				
 				},
