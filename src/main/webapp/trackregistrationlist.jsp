@@ -10,7 +10,7 @@
 <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <script src="./js/jquery.tools.min.js"></script>
 <script type="text/javascript" src="js/myutils.js"></script>
-<script src="js/i18n/grid.locale-en.js" type="text/javascript"></script>
+<script src="js/grid.locale-en.js" type="text/javascript"></script>
 <script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
 <script src="js/src/jquery.fmatter.js" type="text/javascript"></script>
 <script type="text/javascript">
