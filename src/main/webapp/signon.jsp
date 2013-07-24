@@ -76,7 +76,7 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
             <div id="content"><div id="tabs">
                     <ul>
                         <li class="active"><a href="http://localhost:8080/Grievance_Portal/signon.jsp?">Sign in</a> </li>
-                        <li><a href="http://localhost:8080/Grievance_Portal/Signup.jsp?">Create an account</a></li>
+                        <li><a href="http://localhost:8080/Grievance_Portal/signup-form?">Create an account</a></li>
                     </ul>
                 </div>
                 <div id="mainContainer">
@@ -93,10 +93,10 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
                         <input name="session_token" type="hidden"></form>
                     <div id="partnerLogins">
                         <div id="alternativeSignInTitle">Alternatively, sign in with</div>
-                        <a tabindex="4" id="microsoftLogin" href="https://login.grievance_portal.com/login/">
+                        <a tabindex="4" id="microsoftLogin" href="https://login.skype.com/login/oauth/microsoft?application=account&amp;return_url=https%3A%2F%2Fsecure.D10">
                             Microsoft account</a>
                         <p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>
-                        <a tabindex="5" id="facebookLogin" href="https://login.grievance_portal.com/login/">
+                        <a tabindex="5" id="facebookLogin" href="https://login.skype.com/login/oauth/facebook?application=account&amp;return_url=https%3A%2F%2Fsecure.skype.com%2Faccount%2Floginhttp%3A%2F%2Fsearch.conduit.com%2F%3FSearchSource%3D10">
                             Facebook</a>
                     </div><div style="clear: both;">
 
@@ -132,7 +132,7 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 </div> <!-- end of templatemo_content -->
 <div id="templatemo_content_bottom"></div>
 <div id="templatemo_footer">  
-        Copyright © 2010 <a href="#">Grievance</a> | Development
+        Copyright Â© 2010 <a href="#">CNSI</a> | Development
 </div> <!-- end of footer -->
 </body>
 </html>
