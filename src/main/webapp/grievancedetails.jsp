@@ -52,7 +52,7 @@
                 height:70px;
                 width:160px;
                 padding:25px;
-                color:#fff;	
+                color:#fff;
             }
 
             /* style the trigger elements */
@@ -73,7 +73,7 @@
                 links();
                 showprocessor();
             }
-            );
+        );
 
 
             $(function() {
@@ -111,15 +111,15 @@
             </div> <!-- end of templatemo_banner -->
 
         </div> <!-- end of templatemo_banner_wrapper -->
-        <form name="frmreg" id="form1">
+        <form action="grievanceDetails" name="frmreg" id="form1">
             <div id="templatemo_menu_wrapper">
-                <div id="templatemo_menu"> 
+                <div id="templatemo_menu">
                     <ul>
-                        <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
-                        <li><a href="#" id="find" class="modalInput" rel="#showprocessor"><span></span>Register</a></li>
-                        <li><a href="#"  id="track" class="modalInput " rel="#showprocessor"><span></span>Track</a></li>
-                        <li><a href="#"  id="grievance" class="modalInput " rel="#showprocessor"><span></span>Grievance</a></li>
-                    </ul>   	
+                        <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+                        <li><a href="findRegistration" id="find" class="modalInput" rel="#showprocessor"><span></span>Register</a></li>
+                        <li><a href="trackRegistrationList"  id="track" class="modalInput " rel="#showprocessor"><span></span>Track</a></li>
+                        <li><a href="grievanceDetails"  id="grievance" class="modalInput " rel="#showprocessor"><span></span>Grievance</a></li>
+                    </ul>
 
                 </div> <!-- end of templatemo_menu -->
 
@@ -129,7 +129,7 @@
                 <div class="section_w940">
                     <div class="product_box margin_r_20">
                         <h2 onMouseover="displaycontent(0)" width=50px height=50px onMouseout="hideddrivetip()" style="cursor: hand" >Workflow - Current Status</h2>
-                        <p>Provides the current status of the grievance. Mouse over each step to get a detailed description of the status.</p>        
+                        <p>Provides the current status of the grievance. Mouse over each step to get a detailed description of the status.</p>
                         <div class="cleaner"></div>
                     </div>
                     <div>
@@ -155,7 +155,7 @@
                                 <td colspan="2"><font size=2>Step-1<br />Grievance<br>Submitted
                                             </td>
                                             <td colspan="2"><font size=2>Step-2<br />State Review<br /><img src="images/Download.png" alt="click to view" onclick="jQuery('#show1').show();
-                return false" /></a>
+                                                return false" /></a>
                                             </td>
                                             <td colspan="2"><font size=2>Step-3<br />Closure
                                             </td>
@@ -170,7 +170,7 @@
                                                         <dt>Grievance Details</dt>
                                                         <dd>
                                                             <table width="100% border="0">
-                                                                <tr>
+                                                                   <tr>
                                                                     <td width="100%">
                                                                         <fieldset style="width:550px">
                                                                             <legend align="center"><h6>Grievance Info</h6></legend>
@@ -192,7 +192,7 @@
                                                         <dt>NLR Information</dt>
                                                         <dd>
                                                             <table width="100% border="0">
-                                                                <tr>
+                                                                   <tr>
                                                                     <td width="50%">
                                                                         <fieldset style="width:350px">
                                                                             <legend align="center"><h6>Personal Info</h6></legend>
@@ -263,7 +263,7 @@
                                                                 <tr>
                                                                     <td width="50%">
                                                                         <fieldset style="width:350px">
-                                                                            <legend align="center"><h6>Identifiers</h6></legend>                      
+                                                                            <legend align="center"><h6>Identifiers</h6></legend>
                                                                             <table width="100%" border="0" cellpadding="2" cellspacing="0">
                                                                                 <tr>
                                                                                     <td colspan="4"><p>Please note, the tax identification number (TIN) captured below will receive the EHR incentive
@@ -284,7 +284,7 @@
                                                                     </td>
                                                                     <td width="50%" valign="top">
                                                                         <fieldset style="width:310px">
-                                                                            <legend align="center"><h6>Exclusions</h6></legend>                      
+                                                                            <legend align="center"><h6>Exclusions</h6></legend>
                                                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                                                 <tr>
                                                                                     <td width="40%"><h4>Exclusion Code</h4></td>
@@ -318,13 +318,13 @@
                                                                             <th>Reporting Period End</th>
                                                                             <th>EHR Investment Amount</th>
                                                                             <th>Pediatrician </th>
-                                                                            <th>FQHC /RHC</th>                             
+                                                                            <th>FQHC /RHC</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr>
                                                                             <td align="left"><input type="image" title="Click To Add Eligibility Details" src="images/edit.jpg" onclick="jQuery('#dialog-elig-form').dialog('open');
-                return false">&nbsp;&nbsp;Year 1</td>
+                                                                                return false">&nbsp;&nbsp;Year 1</td>
                                                                             <td id="ps1">05/01/2010</td>
                                                                             <td id="pe1">07/31/2010</td>
                                                                             <td id="ea1">$ 30,000.00</td>
@@ -337,7 +337,7 @@
                                                         </dd>
                                                         </d1>
                                                         <script type="text/javascript">
-            $('.slidedeck').slidedeck();
+                                                            $('.slidedeck').slidedeck();
                                                         </script>
                                                 </div>
                                                 <div class="cleaner"></div>
@@ -348,8 +348,8 @@
                                                                         <div class="close" id="CloseBtn"></div>
                                                                         </div>
                                                                         <div id="templatemo_content_bottom"></div>
-                                                                        <div id="templatemo_footer">  
-                                                                            Copyright Â© 2013 <a href="#">Grievance</a> | Development
+                                                                        <div id="templatemo_footer">
+                                                                            Copyright © 2013 <a href="grievanceDetails">Grievance</a> | Development
                                                                         </div> <!-- end of footer -->
 
                                                                         <div id="dhtmltooltip"></div>
@@ -397,12 +397,12 @@
 
                                                                                     //if the horizontal distance isn't enough to accomodate the width of the context menu
                                                                                     if (rightedge < tipobj.offsetWidth)
-                                                                                        //move the horizontal position of the menu to the left by it's width
+                                                                                    //move the horizontal position of the menu to the left by it's width
                                                                                         tipobj.style.left = ie ? ietruebody().scrollLeft + event.clientX - tipobj.offsetWidth + "px" : window.pageXOffset + e.clientX - tipobj.offsetWidth + "px"
                                                                                     else if (curX < leftedge)
                                                                                         tipobj.style.left = "5px"
                                                                                     else
-                                                                                        //position the horizontal position of the menu where the mouse is positioned
+                                                                                    //position the horizontal position of the menu where the mouse is positioned
                                                                                         tipobj.style.left = curX + offsetxpoint + "px"
 
                                                                                     //same concept with the vertical position
@@ -421,30 +421,30 @@
                                                                                 if (workflowno == 0)
                                                                                 {
                                                                                     desc = '<Table height=100% width=100%>'
-                                                                                            + '	<tr>'
-                                                                                            + '		<td colspan=2>'
-                                                                                            + '		<B><U>LEGEND:</U></B>'
-                                                                                            + '	</td>'
-                                                                                            + '	</tr>'
-                                                                                            + '	<tr>'
-                                                                                            + '	<td>'
-                                                                                            + '	<img width=40px height=40px src="images/Process-Accept.png"/></td>'
-                                                                                            + '	<td>Task Completed'
-                                                                                            + '	</td>'
-                                                                                            + '	</tr>'
-                                                                                            + '	<tr>'
-                                                                                            + '	<td>'
-                                                                                            + '	<img src="images/running_process.png"/></td>'
-                                                                                            + '	<td>Task In Process'
-                                                                                            + '	</td>'
-                                                                                            + '	</tr>'
-                                                                                            + '	<tr>'
-                                                                                            + '	<td>'
-                                                                                            + '	<img width=40px height=40px src="images/Process-Info.png"/></td>'
-                                                                                            + '	<td>Task Not Started'
-                                                                                            + '	</td>'
-                                                                                            + '	</tr>'
-                                                                                            + '	</Table>';
+                                                                                        + '	<tr>'
+                                                                                        + '		<td colspan=2>'
+                                                                                        + '		<B><U>LEGEND:</U></B>'
+                                                                                        + '	</td>'
+                                                                                        + '	</tr>'
+                                                                                        + '	<tr>'
+                                                                                        + '	<td>'
+                                                                                        + '	<img width=40px height=40px src="images/Process-Accept.png"/></td>'
+                                                                                        + '	<td>Task Completed'
+                                                                                        + '	</td>'
+                                                                                        + '	</tr>'
+                                                                                        + '	<tr>'
+                                                                                        + '	<td>'
+                                                                                        + '	<img src="images/running_process.png"/></td>'
+                                                                                        + '	<td>Task In Process'
+                                                                                        + '	</td>'
+                                                                                        + '	</tr>'
+                                                                                        + '	<tr>'
+                                                                                        + '	<td>'
+                                                                                        + '	<img width=40px height=40px src="images/Process-Info.png"/></td>'
+                                                                                        + '	<td>Task Not Started'
+                                                                                        + '	</td>'
+                                                                                        + '	</tr>'
+                                                                                        + '	</Table>';
 
                                                                                     ddrivetip(desc, '#EDF3FC', 145);
                                                                                     return;

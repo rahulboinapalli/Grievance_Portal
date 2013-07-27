@@ -27,7 +27,7 @@
 		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
 		.ui-dialog .ui-state-error { padding: .3em; }
 		.validateTips { border: 1px solid transparent; padding: 0.3em; }
-		
+
 	</style>
 
 <style type="text/css">
@@ -52,9 +52,9 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 	height:70px;
 	width:160px;
 	padding:25px;
-	color:#fff;	
+	color:#fff;
 }
- 
+
 /* style the trigger elements */
 #demo img {
 	border:0;
@@ -66,7 +66,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
    <script type="text/javascript">
 	// increase the default animation speed to exaggerate the effect
 	$("#dialog").dialog("destroy");
-	
+
 	$(document).ready(function()
 	{
 		timer();
@@ -88,16 +88,16 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 				}
 			}
 		});
-		
+
 	});
   </script>
-    
+
 </head>
 <body>
 <div id="templatemo_banner_wrapper">
-	
+
     <div id="templatemo_banner">
-    
+
     	<div id="banner_content" >
 			<table width="100%" border="0" celpadding="0" cellspacing="0">
 				<tr>
@@ -105,23 +105,23 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
                             <td align="right"><img height="100" src="images/home.png"/></td>
 				</tr>
 			</table>
-		
-		
+
+
 	</div>
 </div> <!-- end of templatemo_banner -->
 
 </div> <!-- end of templatemo_banner_wrapper -->
-<form name="frmreg" id="form1">
+<form action="stateReview" name="frmreg" id="form1">
 <div id="templatemo_menu_wrapper">
-	<div id="templatemo_menu"> 
+	<div id="templatemo_menu">
         <ul>
-            <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
-          
-            <li><a href="#"  id="track" class="modalInput current" rel="#showprocessor"><span></span>Track</a></li>
-   
-            <li><a href="#"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
-        </ul>   	
-    
+            <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+
+            <li><a href="trackRegistrationList"  id="track" class="modalInput current" rel="#showprocessor"><span></span>Track</a></li>
+
+            <li><a href="grievanceDetails"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
+        </ul>
+
     </div> <!-- end of templatemo_menu -->
 
 </div> <!-- end of templatemo_menu_wrapper -->
@@ -141,7 +141,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
          </div>
          <div class="product_box">
                 <h2>Login Information</h2>
-                        <p>User ID: doej</p> 
+                        <p>User ID: doej</p>
                         <p>Profile: Case Worker</p>
          <div class="cleaner"></div>
          </div>
@@ -279,7 +279,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 						 	<tr>
                           		<td width="50%">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Identifiers</h6></legend>                      
+                                        <legend align="center"><h6>Identifiers</h6></legend>
                                             <table width="100%" border="0" cellpadding="2" cellspacing="0">
                                                 <tr>
                                                     <td colspan="4"><p>Please note, the tax identification number (TIN/SSN) captured below will receive the Medical Benefits.</p></td>
@@ -299,7 +299,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
                               	</td>
                                 <td width="50%" valign="top">
                                      <fieldset style="width:310px">
-                                        <legend align="center"><h6>Exclusions</h6></legend>                      
+                                        <legend align="center"><h6>Exclusions</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td width="40%"><h4>Exclusion Code</h4></td>
@@ -409,7 +409,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
                                                     <td><h5>208D00000X - Below Federal</h5></td>
                                                 </tr>
                                               </table>
- 
+
                                          </fieldset>
                               	</td>
                                 <td width="50%" valign="top">
@@ -453,7 +453,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
                                   <th>Reporting Period End</th>
                                   <th>Income</th>
                                   <th>Resident </th>
-                                  <th>FQHC /RHC</th>                             
+                                  <th>FQHC /RHC</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -538,8 +538,8 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
  <div class="close" id="CloseBtn"></div>
 </div>
 <div id="templatemo_content_bottom"></div>
-<div id="templatemo_footer">  
-        Copyright © 2013 <a href="#">GrievanceApp</a> | Development
+<div id="templatemo_footer">
+        Copyright � 2013 <a href="grievanceDetails">GrievanceApp</a> | Development
 </div> <!-- end of footer -->
 
 <div id="dhtmltooltip"></div>
@@ -605,7 +605,7 @@ tipobj.style.visibility="visible"
 function displaycontent(workflowno)
 {
 	var desc = '';
-	
+
 	if (workflowno == 0)
 	{
 		desc = '<Table height=100% width=100%>'
@@ -633,7 +633,7 @@ function displaycontent(workflowno)
 						+ '	</td>'
 					+ '	</tr>'
 				+ '	</Table>';
-		
+
 		ddrivetip(desc,'#EDF3FC', 145);
 		return;
 	}
@@ -643,11 +643,11 @@ function displaycontent(workflowno)
 	}
 	else if (workflowno == 2)
 	{
-		desc = '<B><U>Correspondence Generated:</U></B><BR><BR> When [State Name] Medicaid received notice of your choice of [State Name]’s EHR Medicaid Incentive Program we generated a letter to inform you that your NLR registration was approved.  The correspondence informed you of next steps required to complete the registration process and the length of time you have to begin the [State Name]’s EHR Medicaid Incentive Program registration.  Remember:  If your Payee’s Employer Identification Number (EIN) is not registered with [State Name]’s State Payment system or is not in [State Name]’s MMIS system we will not be able to make the incentive payment.';
+		desc = '<B><U>Correspondence Generated:</U></B><BR><BR> When [State Name] Medicaid received notice of your choice of [State Name]?s EHR Medicaid Incentive Program we generated a letter to inform you that your NLR registration was approved.  The correspondence informed you of next steps required to complete the registration process and the length of time you have to begin the [State Name]?s EHR Medicaid Incentive Program registration.  Remember:  If your Payee?s Employer Identification Number (EIN) is not registered with [State Name]?s State Payment system or is not in [State Name]?s MMIS system we will not be able to make the incentive payment.';
 	}
 	else if (workflowno == 3)
 	{
-		desc = '<B><U>Registration Process:</U></B><BR><BR> You have begun the registration process in [State Name]’s EHR Medicaid Incentive Program.  You have XXX days to complete and submit your registration material for State review from the date you first saved your information.  All Information must be provided for your registration to be approved.  The final step in the registration process is your attestation of the truthfulness of the information provided.  Please make sure that the information is correct.  You will not be able to change the information once it is submitted.  If you do not complete the registration within xxx days, or if the information is incorrect, you will have to re-register with the NLR to begin the process again. ';
+		desc = '<B><U>Registration Process:</U></B><BR><BR> You have begun the registration process in [State Name]?s EHR Medicaid Incentive Program.  You have XXX days to complete and submit your registration material for State review from the date you first saved your information.  All Information must be provided for your registration to be approved.  The final step in the registration process is your attestation of the truthfulness of the information provided.  Please make sure that the information is correct.  You will not be able to change the information once it is submitted.  If you do not complete the registration within xxx days, or if the information is incorrect, you will have to re-register with the NLR to begin the process again. ';
 	}
 	else if (workflowno == 4)
 	{
@@ -655,17 +655,17 @@ function displaycontent(workflowno)
 	}
 	else if (workflowno == 5)
 	{
-		desc = '<B><U>Approval Process:</U></B><BR><BR> Your registration has been approved/rejected for participation in this year’s Medicaid EHR Incentive Program.  You do not need to do anything else to receive your payment.  You may view your registration information at any time. There will be a final review of your qualifying information before payment is made.';
+		desc = '<B><U>Approval Process:</U></B><BR><BR> Your registration has been approved/rejected for participation in this year?s Medicaid EHR Incentive Program.  You do not need to do anything else to receive your payment.  You may view your registration information at any time. There will be a final review of your qualifying information before payment is made.';
 	}
 	else if (workflowno == 6)
 	{
-		desc = '<B><U>Payment Process:</U></B><BR><BR> We are in the process of generating your EHR payment.  In addition to confirming your eligible payment amount we also must confirm with the NLR that no other payments have been made for this payment year by another State’s Medicaid agency.  We will also make sure that you have not been sanctioned for any period during this payment year since your original application.  Finally we will confirm that you license(s) are still current for the reporting period for this payment year.';
+		desc = '<B><U>Payment Process:</U></B><BR><BR> We are in the process of generating your EHR payment.  In addition to confirming your eligible payment amount we also must confirm with the NLR that no other payments have been made for this payment year by another State?s Medicaid agency.  We will also make sure that you have not been sanctioned for any period during this payment year since your original application.  Finally we will confirm that you license(s) are still current for the reporting period for this payment year.';
 	}
 	else if (workflowno == 7)
 	{
 		desc = '<B><U>Payment Updated NLR:</U></B><BR><BR> Your [State Name] EHR Medicaid Incentive Payment has been processed. The payment information has been sent to NLR';
 	}
-	
+
 	ddrivetip(desc,'#EDF3FC', 500);
 }
 
