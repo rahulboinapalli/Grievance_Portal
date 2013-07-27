@@ -83,8 +83,8 @@
                         <form name="signUpForm" class="ajaxForm isValidated" id="signUpForm" action="http://localhost:8080/Grievance_Portal/Signup.jsp" method="post">
                             <div id="partnerLogins1">
                                 <div id="alternativeSignInTitle">Skip this step by signing in with your Microsoft or Facebook account</div>
-                                <a tabindex="4" id="microsoftLogin" href="https://login.grievance_portal.com/login/oauth/microsoft?application=account">Microsoft account</a><p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>
-                                <a tabindex="5" id="facebookLogin" href="https://login.grievance_portal.com/login/oauth/facebook?application=account">Facebook</a></div>
+                                <a tabindex="4" id="microsoftLogin" href="https://login.skype.com/login/oauth/microsoft?application=account">Microsoft account</a><p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>
+                                <a tabindex="5" id="facebookLogin" href="https://login.skype.com/login/oauth/facebook?application=account">Facebook</a></div>
                             <div class="formContainer">
                                 <div class="fieldRow noMargin">
                                     <div class="specialRow leftRow">
@@ -234,7 +234,7 @@
 
                     </div>
                     <p>
-                        <small>Yes, I have read and I accept the <a href="http://www.grievance.com" target="_blank">Grievance Terms of Use</a> and the <a href="http://www.grievance.com/go/privacy" target="_blank">Grievance Privacy Statement</a></small></p>
+                        <small>Yes, I have read and I accept the <a href="http://www.skype.com/go/tos" target="_blank">Skype Terms of Use</a> and the <a href="http://www.skype.com/go/privacy" target="_blank">Skype Privacy Statement</a></small></p>
                     <div class="fieldRow">
                         <input name="checkOnSubmit" id="checkOnSubmit" type="hidden" value="formError" >
                         <input name="id" type="hidden" value="6270000000023887836" >
@@ -274,7 +274,7 @@
         </div>
             <div id="templatemo_content_bottom"></div>
             <div id="templatemo_footer">  
-                Copyright © 2010 <a href="#">Grievance</a> | Development
+                Copyright Â© 2010 <a href="#">CNSI</a> | Development
             </div> <!-- end of footer -->
     </body>
 </html>

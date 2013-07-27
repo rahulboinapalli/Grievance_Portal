@@ -132,7 +132,7 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 </div> <!-- end of templatemo_content -->
 <div id="templatemo_content_bottom"></div>
 <div id="templatemo_footer">  
-        Copyright � 2010 <a href="grievanceDetails">Grievance</a> | Development
+        Copyright © 2010 <a href="#">CNSI</a> | Development
 </div> <!-- end of footer -->
 </body>
 </html>
