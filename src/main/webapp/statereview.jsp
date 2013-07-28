@@ -115,7 +115,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 <div id="templatemo_menu_wrapper">
 	<div id="templatemo_menu">
         <ul>
-            <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+            <li><a href="index" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
 
             <li><a href="trackRegistrationList"  id="track" class="modalInput current" rel="#showprocessor"><span></span>Track</a></li>
 

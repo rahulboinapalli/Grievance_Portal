@@ -16,6 +16,13 @@
 			<result name="input">/userForm.jsp</result>
 		</action>
 
+                <action name="signIn" class="com.grievance.healthcare.action.UserAction" method="signMeIn">
+			<result name="success" type="redirectAction">
+				<param name="actionName">index</param>
+			</result>
+			
+		</action>
+                
 		<action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
 			<result name="input">/userForm.jsp</result>
 		</action>
@@ -56,6 +63,10 @@
 		</action>
 		<action name="viewRegistration" class="com.grievance.healthcare.action.ViewRegistrationAction" method="showPage">
 			<result name="success">/viewregistration.jsp</result>
+		</action>
+
+                <action name="index" class="com.grievance.healthcare.action.IndexAction" method="showPage">
+			<result name="success">/index.jsp</result>
 		</action>
 
 </package>

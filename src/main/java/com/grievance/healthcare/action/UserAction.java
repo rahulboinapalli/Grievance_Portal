@@ -53,6 +53,28 @@ public class UserAction extends ActionSupport
     }
 
     /**
+     * Handles actions involving saving
+     * a new or changed User object.
+     * Creates or updates user instance
+     * field.
+     * @return success
+     */
+    public String signMeIn()
+    {
+    	logger.debug("in method signMeIn");
+
+        /*if (user.getId() == null)
+        {
+            userService.createUser(user);
+        }
+        else
+        {
+            userService.updateUser(user);
+        }*/
+        return SUCCESS;
+    }
+
+    /**
      * Handles delete User action.
      * Deletes user instance field.
      * @return success

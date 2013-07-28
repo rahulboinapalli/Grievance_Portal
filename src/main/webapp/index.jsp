@@ -78,9 +78,9 @@ $(document).ready(function()
 <div id="templatemo_menu_wrapper">
 	<div id="templatemo_menu"> 
         <ul>
-            <li><a href="#"  id="homep" class="modalInput current" rel="#showprocessor"><span></span>Home</a></li>
-            <li><a href="#"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
-            <li><a href="#"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
+            <li><a href="index"  id="homep" class="modalInput current" rel="#showprocessor"><span></span>Home</a></li>
+            <li><a href="grievanceDetails"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
+            <li><a href="trackRegistrationList"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
             
         </ul>   	
     </div> <!-- end of templatemo_menu -->
@@ -91,9 +91,9 @@ $(document).ready(function()
 	<div class="section_w940">
 <h2> Welcome John Doe</h2>
     	<div class="product_box margin_r_20">
-        	<h2>Submit Grievance</h2>
+        	<h2>Submit Grievance</h2>   
             <img src="images/add.png" alt="image 1" /><p>submit new grievance.&nbsp;&nbsp;&nbsp; </p>
-                   <a href="#" class="modalInput" rel="#showprocessor" id="btnstart" onMouseOver="over_button('Start','images/Start_Down.png')" 
+                   <a href="startRegistration" class="modalInput" rel="#showprocessor" id="btnstart" onMouseOver="over_button('Start','images/Start_Down.png')"
   onMouseOut="up_button('Start','images/Start_Up.png')"><img src="./images/Start_Up.png" name="Start" id="Start" /></a>
             <div class="cleaner"></div>
         </div>
@@ -101,7 +101,7 @@ $(document).ready(function()
         <div class="product_box">
         	<h2>Track Grievance</h2>
             <img src="images/Contract.png" alt="image 3" /><p>View the grievance list   &nbsp;&nbsp;</p>
-                   <a href="#" class="modalInput" rel="#showprocessor" id="btngrievance"  onMouseOver="over_button('Track','images/Track_Down.png')" 
+                   <a href="trackRegistrationList" class="modalInput" rel="#showprocessor" id="btngrievance"  onMouseOver="over_button('Track','images/Track_Down.png')"
   onMouseOut="up_button('Track','images/Track_Up.png')"><img src="./images/Track_Up.png" name="Track" id="Track" /></a>
                    
             <div class="cleaner"></div>
@@ -163,7 +163,7 @@ $(document).ready(function()
 
 <div id="templatemo_content_bottom"></div>
 <div id="templatemo_footer">  
-        Copyright © 2010 <a href="#">grievance</a> | Development
+        Copyright © 2010 <a href="grievanceDetails">grievance</a> | Development
 </div> <!-- end of footer -->
 <script>
 	window.onresize=function ResizeWindow_maintemplate(){

@@ -75,18 +75,26 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 
             <div id="content"><div id="tabs">
                     <ul>
-                        <li class="active"><a href="signon">Sign in</a> </li>
+                        <li class="active"><a href="signon" name="showPage" >Sign in</a> </li>
                         <li><a href="signup">Create an account</a></li>
                     </ul>
                 </div>
                 <div id="mainContainer">
-                    <form id="UserAction" action="signon" method="post" autocomplete="off">
-                        <label for="username">User Name</label>
-                        <input name="username" tabindex="1" id="username" type="text" maxlength="150" value=""> 
-                        <label for="password">Password</label>
-                        <input name="password" tabindex="2" id="password" type="password" maxlength="256" value="" autocomplete="off"> 
+                    <form id="UserAction" action="signIn" method="post" autocomplete="off">
+                        <table>
+                            <tr><td>
+                            <label for="username">User Name:</label></td>
+                            <td>
+                                <input name="username" tabindex="1" id="username" type="text" maxlength="150" value="" size="25"></td>
+                            </tr>
+                            <tr><td>
+                            <label for="password">Password:</label></td>
+                            <td>
+                            <input name="password" tabindex="2" id="password" type="password" maxlength="256" value="" autocomplete="off" size="25"></td>
+                            </tr>
+                        </table>
                         <div class="signInContainer">
-                            <button tabindex="3" class="smallButton primaryCta" id="signIn" type="submit">
+                            <button tabindex="3" class="smallButton primaryCta" id="signIn" type="submit" value="signIn">
                                 <span>Sign me in</span></button>
                         </div>
 
