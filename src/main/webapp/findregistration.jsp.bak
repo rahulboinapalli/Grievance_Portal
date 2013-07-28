@@ -167,14 +167,14 @@
                                 </div> <!-- end of templatemo_banner -->
 
                                 </div> 
-        <form action="findRegistration"name="frmreg" id="form1">
+                                <form name="frmreg" id="form1">
                                     <div id="templatemo_menu_wrapper">
                                         <div id="templatemo_menu"> 
                                             <ul>
                                                
-                                                    <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
-                                                    <li><a href="grievanceDetails"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
-                                                    <li><a href="trackRegistrationList"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
+                                                    <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+                                                    <li><a href="#"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
+                                                    <li><a href="#"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
                                                 
                                             </ul>  	
 
@@ -200,7 +200,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <a href="startRegistration" id="regidsearch" onMouseOver="over_button('Search', 'images/Search_Down.png')"
+                                                                <a href="#" id="regidsearch" onMouseOver="over_button('Search', 'images/Search_Down.png')" 
                                                                    onMouseOut="up_button('Search', 'images/Search_Up.png')"><img src="./images/Search_Up.png" name="Search" id="Search" /></a>
                                                             </td>
                                                         </tr>
@@ -243,7 +243,7 @@
                                                                 <a class="modalInput" rel="#showprocessor" id="showProcessor" ></a>
                                                                 <div id="templatemo_content_bottom"></div>
                                                                 <div id="templatemo_footer">  
-                                                                    Copyright © 2010 <a href="grievanceDetails">grievance</a> | Development
+                                                                    Copyright © 2010 <a href="#">grievance</a> | Development
                                                                 </div> <!-- end of footer -->
 
                                                                 <div id="dialog" title='<img src="images/alert.png"/> Invalid Registration Details'>

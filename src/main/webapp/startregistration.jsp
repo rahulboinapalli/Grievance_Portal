@@ -55,7 +55,7 @@
                 height:70px;
                 width:160px;
                 padding:25px;
-                color:#fff;	
+                color:#fff;
             }
 
             /* style the trigger elements */
@@ -306,16 +306,16 @@
 
             </div> <!-- end of templatemo_banner -->
 
-        </div> 
-        <form name="frmresult" id="form1">
+        </div>
+        <form action="startRegistration" name="frmresult" id="form1">
             <div id="templatemo_menu_wrapper">
-                <div id="templatemo_menu"> 
+                <div id="templatemo_menu">
                     <ul>
-                        <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
-                        <li><a href="#"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
-                        <li><a href="#"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
+                        <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+                        <li><a href="grievanceDetails"  id="grievance" class="modalInput" rel="#showprocessor"><span></span>Grievance</a></li>
+                        <li><a href="trackRegistrationList"  id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
 
-                    </ul> 		
+                    </ul>
 
                 </div> <!-- end of templatemo_menu -->
 
@@ -326,19 +326,19 @@
                     <div class="product_box margin_r_20">
                         <h2>Success</h2>
                         <img src="images/Checkmark.png" alt="image 1" />
-                        <p>Received your registration from NLR. Continue with state registration.</p>           
+                        <p>Received your registration from NLR. Continue with state registration.</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="product_box margin_r_20">
                         <h2>Search Criteria</h2>
-                        <p>Registration ID: 1357924680</p> 
+                        <p>Registration ID: 1357924680</p>
                         <p>NPI: 1033366513</p>
                         <p>Tax ID / SSN: 999-99-9999</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="product_box">
                         <h2>Login Information</h2>
-                        <p>User ID: doej</p> 
+                        <p>User ID: doej</p>
                         <p>Profile: Provider Admin</p>
                         <div class="cleaner"></div>
                     </div>
@@ -419,7 +419,7 @@
                                     <tr>
                                         <td width="50%">
                                             <fieldset style="width:350px">
-                                                <legend align="center"><h6>Identifiers</h6></legend>                      
+                                                <legend align="center"><h6>Identifiers</h6></legend>
                                                 <table width="100%" border="0" cellpadding="2" cellspacing="0">
                                                     <tr>
                                                         <td colspan="4"><p>The Tax Identification Number (TIN) captured below will receive the EHR incentive
@@ -440,7 +440,7 @@
                                         </td>
                                         <td width="50%" valign="top">
                                             <fieldset style="width:280px">
-                                                <legend align="center"><h6>Exclusions</h6></legend>                      
+                                                <legend align="center"><h6>Exclusions</h6></legend>
                                                 <table width="90%" border="0" cellpadding="1" cellspacing="2">
                                                     <tr>
                                                         <td width="40%"><h4>Code</h4></td>
@@ -536,7 +536,7 @@
                                     <tr>
                                         <td width="50%" valign="top">
                                             <fieldset style="width:350px">
-                                                <legend align="center"><h6>Provider Type/Specialty</h6></legend>                      
+                                                <legend align="center"><h6>Provider Type/Specialty</h6></legend>
                                                 <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                     <tr>
                                                         <td><h4>Specialty</h4></td>
@@ -554,7 +554,7 @@
                                         </td>
                                         <td width="50%" valign="top">
                                             <fieldset style="width:280px">
-                                                <legend align="center"><h6>Licenses/Certifications</h6></legend>                      
+                                                <legend align="center"><h6>Licenses/Certifications</h6></legend>
                                                 <table width="100%" border="1" cellpadding="0" cellspacing="0">
                                                     <tr>
                                                         <td><h4>Type</h4></td>
@@ -593,7 +593,7 @@
                                                 <th>Reporting Period End</th>
                                                 <th>EHR Investment Amount</th>
                                                 <th>Pediatrician </th>
-                                                <th>FQHC /RHC</th>                             
+                                                <th>FQHC /RHC</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -653,7 +653,7 @@
                                             <td width="40%">
                                                 <input type=checkbox id="terms" name="terms1" > I accept the terms and conditions</input></td>
                                             <td align="center">
-                                                <a href="#" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')" 
+                                                <a href="startRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')"
                                                    onMouseOut="up_button('SubmitReg', 'images/Register_Up.png')"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></a>
 
                                             </td>
@@ -674,7 +674,7 @@
                                                 <th>File Name</th>
                                                 <th>File Type</th>
                                                 <th>File Size</th>
-                                                <th>Upload Date</th>                            
+                                                <th>Upload Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -703,8 +703,8 @@
                                         </div>
                                         <a class="modalInput" rel="#showprocessor" id="showProcessor" ></a>
                                         <div id="templatemo_content_bottom"></div>
-                                        <div id="templatemo_footer">  
-                                            Copyright&nbsp;© 2010 <a href="#">GrievanceApp</a> | Development
+                                        <div id="templatemo_footer">
+                                            Copyright&nbsp;© 2010 <a href="grievanceDetails">GrievanceApp</a> | Development
                                         </div> <!-- end of footer -->
                                         <!-- Content For adding Eligibility Information -->
                                         <div id="dialog-attest" title="Attestation Information">
@@ -752,7 +752,7 @@
                                                             </td>
                                                         </tr>
                                                     </table>
-                                            </fieldset> 
+                                            </fieldset>
                                         </div>
 
                                         <div id="dialog-elig-form" title="Enter Eligibility Information">
@@ -763,13 +763,13 @@
                                                     /* be careful with padding, it'll shift the nice offset on top of border  */
                                                 }
 
-                                                form label { 
+                                                form label {
                                                     display: block;  /* block float the labels to left column, set a width */
-                                                    float: left; 
-                                                    width: 250px; 
-                                                    padding: 0; 
+                                                    float: left;
+                                                    width: 250px;
+                                                    padding: 0;
                                                     margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
-                                                    text-align: right; 
+                                                    text-align: right;
                                                 }
 
 
@@ -822,8 +822,8 @@
                                                 }
 
                                                 -->
-                                            </style> 
-                                            <!--		
+                                            </style>
+                                            <!--
                                                       <form action="#" method="post" name="f">
                                                       <p><b>Bold</b> fields are required.</p>
                                                       <fieldset>
@@ -915,7 +915,7 @@
                                                     <label for="Medicaid Enc" class="required">Qualified Patient Encounters: </label>
                                                     <input type="text" id="medicaidenc" name="medicaidenc" tabindex="4" value="" title="medicaid encounters" />&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent(2)" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
                                                 </fieldset>
-                                                 
+
                                                 -->
                                                 <fieldset>
                                                     <legend >Reporting Period</legend>
@@ -942,8 +942,8 @@
                                                                                     <fieldset>
                                                                                         <label for="Total Enc"  class="required"> &nbsp</label><input type="checkbox"  name="PA"  value="P" onMouseover="displaycontent(3)" width=50px height=50px onMouseout="hideddrivetip()" style="cursor: hand" />Primary Provider at FQHC/RHC <br>
                                                                                             <label for="Total Enc"  class="required">&nbsp </label><input type="checkbox" name="PA"  value="D" class="required" />Clinical/Medical Director at FQHC/RHC <br>
-                                                                                                <label for="Total Enc"  class="required">&nbsp </label><input type="checkbox" name="PA"  value="O" class="required" /> An Owner at RHC<br>  
-                                                                                                    <label for="Total Enc"  class="required">&nbsp </label><input type="checkbox" name="PA"  value="N" class="required" /> None of the above<br>  
+                                                                                                <label for="Total Enc"  class="required">&nbsp </label><input type="checkbox" name="PA"  value="O" class="required" /> An Owner at RHC<br>
+                                                                                                    <label for="Total Enc"  class="required">&nbsp </label><input type="checkbox" name="PA"  value="N" class="required" /> None of the above<br>
                                                                                                         </fieldset>
                                                                                                         </div>
                                                                                                         <label   class="required"> Do you render service in hospital  &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('hs')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
@@ -1010,7 +1010,7 @@
                                                                                                                                                                                                         <label for="Medicaid Enc" class="required">Medicaid Encounters Other Settings: </label>
                                                                                                                                                                                                         <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
                                                                                                                                                                                                         </fieldset>
-                                                                                                                                                                                                        </div>			
+                                                                                                                                                                                                        </div>
                                                                                                                                                                                                         <label   class="required">MCO primary care provider &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('mp')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                                                                         <input type="radio"  name="radiomco" onClick = "jQuery('#mp').show();
                 return false" value="Y" />Yes &nbsp; <input type="radio" name="radiomco" onClick = "jQuery('#mp').hide();
@@ -1027,7 +1027,7 @@
                                                                                                                                                                                                         <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
 
                                                                                                                                                                                                         </fieldset>
-                                                                                                                                                                                                        </div>	
+                                                                                                                                                                                                        </div>
                                                                                                                                                                                                         <label   class="required">MCO primary care provider(FQHC) &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('mf')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                                                                         <input type="radio"  name="radiopcpfqhc" onClick = "jQuery('#mf').show();
                 return false" value="Y" />Yes &nbsp; <input type="radio" name="radiopcpfqhc" onClick = "jQuery('#mf').hide();
@@ -1050,7 +1050,7 @@
                                                                                                                                                                                                         <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
                                                                                                                                                                                                         </fieldset>
 
-                                                                                                                                                                                                        </div>	
+                                                                                                                                                                                                        </div>
                                                                                                                                                                                                         <!--
                                                                                                                                                                                                         <label   class="required">Did you include any encounters out side [State Name] &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('am')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                                                                         <input type="radio"  name="radiostate" onClick = "jQuery('#am').show(); return false" value="Y" />Yes &nbsp; <input type="radio" name="radiostate" onClick = "jQuery('#am').hide(); return false" value="N" />No <br>
@@ -1061,13 +1061,13 @@
                                                                                                                                                                                                         <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters"/>&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('hstot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
 
                                                                                                                                                                                                         </fieldset>
-                                                                                                                                                                                                        </div>					
+                                                                                                                                                                                                        </div>
                                                                                                                                                                                                         </fieldset>
                                                                                                                                                                                                         <fieldset>
                                                                                                                                                                                                         <legend>EHR Certification Information</legend>
                                                                                                                                                                                                         <label for="Cert Num"  class="required" >EHR Investment Type: </label>
-                                                                                                                                                                                                        <input type="radio"  name="aiu"  value="a" class="required" />Adopt 
-                                                                                                                                                                                                        <input type="radio" name="aiu"  value="I" class="required" />Implment 
+                                                                                                                                                                                                        <input type="radio"  name="aiu"  value="a" class="required" />Adopt
+                                                                                                                                                                                                        <input type="radio" name="aiu"  value="I" class="required" />Implment
                                                                                                                                                                                                         <input type="radio" name="aiu"  value="U" class="required" />Upgrade <br>
                                                                                                                                                                                                         <label for="Cert Num"  class="required" >EHR Certification Number: </label>
                                                                                                                                                                                                         <input type="text" id="certnum" name="certnum" tabindex="5" value="" title="Certification Number">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('cert')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>

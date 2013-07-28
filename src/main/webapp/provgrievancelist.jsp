@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html lang="en" class=”ie6”><![endif]-->
-<!--[if IE 7]><html lang="en" class=”ie7”><![endif]-->
-<!--[if IE 8]><html lang="en" class=”ie8”><![endif]-->
-<!--[if IE 9]><html lang="en" class=”ie9”><![endif]-->
+<!--[if lt IE 7]><html lang="en" class=?ie6?><![endif]-->
+<!--[if IE 7]><html lang="en" class=?ie7?><![endif]-->
+<!--[if IE 8]><html lang="en" class=?ie8?><![endif]-->
+<!--[if IE 9]><html lang="en" class=?ie9?><![endif]-->
 <!--[if gt IE 9]><html lang="en"><![endif]-->
 <!--[if !IE]>--><html lang="en"><!--<![endif]-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EHR - Provider Grievance</title>
 <link href="page_style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" media="screen" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" /> 
+<link rel="stylesheet" type="text/css" media="screen" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="js/css/ui.jqgrid.css" />
 <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="js/myutils.js"></script>
@@ -39,12 +39,12 @@ $(document).ready(function()
 		timer();
 		links();
 		showprocessor();
-		var myDate = new Date();   var prettyDate =(myDate.getMonth()+1) + '/' + myDate.getDate() + '/' +  myDate.getFullYear(); 
+		var myDate = new Date();   var prettyDate =(myDate.getMonth()+1) + '/' + myDate.getDate() + '/' +  myDate.getFullYear();
 	}
 );
 
 $(function() {
-		
+
           // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
           $("#dialog").dialog("destroy");
           $("#dialog-add").dialog({
@@ -58,16 +58,16 @@ $(function() {
 					var v_npi=window.document.getElementById("npi").value;
 					var v_pname=window.document.getElementById("pname").value;
 					var v_date=window.document.getElementById("datepicker").value;
-					var v_type=jQuery('#type option:selected').text(); 
-					var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}]; 
-					
+					var v_type=jQuery('#type option:selected').text();
+					var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
+
 					for(var i=0;i<=mydata1.length;i++) {
 					jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
 					}
 					 var bValid = true;
-					                  
+
                       if (bValid) {
-                          
+
                           $(this).dialog('close');
                       }
                   },
@@ -75,35 +75,35 @@ $(function() {
                       $(this).dialog('close');
                   }
               },
-              
+
           });
 	});
-	
-	
+
+
 </script>
-<script type="text/javascript"> 
- jQuery().ready(function (){ 
- jQuery("#list4").jqGrid({ 
- datatype: "local", height:100, 
+<script type="text/javascript">
+ jQuery().ready(function (){
+ jQuery("#list4").jqGrid({
+ datatype: "local", height:100,
  colNames:['Member ID','Member SSN', 'Member Name','Insurance Type','Grievance Type', 'Date','Status'],
- colModel:[ {name:'rid',index:'rid', width:50, sorttype:"int",align:"center"}, 
- {name:'pnpi',index:'pnpi', width:50, sorttype:"string",align:"center"}, 
+ colModel:[ {name:'rid',index:'rid', width:50, sorttype:"int",align:"center"},
+ {name:'pnpi',index:'pnpi', width:50, sorttype:"string",align:"center"},
  {name:'pname',index:'pname', width:50, sorttype:"int",align:"center"},
  {name:'pyear',index:'pyear', width:50, sorttype:"int",align:"center"},
- {name:'gtype',index:'gtype', width:50,sorttype:"date",align:"center"}, 
+ {name:'gtype',index:'gtype', width:50,sorttype:"date",align:"center"},
  {name:'date',index:'date', width:50, align:"center",sorttype:"date",align:"center"},
  {name:'status',index:'status', width:50, align:"center",formatter:formateadorimg1}],
- pager: '#pager1', 
+ pager: '#pager1',
  rowNum:4,
  autowidth: true,
  rowList:[2,4,6],
- viewrecords: true, 
- caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false}); 
-// var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}]; 
- for(var i=0;i<=mydata.length;i++) 
+ viewrecords: true,
+ caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false});
+// var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
+ for(var i=0;i<=mydata.length;i++)
 	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i])
  }
- ); 
+ );
 
 		function formateadorimg1(cellvalue, options, rowObject) {
 
@@ -114,7 +114,7 @@ $(function() {
            rowid=jQuery("#list4").getGridParam("selrow");
      	   var	cellvalue=jQuery("#list4").getCell(rowid,3);
 			//alert( cellvalue);
-		  
+
 		   if (cellvalue==1)
 		   {
 			   var myTimer = {};
@@ -122,18 +122,18 @@ $(function() {
 				myTimer = $.timer(2500,function(){
 					window.open("grievancedetails.jsp",'_self');
 				});
-			   
+
 		   }
-		    
-		}	
-			
-  </script> 
+
+		}
+
+  </script>
 </head>
 <body>
 <div id="templatemo_banner_wrapper">
-	
+
     <div id="templatemo_banner">
-    
+
     	<div id="banner_content" >
 			<table width="100%" border="0">
 				<tr>
@@ -141,32 +141,32 @@ $(function() {
                             <td align="right"><img height="100" src="images/home.png"/></td>
 				<tr>
 			</table>
-		
-		
+
+
 	</div>
 </div> <!-- end of templatemo_banner -->
 
 </div> <!-- end of templatemo_banner_wrapper -->
 <div id="templatemo_menu_wrapper">
-	<div id="templatemo_menu"> 
+	<div id="templatemo_menu">
         <ul>
-            <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
-            <li><a href="#"  id="grievance" class="modalInput current" rel="#showprocessor"><span></span>Grievance</a></li>
-            <li><a href="#" id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
+            <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+            <li><a href="grievanceDetails"  id="grievance" class="modalInput current" rel="#showprocessor"><span></span>Grievance</a></li>
+            <li><a href="trackRegistrationList" id="track" class="modalInput" rel="#showprocessor"><span></span>Track</a></li>
         </ul>
-    
-    </div> 
+
+    </div>
 </div>
 <div id="templatemo_content">
 	<div class="section_w940">
 		<div class="product_box margin_r_20">
 			<img src="images/grievp.png" /><h2 >Grievance</h2>
-			<p>Add new grievance or view the current status of the grievances that have been submitted.</p>        
+			<p>Add new grievance or view the current status of the grievances that have been submitted.</p>
 			<div class="cleaner"></div>
-			</div>        
+			</div>
 		<div class="product_box">
 			<h2>Login Information</h2>
-			<p>User ID: doej</p> 
+			<p>User ID: doej</p>
 			<p>Profile: Contract Holder</p>
 			<div class="cleaner"></div>
 		</div>
@@ -174,8 +174,8 @@ $(function() {
 	<div class="section_w940">
 		<h3>&nbsp;<img src="images/add.gif" onclick="jQuery('#dialog-add').dialog('open'); return false" style="cursor: hand" />&nbsp;Click to add new grievance</h3>
         <div class="class="section_w450">
-                <table id="list4"></table> 
-				<div id="pager1"></div> 
+                <table id="list4"></table>
+				<div id="pager1"></div>
             <div class="cleaner"></div>
         </div>
     	<div class="cleaner"></div>
@@ -183,38 +183,38 @@ $(function() {
      <div class="section_w940">
     	<div class="cleaner"></div>
     </div>
-</div> 
+</div>
 <div class="processor" id="showprocessor">
 	<table><tr><td><img src="images/red-processor-small1.gif"/></td><td><h4 class="redclass">&nbsp;&nbsp;Processing Request....</h4></td><tr></table>
  <div class="close" id="CloseBtn"></div>
 </div>
 <a class="modalInput" rel="#showprocessor" id="showProcessor" ></a>
 <div id="templatemo_content_bottom"></div>
-<div id="templatemo_footer">  
-        Copyright © 2013 <a href="#">GrievanceApp</a> | Development
+<div id="templatemo_footer">
+        Copyright � 2013 <a href="grievanceDetails">GrievanceApp</a> | Development
 </div> <!-- end of footer -->
 <div id="dialog-add" title="Add New Grievance">
 <p class="validateTips">All form fields with * are required.</p>
- <form>
+<form action="provGrievanceList">
 	<fieldset>
 		<table cellpadding="2" cellspacing="2">
 			<tr>
 				<td>Member ID*</td>
 				<td>:</td>
 				<td><input type="text" name="name" id="rid" maxlength="10" size="10"/></td>
-				
+
 			</tr>
 			<tr>
 				<td>SSN *</td>
 				<td>:</td>
 				<td><input type="text" name="name" id="npi" maxlength="10" size="10"/></td>
-				
+
 			</tr>
 			<tr>
 				<td>Member Name *</td>
 				<td>:</td>
 				<td><input type="text" name="name" id="pname" maxlength="30" size="30" /></td>
-				
+
 			</tr>
 			<tr>
 				<td>Request Type*</td>
@@ -227,13 +227,13 @@ $(function() {
 						<option>Insurance Rejection</option>
 					</select>
 				</td>
-				
+
 			</tr>
 			<tr>
 				<td>Date *</td>
 				<td>:</td>
 				<td><input type="text" id="datepicker"></td>
-				
+
 			</tr>
 			<tr>
 				<td>E-mail Address *</td>
@@ -255,7 +255,7 @@ $(function() {
 				<td>:</td>
 				<td><input type="file" name="upfile"/></td>
 			</tr>
-			
+
 		</table>
 	</fieldset>
 </form>

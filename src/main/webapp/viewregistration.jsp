@@ -41,9 +41,9 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 	height:70px;
 	width:160px;
 	padding:25px;
-	color:#fff;	
+	color:#fff;
 }
- 
+
 /* style the trigger elements */
 #demo img {
 	border:0;
@@ -58,7 +58,7 @@ filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=115);
 		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
 		.ui-dialog .ui-state-error { padding: .3em; }
 		.validateTips { border: 1px solid transparent; padding: 0.3em; }
-		
+
 </style>
 <script type="text/javascript">
 $(document).ready(function()
@@ -95,7 +95,7 @@ $(document).ready(function()
 		$('#select4icon').hide();
 		$('#select5icon').hide();
 		$('#select6icon').hide();
-		
+
 		$('#step3process1complete').hide();
 		$('#step3process2complete').hide();
 		$('#step4process1complete').hide();
@@ -104,9 +104,9 @@ $(document).ready(function()
 		$('#step5process2complete').hide();
 		$('#step6process1complete').hide();
 		$('#step6process2complete').hide();
-		
+
 	});
-	
+
 	$(function() {
 		$("#dgSubmitReg").dialog({
 			autoOpen: false,
@@ -120,14 +120,14 @@ $(document).ready(function()
 							//alert("hello");
 							window.open("registrationack.jsp",'_self');
 						});
-				
+
 				},
 				Cancel: function()
 				{
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
 		$('#submit').click(function(){
 //				alert('checked '+document.forms[0].terms1.checked);
@@ -141,7 +141,7 @@ $(document).ready(function()
 				{
 					$('#dgSubmitReg').text('Are You Sure You Want To Submit The Registration for state review?');
 					$('#dgSubmitReg').dialog('open');
-					
+
 				}
 		});
 		});
@@ -158,7 +158,7 @@ $(document).ready(function()
 
 
 		});
-	
+
       $(function() {
           // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
           $("#dialog").dialog("destroy");
@@ -173,21 +173,21 @@ $(document).ready(function()
                       $(this).dialog('close');
                   }
               },
-              
+
           });
-          
-          
-          
+
+
+
           $('#addBtn')
               .button()
               .click(function() {
                   $('#dialog-elig-form').dialog('open');
                   return false;
           });
-          
-  
+
+
       });
-	  
+
 
 $(function() {
 		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
@@ -203,16 +203,16 @@ $(function() {
 					$(this).dialog('close');
 				}
 			},
-			
+
 		});
-		
+
 		$('#print1')
 			.button()
 			.click(function() {
 				$('#dialog-attest').dialog('open');
 				return false;
 		});
-		
+
 
 	});
 	$(function() {
@@ -222,7 +222,7 @@ $(function() {
             width: 720,
             modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -232,7 +232,7 @@ $(function() {
 						myTimer = $.timer(1000,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							$('#select1icon').show();	
+							$('#select1icon').show();
 							$('#process1icon').hide();
 
 						});
@@ -247,7 +247,7 @@ $(function() {
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
 	});
 $(function() {
@@ -257,7 +257,7 @@ $(function() {
             width: 750,
             modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -281,9 +281,9 @@ $(function() {
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
-	});	
+	});
 $(function() {
 		$("#dialog-payment").dialog({
 			autoOpen: false,
@@ -291,7 +291,7 @@ $(function() {
             width: 800,
             modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -315,9 +315,9 @@ $(function() {
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
-	});	
+	});
 $(function() {
 		$("#dialog-paymentapprove").dialog({
 			autoOpen: false,
@@ -325,7 +325,7 @@ $(function() {
             width: 800,
             modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -349,9 +349,9 @@ $(function() {
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
-	});		
+	});
  $(function() {
 		$("#dialog-plicense").dialog({
 			autoOpen: false,
@@ -359,14 +359,14 @@ $(function() {
             width: 420,
             modal: true,
 			buttons: {
-					
+
 				Ok: function()
 				{
 				$(this).dialog('close');
 				},
-				
+
 			}
-			
+
 		});
 	});
 	$(function() {
@@ -376,7 +376,7 @@ $(function() {
             width: 720,
             modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -386,7 +386,7 @@ $(function() {
 						myTimer = $.timer(1000,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							$('#select3icon').show();	
+							$('#select3icon').show();
 							$('#process3icon').hide();
 
 						});
@@ -401,7 +401,7 @@ $(function() {
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
 	});
 	$(function() {
@@ -411,7 +411,7 @@ $(function() {
             width: 750,
 			modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -421,7 +421,7 @@ $(function() {
 						myTimer = $.timer(2000,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							$('#select4icon').show();	
+							$('#select4icon').show();
 							$('#select6icon').show();
 							$('#process4icon').hide();
 							$('#process5icon').hide();
@@ -433,10 +433,10 @@ $(function() {
 				{
 				$(this).dialog('close');
 				}
-				
-				
+
+
 			}
-			
+
 		});
 	});
 	$(function() {
@@ -446,7 +446,7 @@ $(function() {
             width: 750,
 			modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -456,7 +456,7 @@ $(function() {
 						myTimer = $.timer(3500,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							$('#select4icon').show();	
+							$('#select4icon').show();
 							$('#select6icon').show();
 							$('#process4icon').hide();
 							$('#process5icon').hide();
@@ -468,10 +468,10 @@ $(function() {
 				{
 				$(this).dialog('close');
 				}
-				
-				
+
+
 			}
-			
+
 		});
 	});
 	$(function() {
@@ -482,7 +482,7 @@ $(function() {
             width: 600,
 			modal: true,
 			buttons: {
-				
+
 				Cancel: function()
 				{
 				$(this).dialog('close');
@@ -496,7 +496,7 @@ $(function() {
 							$('#select5icon').hide();
 							$('#step3process').show();
 							$('#step2complete').show();
-							
+
 							$('#step3info').hide();
 							$('#step2process').hide();
 							jQuery('#step2').hide();
@@ -509,41 +509,41 @@ $(function() {
 					myTimer = $.timer(2000,function(){
 							// Display hello message when timer goes off
 							//alert("hello");
-							$('#select6icon').show();	
+							$('#select6icon').show();
 							$('#process5icon').hide();
 
 						});
 				$(this).dialog('close');
 				}
 			}
-			
+
 		});
 	});
 	</script>
-    
+
 </head>
 <body>
 <div id="templatemo_banner_wrapper">
-	
+
     <div id="templatemo_banner">
-    
+
     	<div id="banner_content" >
-					
-		
+
+
 	</div>
 </div> <!-- end of templatemo_banner -->
 
 </div> <!-- end of templatemo_banner_wrapper -->
-<form name="frmresult" id="form1">
+<form action="viewRegistration"name="frmresult" id="form1">
 <div id="templatemo_menu_wrapper">
-	<div id="templatemo_menu"> 
+	<div id="templatemo_menu">
         <ul>
-		 <li><a href="#" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
+		 <li><a href="signon" id="homep" class="modalInput" rel="#showprocessor"><span></span>Home</a></li>
 
-                        <li><a href="#"  id="track" class="modalInput " rel="#showprocessor"><span></span>Track</a></li>
+                        <li><a href="trackRegistrationList"  id="track" class="modalInput " rel="#showprocessor"><span></span>Track</a></li>
 
-                        <li><a href="#"  id="grievance" class="modalInput " rel="#showprocessor"><span></span>Grievance</a></li>
-        </ul>   
+                        <li><a href="grievanceDetails"  id="grievance" class="modalInput " rel="#showprocessor"><span></span>Grievance</a></li>
+        </ul>
     </div> <!-- end of templatemo_menu -->
 
 </div> <!-- end of templatemo_menu_wrapper -->
@@ -553,7 +553,7 @@ $(function() {
         <div class="product_box margin_r_20">
                 <h2>Review Workflow</h2>
                 <img src="images/Process.png" alt="image 1" />
-                <p>Review Application for registration approval and payment processing.</p>           
+                <p>Review Application for registration approval and payment processing.</p>
                 <div class="cleaner"></div>
          </div>
          <div class="product_box margin_r_20">
@@ -564,7 +564,7 @@ $(function() {
          </div>
          <div class="product_box">
                 <h2>Login Information</h2>
-                        <p>User ID: smithj</p> 
+                        <p>User ID: smithj</p>
                         <p>Profile: Super Administrator</p>
          <div class="cleaner"></div>
          </div>
@@ -598,10 +598,10 @@ $(function() {
 						<td colspan="2"><font size=2>Step-5<br />Approve Payment</td>
 						<td colspan="2"><font size=2>Step-6<br />Payment Made</td>
 					</tr>
-					
-					
+
+
 				</table>
-			</fieldset>	
+			</fieldset>
         <div class="cleaner"></div>
 		</div>
 		<br/>
@@ -674,10 +674,10 @@ $(function() {
 								<td width="8%" bgcolor="#efefef"><img src="images/Process-Info.png" id="step6process1icon" onclick="jQuery('#dialog-Approve').dialog('open'); return false" /></a> <img src="images/Process-Warning.png" id="step6process1complete"/><br>RA<br>Generated</td>
 								<td valign="top"width="5%" bgcolor="#efefef"><img  src="images/blue_arrow_right.png"/></td>
 								<td width="8%" bgcolor="#efefef"><img src="images/Process-Info.png" id="step6process2icon" onclick="jQuery('#dialog-payment').dialog('open'); return false" /></a> <img src="images/Process-Warning.png" id="step6process2complete"/><br>NLR<br>Confirmation</td>
-								
+
 							</tr>
 					</table>
-				
+
 			</div>
 		</div>
     <div class="section_w940" id="show1">
@@ -757,7 +757,7 @@ $(function() {
 						 	<tr>
                           		<td width="50%">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Identifiers</h6></legend>                      
+                                        <legend align="center"><h6>Identifiers</h6></legend>
                                             <table width="100%" border="0" cellpadding="2" cellspacing="0">
                                                 <tr>
                                                     <td colspan="4"><p>Please note, the tax identification number (TIN) captured below will receive the EHR incentive
@@ -778,7 +778,7 @@ $(function() {
                               	</td>
                                 <td width="50%" valign="top">
                                      <fieldset style="width:310px">
-                                        <legend align="center"><h6>Exclusions</h6></legend>                      
+                                        <legend align="center"><h6>Exclusions</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td width="40%"><h4>Exclusion Code</h4></td>
@@ -875,7 +875,7 @@ $(function() {
 						 	<tr>
                           		<td width="50%" valign="top">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>                      
+                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td><h4>Specialty</h4></td>
@@ -888,12 +888,12 @@ $(function() {
                                                     <td><h5>208D00000X - General Practice</h5></td>
                                                 </tr>
                                               </table>
- 
+
                                          </fieldset>
                               	</td>
                                 <td width="50%" valign="top">
                                      <fieldset style="width:310px">
-                                        <legend align="center"><h6>Licenses/Certifications</h6></legend>                      
+                                        <legend align="center"><h6>Licenses/Certifications</h6></legend>
                                             <table width="100%" border="1" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td><h4>Type</h4></td>
@@ -932,7 +932,7 @@ $(function() {
                                   <th>Reporting Period End</th>
                                   <th>EHR Investment Amount</th>
                                   <th>Pediatrician </th>
-                                  <th>FQHC /RHC</th>                             
+                                  <th>FQHC /RHC</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -1015,8 +1015,8 @@ $(function() {
  <div class="close" id="CloseBtn"></div>
  </div>
 <div id="templatemo_content_bottom"></div>
-<div id="templatemo_footer">  
-        Copyright &copy; 2013 <a href="#">GrievanceApp</a> | Development
+<div id="templatemo_footer">
+        Copyright &copy; 2013 <a href="grievanceDetails">GrievanceApp</a> | Development
 </div> <!-- end of footer -->
 <div id="dhtmltooltip"></div>
 <!-- Content For adding Eligibility Information -->
@@ -1065,9 +1065,9 @@ $(function() {
     </td>
     </tr>
     </table>
-  </fieldset> 
+  </fieldset>
   </div>
-    
+
   <div id="dialog-elig-form" title="Enter Eligibility Information">
        <style type="text/css">
           <!--
@@ -1075,39 +1075,39 @@ $(function() {
           font-size:1.1em; /* bump up legend font size, not too large or it'll overwrite border on left */
           /* be careful with padding, it'll shift the nice offset on top of border  */
           }
-          
-          form label { 
+
+          form label {
           display: block;  /* block float the labels to left column, set a width */
-          float: left; 
-          width: 250px; 
-          padding: 0; 
+          float: left;
+          width: 250px;
+          padding: 0;
           margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
-          text-align: right; 
+          text-align: right;
           }
-          
-          
+
+
           form input, form textarea {
           /* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
           width:auto;      /* set width of form elements to auto-size, otherwise watch for wrap on resize */
           margin:5px 0 0 10px; /* set margin on left of form elements rather than right of
           label aligns textarea better in IE */
           }
-          
+
           form input#reset {
           margin-left:0px; /* set margin-left back to zero on reset button (set above) */
           }
-          
+
           textarea { overflow: auto; }
-          
+
           form small {
           display: block;
           margin: 0 0 5px 160px; /* instructions/comments left margin set to align w/ right column inputs */
           padding: 1px 3px;
           font-size: 88%;
           }
-          
+
           form .required{font-weight:bold;} /* uses class instead of div, more efficient */
-          
+
           form br {
           clear:left; /* setting clear on inputs didn't work consistently, so brs added for degrade */
           }
@@ -1134,7 +1134,7 @@ $(function() {
 				-webkit-box-shadow:0 0 6px #ddd;
 			}
           -->
-          </style>     
+          </style>
           <form action="#" method="post" name="f">
           <p><b>Bold</b> fields are required.</p>
           <fieldset>
@@ -1259,7 +1259,7 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>&nbsp;</h5></td>
                                         </tr>
-                                       
+
                                         <tr>
                                             <td><h4>Date Of Birth</h4></td>
                                             <td>:</td>
@@ -1277,7 +1277,7 @@ $(function() {
                                             <td><h4>Business Status</h4></td>
                                             <td>:</td>
                                             <td ><h5>Active</h5></td>
-											
+
                                         </tr>
                                       </table>
                                 	</fieldset>
@@ -1297,7 +1297,7 @@ $(function() {
                                             <td><h5>08/09/2010</h5></td>
                                         </tr>
                                         <tr>
-                                            
+
                                             <td width='40%'><h4>Medicaid Percentage</h4></td>
                                             <td>:</td>
                                             <td><h5>35</h5></td>
@@ -1306,7 +1306,7 @@ $(function() {
                                             <td width='40%'><h4>Certification Status</h4></td>
                                             <td>:</td>
                                             <td><h5>Certified</h5></td>
-                                            
+
                                         </tr>
                                       </table>
                                  </fieldset>
@@ -1315,7 +1315,7 @@ $(function() {
 						 	<tr>
                           		<td width="50%" valign="top">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>                      
+                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td><h4>Specialty</h4></td>
@@ -1338,12 +1338,12 @@ $(function() {
                                                     <td><h5>No</h5></td>
                                                 </tr>
                                               </table>
- 
+
                                          </fieldset>
                               	</td>
                                 <td width="50%" valign="top">
                                      <fieldset style="width:310px">
-                                        <legend align="center"><h6>Licenses/Certifications</h6></legend>                      
+                                        <legend align="center"><h6>Licenses/Certifications</h6></legend>
                                             <table width="100%" border="1" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td><h4>Type</h4></td>
@@ -1378,12 +1378,12 @@ $(function() {
 								  <textarea rows="5" cols="85">
 
 									</textarea>
-								  
+
 						   </fieldset>
 						</td>
 	</tr>
-					
-</table>						 
+
+</table>
 </div>
 <div id="dialog-evolume" title="Workflow- Encounter Qualifying Volume Review">
 	<table width="100% border="0">
@@ -1408,7 +1408,7 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>04/01/2010</h5></td>
                                         </tr>
-                                       
+
                                         <tr>
                                             <td width='35%'><h4>Total Volume</h4></td>
                                             <td>:</td>
@@ -1423,52 +1423,52 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>35</h5></td>
                                         </tr>
-										
+
                                       </table>
                                 	</fieldset>
-						
+
 						</td>
 					<td width="50%">
 					<fieldset style="width:310px">
-                                        <legend align="center"><h6>EP Qualifying Volumes</h6></legend>                      
+                                        <legend align="center"><h6>EP Qualifying Volumes</h6></legend>
                                             <table width="100%" border="1" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td><h4>Provider Type</h4></td>
                                                     <td><h4>Percentage</h4></td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                     <td><h5>Physician</h5></td>
                                                     <td><h5>>=30</h5></td>
-                                                   
+
                                                 </tr>
                                                 <tr>
                                                     <td><h5>Pediatrician</h5></td>
                                                     <td><h5>>=20</h5></td>
-                                                    
+
                                                 </tr>
                                                 <tr>
                                                     <td><h5>FQHC/RHC Provider</h5></td>
                                                     <td><h5>>=30</h5></td>
-                                                   
+
                                                 </tr>
 												<tr>
                                                     <td><h5>MCO Primary Care Provider</h5></td>
                                                     <td><h5>>=30</h5></td>
-                                                   
+
                                                 </tr>
 												<tr>
                                                     <td><h5>Physician Assistant</h5></td>
                                                     <td><h5>>=50</h5></td>
-                                                   
+
                                                 </tr>
-													
+
                                               </table>
                                          </fieldset>
 					</td>
 </tr>
-					
-</table>	
+
+</table>
 <table width="100% border="0">
    <tr>
                          <td width="100%">
@@ -1477,12 +1477,12 @@ $(function() {
 								  <textarea rows="5" cols="85">
 
 									</textarea>
-								  
+
 						   </fieldset>
 						</td>
 	</tr>
-					
-</table>	
+
+</table>
 </div>
 <div id="dialog-ecertificaion" title="Workflow- EHR Certification Information">
 <table id="users" class="ui-widget ui-widget-content" cellpadding="1" cellspacing="1" width="100%">
@@ -1493,7 +1493,7 @@ $(function() {
                                   <th>Certification Number</th>
 								  <th>Investment Amount</th>
                                   <th>Stage</th>
-                                  <th>Status(ONC) </th>                            
+                                  <th>Status(ONC) </th>
                               </tr>
                           </thead>
                           <tbody>
@@ -1504,10 +1504,10 @@ $(function() {
 								   <td id="pe1">$30,000.00</td>
                                  <td id="ea1">Adopt</td>
                                  <td id="pt1">Certified</td>
-                                 
+
                               </tr>
                           </tbody>
-                     </table>	
+                     </table>
 <table width="100% border="0">
    <tr>
                          <td width="100%">
@@ -1516,12 +1516,12 @@ $(function() {
 								  <textarea rows="5" cols="75">
 
 									</textarea>
-								  
+
 						   </fieldset>
 						</td>
 	</tr>
-					
-</table>					 
+
+</table>
 
 </div>
 <div id="dialog-payment" title="Workflow- Approve Incentive Payment" class="ui-widget">
@@ -1547,7 +1547,7 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>&nbsp;</h5></td>
                                         </tr>
-                                       
+
                                         <tr>
                                             <td><h4>Date Of Birth</h4></td>
                                             <td>:</td>
@@ -1565,7 +1565,7 @@ $(function() {
                                             <td><h4>Business Status</h4></td>
                                             <td>:</td>
                                             <td ><h5>Active</h5></td>
-											
+
                                         </tr>
                                       </table>
                                 	</fieldset>
@@ -1585,7 +1585,7 @@ $(function() {
                                             <td><h5>08/09/2010</h5></td>
                                         </tr>
                                         <tr>
-                                            
+
                                             <td width="25%"><h4>Payment Amount</h4></td>
                                             <td>:</td>
                                             <td><h5>$21500.00</h5></td>
@@ -1594,25 +1594,25 @@ $(function() {
                                             <td width="25%"><h4>Account Code</h4></td>
                                             <td>:</td>
                                             <td><h5>391.90001.15510.8070.69P0XXXB05AX</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="35%"><h4>Federal Fiscal Year</h4></td>
                                             <td>:</td>
                                             <td><h5> 2010</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="25%"><h4>Payment Code</h4></td>
                                             <td>:</td>
                                             <td><h5>P2010</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="25%"><h4>Fund Source</h4></td>
                                             <td>:</td>
                                             <td><h5>  A1-T-XIX - Medicaid Incentive Payment</h5></td>
-                                            
+
                                         </tr>
                                       </table>
                                  </fieldset>
@@ -1621,7 +1621,7 @@ $(function() {
 						 	<tr>
                           		<td width="50%" valign="top">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>                      
+                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td><h4>Specialty</h4></td>
@@ -1644,10 +1644,10 @@ $(function() {
                                                     <td><h5>No</h5></td>
                                                 </tr>
                                               </table>
- 
+
                                          </fieldset>
                               	</td>
-                                
+
                              </tr>
                          </table>
 <table width="100% border="0">
@@ -1658,12 +1658,12 @@ $(function() {
 								  <textarea rows="5" cols="85">
 
 									</textarea>
-								  
+
 						   </fieldset>
 						</td>
 	</tr>
-					
-</table>						 
+
+</table>
 </div>
 <div id="dialog-paymentapprove" title="Workflow- Initiate Incentive Payment" class="ui-widget">
 	<table width="100% border="0">
@@ -1688,7 +1688,7 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>&nbsp;</h5></td>
                                         </tr>
-                                       
+
                                         <tr>
                                             <td><h4>Date Of Birth</h4></td>
                                             <td>:</td>
@@ -1706,7 +1706,7 @@ $(function() {
                                             <td><h4>Business Status</h4></td>
                                             <td>:</td>
                                             <td ><h5>Active</h5></td>
-											
+
                                         </tr>
                                       </table>
                                 	</fieldset>
@@ -1726,7 +1726,7 @@ $(function() {
                                             <td><h5>08/09/2010</h5></td>
                                         </tr>
                                         <tr>
-                                            
+
                                             <td width="25%"><h4>Payment Amount</h4></td>
                                             <td>:</td>
                                             <td><h5>$21500.00</h5></td>
@@ -1735,25 +1735,25 @@ $(function() {
                                             <td width="25%"><h4>Account Code</h4></td>
                                             <td>:</td>
                                             <td><h5>391.90001.15510.8070.69P0XXXB05AX</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="35%"><h4>Federal Fiscal Year</h4></td>
                                             <td>:</td>
                                             <td><h5> 2010</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="25%"><h4>Payment Code</h4></td>
                                             <td>:</td>
                                             <td><h5>P2010</h5></td>
-                                            
+
                                         </tr>
 										<tr>
                                             <td width="25%"><h4>Fund Source</h4></td>
                                             <td>:</td>
                                             <td><h5>  A1-T-XIX - Medicaid Incentive Payment</h5></td>
-                                            
+
                                         </tr>
                                       </table>
                                  </fieldset>
@@ -1762,7 +1762,7 @@ $(function() {
 						 	<tr>
                           		<td width="50%" valign="top">
                                      <fieldset style="width:350px">
-                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>                      
+                                        <legend align="center"><h6>Provider Type/Specialty</h6></legend>
                                             <table width="100%" border="0" cellpadding="1" cellspacing="2">
                                                 <tr>
                                                     <td><h4>Specialty</h4></td>
@@ -1785,7 +1785,7 @@ $(function() {
                                                     <td><h5>No</h5></td>
                                                 </tr>
                                               </table>
- 
+
                                          </fieldset>
                               	</td>
                                 <td width="50%">
@@ -1802,7 +1802,7 @@ $(function() {
                                             <td>:</td>
                                             <td><h5>08/09/2010</h5></td>
                                         </tr>
-                                        
+
                                       </table>
                                  </fieldset>
                               </td>
@@ -1816,12 +1816,12 @@ $(function() {
 								  <textarea rows="5" cols="85">
 
 									</textarea>
-								  
+
 						   </fieldset>
 						</td>
 	</tr>
-					
-</table>						 
+
+</table>
 </div>
 
 </form>
@@ -1886,7 +1886,7 @@ tipobj.style.visibility="visible"
 function displaycontent(workflowno)
 {
 	var desc = '';
-	
+
 	if (workflowno == 0)
 	{
 		desc = '<Table height=100% width=100%>'
@@ -1914,7 +1914,7 @@ function displaycontent(workflowno)
 						+ '	</td>'
 					+ '	</tr>'
 				+ '	</Table>';
-		
+
 		ddrivetip(desc,'#EDF3FC', 145);
 		return;
 	}
@@ -1937,7 +1937,7 @@ function displaycontent(workflowno)
 	}else if (workflowno == 'nlrupd'){
 		desc = '<B><U>UpdateNational Level Repository (NLR):</U></B><BR><BR> Approver must review and submit amount to payment system for paymentgeneration';
 	}
-	
+
 	ddrivetip(desc,'#EDF3FC', 300);
 }
 
