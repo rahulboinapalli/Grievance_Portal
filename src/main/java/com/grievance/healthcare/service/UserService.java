@@ -69,4 +69,6 @@ public interface UserService {
 	 */
 	public User getUser(Long id);
 
+        public Boolean checkUserCredentials(String username,String password);
+
 }

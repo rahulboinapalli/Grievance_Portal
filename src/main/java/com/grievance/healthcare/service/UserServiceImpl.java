@@ -60,6 +60,21 @@ public class UserServiceImpl implements UserService {
 		this.userDao = userDao;
 	}
 
+    @Override
+    public Boolean checkUserCredentials(String username, String password) {
+
+        List<User> users=userDao.findAll();
+        if(users != null){
+            for(User user:users){
+                if(username.equalsIgnoreCase(user.getLoginname())
+                        && password.equals(user.getPassword())){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
 
 

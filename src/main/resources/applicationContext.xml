@@ -16,7 +16,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
               
-    <context:component-scan base-package="com.grievance.healthcare.dao" />
+    <context:component-scan base-package="com.grievance.healthcare" />
 
     <tx:annotation-driven />
 
@@ -26,6 +26,7 @@
    <jdbc:embedded-database id="dataSource">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
+        <jdbc:script location="classpath:grievance-schema.sql"/>
     </jdbc:embedded-database>
 
     
@@ -37,6 +38,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.grievance.healthcare.model.User</value>
+                <value>com.grievance.healthcare.model.Grievance</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -54,6 +56,14 @@
     
     <bean name="userService" class="com.grievance.healthcare.service.UserServiceImpl">
     	<property name="userDao" ref="userDao" />
+    </bean>
+
+     <bean name="grievanceDAO" class="com.grievance.healthcare.dao.GrievanceDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean name="grievanceService" class="com.grievance.healthcare.service.GrievanceServiceImpl">
+        <property name="grievanceDAO" ref="grievanceDAO" />
     </bean>
 
     <bean id="transactionManager"

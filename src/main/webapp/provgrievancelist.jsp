@@ -54,27 +54,40 @@ $(function() {
               modal: true,
               buttons: {
                   'Save': function() {
+                      
 					var v_rid=window.document.getElementById("rid").value;
 					var v_npi=window.document.getElementById("npi").value;
 					var v_pname=window.document.getElementById("pname").value;
 					var v_date=window.document.getElementById("datepicker").value;
 					var v_type=jQuery('#type option:selected').text();
 					var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
+//                                        jQuery("#buttons-Save").click(function(){
+                                            
+                                            jQuery.ajax({
+                                                url:'savegrievance',
+                                                type:'post',
+                                                success:function(data){
+                                                    //alert("response text:="+data.responseText);
+                                                    if(data.responseText == "success"){
 
-					for(var i=0;i<=mydata1.length;i++) {
-					jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
-					}
-					 var bValid = true;
-
-                      if (bValid) {
-
-                          $(this).dialog('close');
-                      }
+                                                        for(var i=0;i<=mydata1.length;i++) {
+                                                                jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
+                                                            }
+                                                      $(this).dialog('close');
+                                                            
+                                                    }else{
+                                                        $(this).dialog('close');
+                                                        alert("Transaction not successfull!");
+                                                    }
+                                                }
+                                            });
+//                                        })
+					 
                   },
                   Cancel: function() {
                       $(this).dialog('close');
                   }
-              },
+              }
 
           });
 	});
@@ -100,8 +113,8 @@ $(function() {
  viewrecords: true,
  caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false});
 // var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
- for(var i=0;i<=mydata.length;i++)
-	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i])
+ //for(var i=0;i<=mydata1.length;i++)
+//	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
  }
  );
 
@@ -173,7 +186,7 @@ $(function() {
 	</div>
 	<div class="section_w940">
 		<h3>&nbsp;<img src="images/add.gif" onclick="jQuery('#dialog-add').dialog('open'); return false" style="cursor: hand" />&nbsp;Click to add new grievance</h3>
-        <div class="class="section_w450">
+        <div class="section_w450">
                 <table id="list4"></table>
 				<div id="pager1"></div>
             <div class="cleaner"></div>
@@ -201,25 +214,25 @@ $(function() {
 			<tr>
 				<td>Member ID*</td>
 				<td>:</td>
-				<td><input type="text" name="name" id="rid" maxlength="10" size="10"/></td>
+				<td><input type="text" name="memberId" id="rid" maxlength="10" size="10"/></td>
 
 			</tr>
 			<tr>
 				<td>SSN *</td>
 				<td>:</td>
-				<td><input type="text" name="name" id="npi" maxlength="10" size="10"/></td>
+				<td><input type="text" name="SSN" id="npi" maxlength="10" size="10"/></td>
 
 			</tr>
 			<tr>
 				<td>Member Name *</td>
 				<td>:</td>
-				<td><input type="text" name="name" id="pname" maxlength="30" size="30" /></td>
+				<td><input type="text" name="memberName" id="pname" maxlength="30" size="30" /></td>
 
 			</tr>
 			<tr>
 				<td>Request Type*</td>
 				<td>:</td>
-				<td><select id="type">
+                                <td><select id="type" name="requestType">
 						<option>Select an option</option>
 						<option>Appeal</option>
 						<option>Compliant</option>
@@ -232,32 +245,36 @@ $(function() {
 			<tr>
 				<td>Date *</td>
 				<td>:</td>
-				<td><input type="text" id="datepicker"></td>
+                                <td><input type="text" name="date" id="datepicker"></td>
 
 			</tr>
 			<tr>
 				<td>E-mail Address *</td>
 				<td>:</td>
-				<td><input type="text" name="name" id="email" size="30"/></td>
+				<td><input type="text" name="emailAddress" id="email" size="30"/></td>
 			</tr>
 			<tr>
 				<td>Contact Phone *</td>
 				<td>:</td>
-				<td><input type="text" name="name" id="phone"  /></td>
+				<td><input type="text" name="contactPhone" id="phone"  /></td>
 			</tr>
 			<tr valign="top">
 				<td>Comments *</td>
 				<td>:</td>
-				<td><textarea  rows="5" cols="55"> </textarea></td>
+                                <td><textarea  rows="5" cols="55" name="comments" id="comments"> </textarea></td>
 			</tr>
 			<tr valign="top">
 				<td>Attach File</td>
 				<td>:</td>
-				<td><input type="file" name="upfile"/></td>
+                                <td><input type="file" name="attachFile" id="attachFile"/></td>
 			</tr>
 
 		</table>
 	</fieldset>
+    <div id="buttons">
+        
+
+    </div>
 </form>
 
 </div>
