@@ -60,28 +60,37 @@ $(function() {
 					var v_pname=window.document.getElementById("pname").value;
 					var v_date=window.document.getElementById("datepicker").value;
 					var v_type=jQuery('#type option:selected').text();
-					var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
-//                                        jQuery("#buttons-Save").click(function(){
-                                            
+                                        var v_email=window.document.getElementById("email").value;
+                                        var v_phone=window.document.getElementById("phone").value;
+                                        var v_comments=window.document.getElementById("comments").value;
+                                        var v_attachFile=window.document.getElementById("attachFile").value;
+					
+//                                            alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
                                             jQuery.ajax({
                                                 url:'savegrievance',
                                                 type:'post',
+                                                data: "v_rid="+v_rid+"&v_npi="+v_npi+"&v_pname="+v_pname+"&v_date="+v_date+"&v_type="+v_type+"&v_email="+v_email+"&v_phone="+v_phone+"&v_comments="+v_comments+"&v_attachFile="+v_attachFile, // get the form data
                                                 success:function(data){
-                                                    //alert("response text:="+data.responseText);
-                                                    if(data.responseText == "success"){
-
+                                                    var response = data.responseText;
+                                                    /*alert("response="+response);
+                                                    var resp = null;
+                                                    if(response != null && response != 'undefined' && response!=""){
+                                                        resp = response.split("#");
+                                                    }
+                                                     if(resp != null && resp.length > 0 && resp[0] != null){
+                                                        window.document.getElementById("rid").value=resp[0];*/
+                                                        var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
                                                         for(var i=0;i<=mydata1.length;i++) {
                                                                 jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
                                                             }
-                                                      $(this).dialog('close');
-                                                            
-                                                    }else{
-                                                        $(this).dialog('close');
-                                                        alert("Transaction not successfull!");
-                                                    }
+                                                            alert("Transaction successfully saved!");
+                                                            window.close();
+                                                     /*}else{
+                                                         alert("Transaction not successfull!");
+                                                         window.close();
+                                                     }*/
                                                 }
                                             });
-//                                        })
 					 
                   },
                   Cancel: function() {
@@ -208,7 +217,7 @@ $(function() {
 </div> <!-- end of footer -->
 <div id="dialog-add" title="Add New Grievance">
 <p class="validateTips">All form fields with * are required.</p>
-<form action="provGrievanceList">
+<form action="provGrievanceList" method="post" id="provGreinvanceForm" >
 	<fieldset>
 		<table cellpadding="2" cellspacing="2">
 			<tr>

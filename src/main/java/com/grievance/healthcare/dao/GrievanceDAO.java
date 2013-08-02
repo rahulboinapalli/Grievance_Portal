@@ -13,6 +13,6 @@ import com.grievance.healthcare.model.Grievance;
  */
 public interface GrievanceDAO {
 
-    public Boolean saveGrievanceDetails(Grievance grievance);
+    public Long saveGrievanceDetails(Grievance grievance);
 
 }

@@ -19,14 +19,15 @@ public class GrievanceDAOImpl extends HibernateDaoSupport implements GrievanceDA
 
     @Override
     @Transactional
-    public Boolean saveGrievanceDetails(Grievance grievance) {
+    public Long saveGrievanceDetails(Grievance grievance) {
         try {
+
             getHibernateTemplate().save(grievance);
-            return true;
+            return grievance.getMemberId();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return false;
+        return Long.valueOf(0);
     }
 
 }

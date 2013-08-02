@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:tx="http://www.springframework.org/schema/tx"
@@ -16,28 +15,30 @@
             http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-              
-    <context:component-scan base-package="com.grievance.healthcare.dao" />
+
+    <context:component-scan base-package="com.grievance.healthcare" />
 
     <tx:annotation-driven />
 
-	<!-- Creates a data source that can provide a connection to in-memory embedded database populated 
+	<!-- Creates a data source that can provide a connection to in-memory embedded database populated
 	with test data
 	see: http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/ch12s08.html   -->
    <jdbc:embedded-database id="dataSource">
         <jdbc:script location="classpath:schema.sql"/>
         <jdbc:script location="classpath:test-data.sql"/>
+        <jdbc:script location="classpath:grievance-schema.sql"/>
     </jdbc:embedded-database>
 
-    
+
     <!-- See page 303 of Spring Recipes (2008) -->
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"  >
-        
+
         <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
                 <value>com.grievance.healthcare.model.User</value>
+                <value>com.grievance.healthcare.model.Grievance</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -48,13 +49,21 @@
             </props>
         </property>
     </bean>
-    
+
     <bean name="userDao" class="com.grievance.healthcare.dao.UserDaoHibernate">
     	<property name="sessionFactory" ref="sessionFactory" />
     </bean>
-    
+
     <bean name="userService" class="com.grievance.healthcare.service.UserServiceImpl">
     	<property name="userDao" ref="userDao" />
+    </bean>
+
+     <bean name="grievanceDAO" class="com.grievance.healthcare.dao.GrievanceDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <bean name="grievanceService" class="com.grievance.healthcare.service.GrievanceServiceImpl">
+    	<property name="grievanceDAO" ref="grievanceDAO" />
     </bean>
 
     <bean id="transactionManager"

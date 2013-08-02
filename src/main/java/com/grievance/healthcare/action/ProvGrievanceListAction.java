@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.components.File;
 import com.grievance.healthcare.model.Grievance;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
 
 public class ProvGrievanceListAction extends ActionSupport{
     private Long memberId;
@@ -103,18 +105,34 @@ public class ProvGrievanceListAction extends ActionSupport{
 
      public void saveGrievanceDetails()
 	    {
-         PrintWriter out = null;
+                HttpServletRequest request = ServletActionContext.getRequest();
+                HttpServletResponse response = ServletActionContext.getResponse();
+                ServletOutputStream out = null;
+                Long id=0L;
                 try {
-                    HttpServletResponse response = ServletActionContext.getResponse();
-                     if(grievanceService.saveGrievanceDetails(memberId,SSN,memberName,requestType,date,emailAddress,contactPhone,comments,attachFile,grievance)){
-                        out = response.getWriter();
-                        out.print("SUCCESS");
+                    out = response.getOutputStream();
+//                    String m_id=(String)request.getParameter("v_rid");
+                    String m_ssn=(String)request.getParameter("v_npi");
+                    String m_name=(String)request.getParameter("v_pname");
+                    String m_reqDate=(String)request.getParameter("v_date");
+                    String m_reqType=(String)request.getParameter("v_type");
+                    String m_emailAddress=(String)request.getParameter("v_email");
+                    String m_contactPhone=(String)request.getParameter("v_phone");
+                    String m_comments=(String)request.getParameter("v_comments");
+//                    String attachedFile=(String)request.getParameter("v_attachFile");
+                     id=grievanceService.saveGrievanceDetails(m_ssn,m_name,m_reqType,m_reqDate,m_emailAddress,m_contactPhone,m_comments,null);
+                    if( id > 0){
+                        response.getOutputStream().print("SUCCESS#"+id);
                      }else{
-                        out.print("FAILED");
+                        response.getOutputStream().print("FAILED#"+id);
                      }
                 } catch (Exception e) {
-                    e.printStackTrace();
-                    out.print("FAILED");
+//                    e.printStackTrace();
+                    try{
+                      response.getOutputStream().print("FAILED#"+id);
+                    }catch (Exception ex) {
+//                        ex.printStackTrace();
+                    }
                 }
             }
          public GrievanceService getGrievanceService() {

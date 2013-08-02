@@ -13,6 +13,6 @@ import com.grievance.healthcare.model.Grievance;
  * @author sabbani
  */
 public interface GrievanceService {
-    public Boolean saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String Date,
-            String emailAddress,String contactPhone,String Comments,File attachFile,Grievance grievance);
+    public Long saveGrievanceDetails(String SSN,String memberName,String requestType,String Date,
+            String emailAddress,String contactPhone,String Comments,File attachFile);
 }

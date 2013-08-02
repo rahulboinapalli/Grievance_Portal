@@ -1,0 +1,142 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.grievance.healthcare.model;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
+/**
+ *
+ * @author Anil
+ */
+@Entity
+@Table(name="GRIEVANCE")
+public class Grievance implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    private String comments;
+    private String requestType;
+    private Long memberId;
+
+    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "MEMBER_ID")
+    @Id
+    
+    public Long getMemberId() {
+        return memberId;
+    }
+    
+    
+    private String memberName;
+
+    /**
+     * Get the value of name
+     *
+     * @return the value of name
+     */
+    @Column(name="MEMBER_NAME")
+    public String getMemberName() {
+        return memberName;
+    }
+
+    /**
+     * Set the value of name
+     *
+     * @param name new value of name
+     */
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
+    }
+
+
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (memberId != null ? memberId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Grievance)) {
+            return false;
+        }
+        Grievance other = (Grievance) object;
+        if ((this.memberId == null && other.memberId != null) || (this.memberId != null && !this.memberId.equals(other.memberId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.grievance.healthcare.model.Grievance[ id=" + memberId + " ]";
+    }
+
+//   private enum  RequestType{Appeal,PaymentIssue,Compliant,InsuranceRejection};
+    
+        
+    @Column(name = "REQUEST_TYPE")
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
+
+    /**
+     * Get the value of requestType
+     *
+     * @return the value of requestType
+     */
+  /*  public RequestType getRequestType() {
+        return requestType;
+   */
+
+    /**
+     * Set the value of requestType
+     *
+     * @param requestType new value of requestType
+     */
+   /* public void setRequestType(RequestType requestType) {
+        this.requestType = requestType;
+    }*/
+
+    
+
+    /**
+     * Get the value of comments
+     *
+     * @return the value of comments
+     */
+    @Column(name = "COMMENTS")
+    public String getComments() {
+        return comments;
+    }
+
+    /**
+     * Set the value of comments
+     *
+     * @param comments new value of comments
+     */
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+}

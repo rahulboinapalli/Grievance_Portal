@@ -25,10 +25,7 @@
 			<result name="input">/jsp/userForm.jsp</result>
 		</action>
 
-                
-                
-
-		<action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
+                <action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
 			<result name="input">/jsp/userForm.jsp</result>
 		</action>
 		

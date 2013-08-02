@@ -5,43 +5,67 @@
 package com.grievance.healthcare.model;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityManager;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.transaction.UserTransaction;
+import javax.persistence.Table;
+import java.sql.Date;
+import java.io.File;
+import java.sql.Blob;
 
 /**
  *
  * @author Anil
  */
 @Entity
+@Table(name="grievance_details")
 public class Grievance implements Serializable {
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    
+    private Long memberId;
+    private Long ssn;
+    private String memberName;
+    private String requestType;
+    private Date requestDate;
+    private String email;
+    private Long contactNo;
+    private String comments;
+//    private byte[] attachedFile;
 
-    public Long getId() {
-        return id;
+    
+    
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "member_id")
+    @Id
+    
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(Long memberId) {
+        this.memberId = memberId;
     }
     
+    @Column(name = "SSN")
+    public Long getSsn() {
+        return ssn;
+    }
+
+    public void setSsn(Long ssn) {
+        this.ssn = ssn;
+    }
     
-    private String name;
 
     /**
      * Get the value of name
      *
      * @return the value of name
      */
-    public String getName() {
-        return name;
+    @Column(name="member_name")
+    public String getMemberName() {
+        return memberName;
     }
 
     /**
@@ -49,87 +73,78 @@ public class Grievance implements Serializable {
      *
      * @param name new value of name
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setMemberName(String memberName) {
+        this.memberName = memberName;
     }
 
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Grievance)) {
-            return false;
-        }
-        Grievance other = (Grievance) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.grievance.healthcare.model.Grievance[ id=" + id + " ]";
-    }
-    private Date date;
-
-    /**
-     * Get the value of date
-     *
-     * @return the value of date
-     */
-    public Date getDate() {
-        return date;
-    }
-
-    /**
-     * Set the value of date
-     *
-     * @param date new value of date
-     */
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-   private enum  RequestType{Appeal,PaymentIssue,Compliant,InsuranceRejection};
     
-        private RequestType requestType;
+//   private enum  RequestType{Appeal,PaymentIssue,Compliant,InsuranceRejection};
+    
+        
+    @Column(name = "request_type")
+    public String getRequestType() {
+        return requestType;
+    }
+
+    public void setRequestType(String requestType) {
+        this.requestType = requestType;
+    }
+
+    @Column(name="request_date")
+    public Date getRequestDate() {
+        return requestDate;
+    }
+
+    public void setRequestDate(Date requestDate) {
+        this.requestDate = requestDate;
+    }
 
     /**
      * Get the value of requestType
      *
      * @return the value of requestType
      */
-    public RequestType getRequestType() {
+  /*  public RequestType getRequestType() {
         return requestType;
-    }
+   */
 
     /**
      * Set the value of requestType
      *
      * @param requestType new value of requestType
      */
-    public void setRequestType(RequestType requestType) {
+   /* public void setRequestType(RequestType requestType) {
         this.requestType = requestType;
+    }*/
+
+    @Column(name="email_id")
+    public String getEmail() {
+        return email;
     }
-    private String comments;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    
+    @Column(name="contact_no")
+    public Long getContactNo() {
+        return contactNo;
+    }
+
+    public void setContactNo(Long contactNo) {
+        this.contactNo = contactNo;
+    }
+   
+    
 
     /**
      * Get the value of comments
      *
      * @return the value of comments
      */
+    @Column(name = "comments")
     public String getComments() {
         return comments;
     }
@@ -141,6 +156,52 @@ public class Grievance implements Serializable {
      */
     public void setComments(String comments) {
         this.comments = comments;
+
     }
+
+/**
+     * Get the value of comments
+     *
+     * @return the value of comments
+     
+    @Column(name = "file")
+    public byte[] getAttachedFile() {
+        return attachedFile;
+    }*/
+
+    /**
+     * Set the value of comments
+     *
+     * @param comments new value of comments
+     
+    public void setAttachedFile(byte[] attachedFile) {
+        this.attachedFile = attachedFile;
+
+    }*/
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (memberId != null ? memberId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Grievance)) {
+            return false;
+        }
+        Grievance other = (Grievance) object;
+        if ((this.memberId == null && other.memberId != null) || (this.memberId != null && !this.memberId.equals(other.memberId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.grievance.healthcare.model.Grievance[ id=" + memberId + " ]";
+    }
+
 
 }

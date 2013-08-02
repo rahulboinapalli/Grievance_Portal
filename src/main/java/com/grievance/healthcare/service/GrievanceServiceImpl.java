@@ -17,15 +17,26 @@ public class GrievanceServiceImpl implements GrievanceService{
     private Grievance grievance;
     private GrievanceDAO grievanceDAO;
     @Override
-    public Boolean saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String date,
-            String emailAddress,String contactPhone,String comments,File attachFile,Grievance grievance1) {
-        grievance = new Grievance();
-        grievance.setComments(comments);
-//        grievance.setDate(date);
-        grievance.setMemberId(memberId);
-        grievance.setMemberName(memberName);
-//        grievance.setRequestType(requestType);
-        return grievanceDAO.saveGrievanceDetails(grievance);
+    public Long saveGrievanceDetails(String SSN,String memberName,String requestType,String requestedDate,
+            String emailAddress,String contactPhone,String comments,File attachFile) {
+        try{
+            grievance = new Grievance();
+            grievance.setMemberId(Long.MIN_VALUE);
+            grievance.setSsn(Long.valueOf(SSN));
+            grievance.setMemberName(memberName);
+            grievance.setRequestType(requestType);
+//            SimpleDateFormat sdf = new SimpleDateFormat();
+//            Date reqDate=sdf.parse(requestedDate);
+            grievance.setRequestDate(null);
+            grievance.setEmail(emailAddress);
+            grievance.setContactNo(Long.valueOf(contactPhone));
+            grievance.setComments(comments);
+//            grievance.setAttachedFile(null);
+            return grievanceDAO.saveGrievanceDetails(grievance);
+        }catch(Exception e){
+            e.getMessage();
+        }
+        return Long.valueOf(0);
     }
 
     
