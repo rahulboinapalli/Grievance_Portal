@@ -5,6 +5,7 @@
 <!--[if IE 9]><html lang="en" class=?ie9?><![endif]-->
 <!--[if gt IE 9]><html lang="en"><![endif]-->
 <!--[if !IE]>--><html lang="en"><!--<![endif]-->
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EHR - Provider Grievance</title>
@@ -53,54 +54,51 @@ $(function() {
               width: 560,
               modal: true,
               buttons: {
-                  'Save': function() {
-                      
-					var v_rid=window.document.getElementById("rid").value;
-					var v_npi=window.document.getElementById("npi").value;
-					var v_pname=window.document.getElementById("pname").value;
-					var v_date=window.document.getElementById("datepicker").value;
-					var v_type=jQuery('#type option:selected').text();
-                                        var v_email=window.document.getElementById("email").value;
-                                        var v_phone=window.document.getElementById("phone").value;
-                                        var v_comments=window.document.getElementById("comments").value;
-                                        var v_attachFile=window.document.getElementById("attachFile").value;
-					
-//                                            alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
-                                            jQuery.ajax({
-                                                url:'savegrievance',
-                                                type:'post',
-                                                data: "v_rid="+v_rid+"&v_npi="+v_npi+"&v_pname="+v_pname+"&v_date="+v_date+"&v_type="+v_type+"&v_email="+v_email+"&v_phone="+v_phone+"&v_comments="+v_comments+"&v_attachFile="+v_attachFile, // get the form data
-                                                success:function(data){
-                                                    var response = data.responseText;
-                                                    /*alert("response="+response);
-                                                    var resp = null;
-                                                    if(response != null && response != 'undefined' && response!=""){
-                                                        resp = response.split("#");
-                                                    }
-                                                     if(resp != null && resp.length > 0 && resp[0] != null){
-                                                        window.document.getElementById("rid").value=resp[0];*/
-                                                        var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
-                                                        for(var i=0;i<=mydata1.length;i++) {
-                                                                jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
-                                                            }
-                                                            alert("Transaction successfully saved!");
-                                                            window.close();
-                                                     /*}else{
-                                                         alert("Transaction not successfull!");
-                                                         window.close();
-                                                     }*/
-                                                }
-                                            });
-					 
-                  },
+               /*,'Save': function() {
+
+                var v_rid=window.document.getElementById("rid").value;
+                var v_npi=window.document.getElementById("npi").value;
+                var v_pname=window.document.getElementById("pname").value;
+                var v_date=window.document.getElementById("datepicker").value;
+                var v_type=jQuery('#type option:selected').text();
+                var v_email=window.document.getElementById("email").value;
+                var v_phone=window.document.getElementById("phone").value;
+                var v_comments=window.document.getElementById("comments").value;
+                var v_attachFile=window.document.getElementById("attachFile").value;
+
+                                            alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
+                    jQuery.ajax({
+                        url:'savegrievance',
+                        type:'post',
+                        data: "v_rid="+v_rid+"&v_npi="+v_npi+"&v_pname="+v_pname+"&v_date="+v_date+"&v_type="+v_type+"&v_email="+v_email+"&v_phone="+v_phone+"&v_comments="+v_comments+"&v_attachFile="+v_attachFile,
+                        success:function(data){
+                            var response = data.responseText;
+                                    alert("Transaction successfully saved!");
+                                    $("#dialog").dialog("destroy");
+                                var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
+                                for(var i=0;i<=mydata1.length;i++) {
+                                        jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
+                                    }
+                                    
+
+                        }
+                    });
+
+               
+               },*/
+
                   Cancel: function() {
                       $(this).dialog('close');
                   }
-              }
-
+        }
           });
-	});
+});
 
+function submitForm(method){
+    alert("method="+method);
+    document.forms[0].action = method;
+    document.forms[0].submit();
+}
 
 </script>
 <script type="text/javascript">
@@ -205,6 +203,18 @@ $(function() {
      <div class="section_w940">
     	<div class="cleaner"></div>
     </div>
+    <div id="prov-grievance" title="Provider Grievance List">
+        
+         <table>
+             <s:set name="list" value="greivanceList"></s:set>
+             <s:iterator value="greivanceList" id="grievanceListid" var="grievanceStr" status="status">
+                ${status}--
+                <tr>
+                    <td><input type="text" id="rowId${status}" value="${grievanceStr}"/></td>
+                </tr>
+            </s:iterator>
+        </table>
+    </div>
 </div>
 <div class="processor" id="showprocessor">
 	<table><tr><td><img src="images/red-processor-small1.gif"/></td><td><h4 class="redclass">&nbsp;&nbsp;Processing Request....</h4></td><tr></table>
@@ -217,7 +227,7 @@ $(function() {
 </div> <!-- end of footer -->
 <div id="dialog-add" title="Add New Grievance">
 <p class="validateTips">All form fields with * are required.</p>
-<form action="provGrievanceList" method="post" id="provGreinvanceForm" >
+<form action="provGrievanceList" method="post" id="provGreinvanceForm" enctype="multipart/form-data">
 	<fieldset>
 		<table cellpadding="2" cellspacing="2">
 			<tr>
@@ -273,15 +283,21 @@ $(function() {
                                 <td><textarea  rows="5" cols="55" name="comments" id="comments"> </textarea></td>
 			</tr>
 			<tr valign="top">
-				<td>Attach File</td>
+				<!--<td>Attach File</td>
 				<td>:</td>
-                                <td><input type="file" name="attachFile" id="attachFile"/></td>
+                                <td><input type="file" name="attachFile" id="attachFile"/></td>-->
+                                <td><s:file name="attachFile" label="Attach File" size="40" /></td>
+                                
 			</tr>
 
 		</table>
 	</fieldset>
     <div id="buttons">
         
+         <button class="smallButton primaryCta" id="savegrievance" type="button" onclick="submitForm('savegrievance');" value="savegrievance">
+                                <span>Save</span></button>
+        <button tabindex="3" class="smallButton primaryCta" id="signIn" type="button" value="signIn">
+                                <span>Cancel</span></button>
 
     </div>
 </form>

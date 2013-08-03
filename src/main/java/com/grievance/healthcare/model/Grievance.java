@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import java.sql.Date;
 import java.io.File;
 import java.sql.Blob;
+import javax.persistence.Lob;
 
 /**
  *
@@ -23,7 +24,8 @@ import java.sql.Blob;
 @Table(name="grievance_details")
 public class Grievance implements Serializable {
     private static final long serialVersionUID = 1L;
-    
+
+    private int id;
     private Long memberId;
     private Long ssn;
     private String memberName;
@@ -32,14 +34,23 @@ public class Grievance implements Serializable {
     private String email;
     private Long contactNo;
     private String comments;
-//    private byte[] attachedFile;
+    private byte[] attachedFile;
 
     
     
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id")
+    @Column(name = "id")
     @Id
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "member_id")
     public Long getMemberId() {
         return memberId;
     }
@@ -163,21 +174,22 @@ public class Grievance implements Serializable {
      * Get the value of comments
      *
      * @return the value of comments
-     
-    @Column(name = "file")
+     */
+    @Lob
+    @Column(name="file", columnDefinition="mediumblob")
     public byte[] getAttachedFile() {
         return attachedFile;
-    }*/
+    }
 
     /**
      * Set the value of comments
      *
      * @param comments new value of comments
-     
+     */
     public void setAttachedFile(byte[] attachedFile) {
         this.attachedFile = attachedFile;
 
-    }*/
+    }
     @Override
     public int hashCode() {
         int hash = 0;

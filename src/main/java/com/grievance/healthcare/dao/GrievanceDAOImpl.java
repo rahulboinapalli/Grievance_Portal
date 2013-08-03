@@ -23,7 +23,7 @@ public class GrievanceDAOImpl extends HibernateDaoSupport implements GrievanceDA
         try {
 
             getHibernateTemplate().save(grievance);
-            return grievance.getMemberId();
+            return Long.valueOf(grievance.getId());
         } catch (Exception e) {
             e.printStackTrace();
         }

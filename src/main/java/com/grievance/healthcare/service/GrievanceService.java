@@ -5,7 +5,8 @@
 
 package com.grievance.healthcare.service;
 
-import org.apache.struts2.components.File;
+import java.io.File;
+import java.util.List;
 import com.grievance.healthcare.model.Grievance;
 
 /**
@@ -13,6 +14,6 @@ import com.grievance.healthcare.model.Grievance;
  * @author sabbani
  */
 public interface GrievanceService {
-    public Long saveGrievanceDetails(String SSN,String memberName,String requestType,String Date,
-            String emailAddress,String contactPhone,String Comments,File attachFile);
+    public List<Grievance> saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String Date,
+            String emailAddress,String contactPhone,String Comments,File attachFile,List<Grievance> list);
 }

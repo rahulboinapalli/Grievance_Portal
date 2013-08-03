@@ -6,7 +6,7 @@
 <struts>
 
    <constant name="struts.devMode" value="true" />
-
+    
 	<!-- Configuration for the default package. -->
 	<package name="default" extends="struts-default" >	
 		
@@ -61,10 +61,17 @@
 			<result name="success">/provgrievancelist.jsp</result>
 		</action>
                 <action name="savegrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="saveGrievanceDetails">
-                       <!-- <result name="success" type="redirectAction">
-				<param name="actionName">grievanceDetails</param>
-			</result>-->
-		</action>
+                     <interceptor-ref name="basicStack"></interceptor-ref>
+                     <interceptor-ref name="fileUpload">
+                        <param name="maximumSize">10240</param>
+                        <param name="allowedTypes">text/plain,image/jpeg,image/gif,image/jpg</param>
+                     </interceptor-ref>
+                       
+                       <result name="success" type="redirectAction">
+				<param name="actionName">provGrievanceList</param>
+			</result>
+                        <result name="failed">signon</result>
+                </action>
 		<action name="signup" class="com.grievance.healthcare.action.SignupAction" method="showPage">
 			<result name="success">/Signup.jsp</result>
 		</action>

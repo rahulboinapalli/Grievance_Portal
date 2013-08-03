@@ -6,8 +6,13 @@
 package com.grievance.healthcare.service;
 
 import com.grievance.healthcare.dao.GrievanceDAO;
-import org.apache.struts2.components.File;
+import java.io.File;
 import com.grievance.healthcare.model.Grievance;
+import com.grievance.healthcare.utililty.DateUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.apache.commons.io.FileUtils;
+
 
 /**
  *
@@ -17,26 +22,34 @@ public class GrievanceServiceImpl implements GrievanceService{
     private Grievance grievance;
     private GrievanceDAO grievanceDAO;
     @Override
-    public Long saveGrievanceDetails(String SSN,String memberName,String requestType,String requestedDate,
-            String emailAddress,String contactPhone,String comments,File attachFile) {
+    public List<Grievance> saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String requestedDate,
+            String emailAddress,String contactPhone,String comments,File attachFile,List<Grievance> list) {
+        
         try{
+           
             grievance = new Grievance();
-            grievance.setMemberId(Long.MIN_VALUE);
+            grievance.setMemberId(memberId);
             grievance.setSsn(Long.valueOf(SSN));
             grievance.setMemberName(memberName);
             grievance.setRequestType(requestType);
-//            SimpleDateFormat sdf = new SimpleDateFormat();
-//            Date reqDate=sdf.parse(requestedDate);
-            grievance.setRequestDate(null);
+            grievance.setRequestDate(DateUtils.convertStringToData(requestedDate));
             grievance.setEmail(emailAddress);
             grievance.setContactNo(Long.valueOf(contactPhone));
             grievance.setComments(comments);
-//            grievance.setAttachedFile(null);
-            return grievanceDAO.saveGrievanceDetails(grievance);
+            // Convert FormFile to a byte Array
+//            byte[] byteArray=FileUtils.readFileToByteArray(attachFile);
+            grievance.setAttachedFile(null);
+            
+            Long id= grievanceDAO.saveGrievanceDetails(grievance);
+            if(id > 0){
+               if(list == null)
+                    list = new ArrayList<Grievance>();
+               list.add(grievance);
+            }
         }catch(Exception e){
-            e.getMessage();
+            e.printStackTrace();
         }
-        return Long.valueOf(0);
+        return list;
     }
 
     
