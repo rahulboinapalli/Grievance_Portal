@@ -102,8 +102,8 @@
             $(function() {
                 $("#dgSubmitReg").dialog({
                     autoOpen: false,
-                    modal: true
-                   /*, buttons: {
+                    modal: true,
+                    buttons: {
                         Ok: function() {
                             $(this).dialog('close');
                             var myTimer = {};
@@ -120,7 +120,7 @@
                         {
                             $(this).dialog('close');
                         }
-                    }*/
+                    }
 
                 });
                 $('#submit').click(function() {
@@ -308,7 +308,7 @@
             </div> <!-- end of templatemo_banner -->
 
         </div>
-        <form action="startRegistration" name="frmresult" id="form1">
+        <form action="startRegistration" method="post" id="startRegistrationForm">
             <div id="templatemo_menu_wrapper">
                 <div id="templatemo_menu">
                     <ul>
@@ -332,9 +332,9 @@
                     </div>
                     <div class="product_box margin_r_20">
                         <h2>Search Criteria</h2>
-                        <p>Registration ID:  <input type="text" name="memberId" value="1357924680" id="rid" maxlength="10" size="10"/></p>
-                            <p>NPI: <input type="text" name="memberId" value="1033366513" id="rid" maxlength="10" size="10"></p>
-                        <p>Tax ID / SSN: <input type="text" name="memberId" value=" 999-99-9999" id="rid" maxlength="10" size="10"/></p>
+                        <p>Registration ID:  <input type="text" name="regId" value="1357924680" id="regId" size="10"/></p>
+                            <p>NPI: <input type="text" name="npi" value="1033366513" id="npi" size="10"></p>
+                        <p>Tax ID / SSN: <input type="text" name="taxId" value=" 999-99-9999" id="taxId"  size="10"/></p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="product_box">
@@ -358,28 +358,28 @@
                                                     <tr>
                                                         <td width="35%"><h4>First Name</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td width="25%"> <input type="text" name="memberFirstName" value="john" id="memberFirstName" maxlength="10" size="10"/></td>
+                                                        <td width="25%"> <input type="text" name="memberFirstName" id="memberFirstName" size="10"/></td>
                                                         <td><h4>Last Name</h4></td>
                                                         <td>:</td>
-                                                        <td> <input type="text" name="memberLastName" value="Doe" id="memberLastName" maxlength="10" size="10"/></td>
+                                                        <td> <input type="text" name="memberLastName" id="memberLastName" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Middle Initial</h4></td>
                                                         <td>:</td>
-                                                        <td> <input type="text" name="memberMiddleInitail" value="A" id="memberMiddleInitail" maxlength="10" size="10"/></td>
+                                                        <td> <input type="text" name="memberMiddleInitail" id="memberMiddleInitail" size="10"/></td>
                                                         <td><h4>Suffix</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberSuffix" value="P" id="memberSuffix" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberSuffix"  id="memberSuffix" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Type</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="memberProviderType" value="Doctor of Medicine" id="memberProviderType" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><input type="text" name="memberProviderType" id="memberProviderType" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Specialty </h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="memberProviderSpeciality" value="Specialty" id="memberProviderSpeciality" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><input type="text" name="memberProviderSpeciality" id="memberProviderSpeciality" size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -391,27 +391,27 @@
                                                     <tr>
                                                         <td width="25%"><h4>Address</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="memberStreet" value="1234 Michigan Ave" id="memberStreet" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberStreet" id="memberStreet" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>City</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberCity" value="Lansing" id="memberCity" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberCity" id="memberCity"size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>State</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberAState" value="Michigan" id="memberAState" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberAState" id="memberAState" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Zip</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberzZipcode" value="48917" id="memberzZipcode" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberzZipcode" id="memberzZipcode" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Phone</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberPhone" value="517-111-2222" id="memberPhone" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberPhone" id="memberPhone" size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -429,13 +429,13 @@
                                                     <tr>
                                                         <td><h4>NPI</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="npi" value="1033366513" id="npi" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="npi"  id="npi" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td width="25%"><h4>SSN/Tax ID</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="taxId" value="999-99-9999"
-                                                                   id= "taxId" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="taxId" 
+                                                                   id= "taxId" size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -447,17 +447,17 @@
                                                     <tr>
                                                         <td width="40%"><h4>Code</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="exclusionsCode" value="1128Aa" id="exclusionsCode" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="exclusionsCode"  id="exclusionsCode" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Description</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="exclusionsDesc" value="Description" id="exclusionsDesc" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="exclusionsDesc" id="exclusionsDesc"  size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td width="25%"><h4>Date</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="exclusionsDate" value="12/31/2010" id="exclusionsDate" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="exclusionsDate"  id="exclusionsDate"  size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -476,28 +476,28 @@
                                                     <tr>
                                                         <td width="35%"><h4>First Name</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="federalFirstName" value="John" id="federalFirstName" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalFirstName"  id="federalFirstName" size="10"/></td>
                                                         <td><h4>Last Name</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalLastName" value="Doe" id="federalLastName" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalLastName"  id="federalLastName"  size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Middle Initial</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalMiddleInitail" value="A" id="federalMiddleInitail" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalMiddleInitail" id="federalMiddleInitail" size="10"/></td>
                                                         <td><h4>Suffix</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalSuffix" value="p" id="federalSuffix" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalSuffix" id="federalSuffix" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Type</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="3"><input type="text" name="federalProviderType" value="Physician" id="federalProviderType" maxlength="10" size="10"/></td>
+                                                        <td colspan="3"><input type="text" name="federalProviderType"  id="federalProviderType"  size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Date Of Birth</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="federalDateOfBirth" value="05/03/1966" id="federalDateOfBirth" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><input type="text" name="federalDateOfBirth"  id="federalDateOfBirth"  size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -509,27 +509,27 @@
                                                     <tr>
                                                         <td width="25%"><h4>Address</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="federalStreet" value="300 Michigan Ave" id="federalStreet" maxlength="10" size="10"/></td>
-                                                    </tr>300 Michigan Ave
+                                                        <td><input type="text" name="federalStreet"  id="federalStreet" size="10"/></td>
+                                                    </tr>
                                                     <tr>
                                                         <td><h4>City</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalCity" value="Lansing" id="federalCity" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalCity"  id="federalCity" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>State</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalAState" value="Michigan" id="federalAState" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalAState"  id="federalAState" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Zip</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalzZipcode" value="48917" id="federalzZipcode" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalzZipcode"  id="federalzZipcode" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Phone</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="to.federalPhone" value="517-111-2222" id="federalPhone" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="federalPhone"  id="federalPhone" size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -543,12 +543,12 @@
                                                     <tr>
                                                         <td><h4>Specialty</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="providerSpecialty" value="Physician/General Practice" id="providerSpecialty" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="providerSpecialty"  id="providerSpecialty" size="10"/></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Taxonomy</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="taxonomy" value="208D00000X - General Practice" id="taxonomy" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="taxonomy"  id="taxonomy" size="10"/></td>
                                                     </tr>
                                                 </table>
 
@@ -564,19 +564,19 @@
                                                         <td><h4>Expiration Date</h4></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="exclusionsCode" value="MI License" id="exclusionsCode" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="exclusionsDesc" value="4704232724" id="exclusionsDesc" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="exclusionsDate" value="12/31/2012" id="exclusionsDate" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="exclusionsCode"  id="exclusionsCode"  size="10"/></td>
+                                                        <td><input type="text" name="exclusionsDesc"  id="exclusionsDesc" size="10"/></td>
+                                                        <td><input type="text" name="exclusionsDate"  id="exclusionsDate"  size="10"/></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="memberId" value="CLIA" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="14D0413011" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="12/31/2012" id="rid" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="memberId" value="DEA" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="AA1005461" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="12/31/2999" id="rid" maxlength="10" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
+                                                        <td><input type="text" name="memberId"  id="rid" size="10"/></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -932,14 +932,14 @@
 
                                                                         <label for="pediatrician"  class="required">Pediatrician &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('ped')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                         <input type="radio"  name="rpediatrician" onClick = "jQuery('#pd').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="rpediatrician" onClick = "jQuery('#pd').hide();
-                return false" value="N"  />No <br>
+                                                                            return false" value="Y" />Yes &nbsp; <input type="radio" name="rpediatrician" onClick = "jQuery('#pd').hide();
+                                                                            return false" value="N"  />No <br>
 
 
                                                                             <label   class="required">Eligible physician assistant (PA) &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pa')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                             <input type="radio"  name="radiopa" onClick = "jQuery('#pa').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="radiopa" onClick = "jQuery('#pa').hide();
-                return false" value="N"  />No <br>
+                                                                                return false" value="Y" />Yes &nbsp; <input type="radio" name="radiopa" onClick = "jQuery('#pa').hide();
+                                                                                return false" value="N"  />No <br>
                                                                                 <div id="pa">
                                                                                     <fieldset>
                                                                                         <label for="Total Enc"  class="required"> &nbsp</label><input type="checkbox"  name="PA"  value="P" onMouseover="displaycontent(3)" width=50px height=50px onMouseout="hideddrivetip()" style="cursor: hand" />Primary Provider at FQHC/RHC <br>
@@ -950,8 +950,8 @@
                                                                                                         </div>
                                                                                                         <label   class="required"> Do you render service in hospital  &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('hs')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                         <input type="radio"  name="radiohospital" onClick = "jQuery('#hs').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="radiohospital" onClick = "jQuery('#hs').hide();
-                return false" value="N" />No <br>
+                                                                                                            return false" value="Y" />Yes &nbsp; <input type="radio" name="radiohospital" onClick = "jQuery('#hs').hide();
+                                                                                                            return false" value="N" />No <br>
                                                                                                             <div id="hs">
                                                                                                                 <fieldset>
 
@@ -970,8 +970,8 @@
                                                                                                                                                         </div>
                                                                                                                                                         <label   class="required">Organization Encounter Proxy&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('gp')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                         <input type="radio"  name="radioencproxy" onClick = "jQuery('#gp').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="radioencproxy" onClick = "jQuery('#gp').hide();
-                return false" value="N" />No <br>
+                                                                                                                                                            return false" value="Y" />Yes &nbsp; <input type="radio" name="radioencproxy" onClick = "jQuery('#gp').hide();
+                                                                                                                                                            return false" value="N" />No <br>
                                                                                                                                                             <div id="gp">
                                                                                                                                                                 <fieldset>
                                                                                                                                                                     <fieldset>
@@ -990,8 +990,8 @@
                                                                                                                                                                                                         </div>
                                                                                                                                                                                                         <label   class="required">FQHC/RHC provider &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('fqhc')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                                                                         <input type="radio"  name="radiofqhc" onClick = "jQuery('#fq').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="radiofqhc" onClick = "jQuery('#fq').hide();
-                return false" value="N" selected />No <br>
+                                                                                                                                                                                                        return false" value="Y" />Yes &nbsp; <input type="radio" name="radiofqhc" onClick = "jQuery('#fq').hide();
+                                                                                                                                                                                                        return false" value="N" selected />No <br>
                                                                                                                                                                                                         <div id="fq">
                                                                                                                                                                                                         <fieldset>
 
@@ -1015,8 +1015,8 @@
                                                                                                                                                                                                         </div>
                                                                                                                                                                                                         <label   class="required">MCO primary care provider &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('mp')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
                                                                                                                                                                                                         <input type="radio"  name="radiomco" onClick = "jQuery('#mp').show();
-                return false" value="Y" />Yes &nbsp; <input type="radio" name="radiomco" onClick = "jQuery('#mp').hide();
-                return false" value="N" />No <br>
+                                                                                                                                                                                                        return false" value="Y" />Yes &nbsp; <input type="radio" name="radiomco" onClick = "jQuery('#mp').hide();
+                                                                                                                                                                                                        return false" value="N" />No <br>
                                                                                                                                                                                                         <div id="mp">
                                                                                                                                                                                                         <fieldset>
                                                                                                                                                                                                         <label for="Total Enc"  class="required">Total PCP Panel: </label>
@@ -1034,51 +1034,51 @@
                                                                                                                                                                                                         <input type="radio"  name="radiopcpfqhc" onClick = "jQuery('#mf').show();
                 return false" value="Y" />Yes &nbsp; <input type="radio" name="radiopcpfqhc" onClick = "jQuery('#mf').hide();
                 return false" value="N" />No <br>
-                                                                                                                                                                                                        <div id="mf">
-                                                                                                                                                                                                        <fieldset>
-                                                                                                                                                                                                        <label for="Total Enc"  class="required">Total PCP Panel: </label>
-                                                                                                                                                                                                        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedtot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Total Enc"  class="required">Total Unduplicated Encounters: </label>
-                                                                                                                                                                                                        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedtot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Medicaid Enc" class="required">Medicaid PCP Panel: </label>
-                                                                                                                                                                                                        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Medicaid Enc" class="required">MIChild Panel: </label>
-                                                                                                                                                                                                        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Medicaid Enc" class="required">Charity Care Panel: </label>
-                                                                                                                                                                                                        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Medicaid Enc" class="required">Sliding Fee Scale Panel: </label>
-                                                                                                                                                                                                        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="Medicaid Enc" class="required">Medicaid Unduplicated Encounters Other Settings: </label>
-                                                                                                                                                                                                        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        </fieldset>
+        <div id="mf">
+        <fieldset>
+        <label for="Total Enc"  class="required">Total PCP Panel: </label>
+        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedtot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Total Enc"  class="required">Total Unduplicated Encounters: </label>
+        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedtot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Medicaid Enc" class="required">Medicaid PCP Panel: </label>
+        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Medicaid Enc" class="required">MIChild Panel: </label>
+        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Medicaid Enc" class="required">Charity Care Panel: </label>
+        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Medicaid Enc" class="required">Sliding Fee Scale Panel: </label>
+        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="Medicaid Enc" class="required">Medicaid Unduplicated Encounters Other Settings: </label>
+        <input type="text" id="medicaidenc" name="medicaidenc" tabindex="2" value="" title="medicaid encounters">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('pedqal')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        </fieldset>
 
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        <!--
-                                                                                                                                                                                                        <label   class="required">Did you include any encounters out side [State Name] &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('am')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
-                                                                                                                                                                                                        <input type="radio"  name="radiostate" onClick = "jQuery('#am').show(); return false" value="Y" />Yes &nbsp; <input type="radio" name="radiostate" onClick = "jQuery('#am').hide(); return false" value="N" />No <br>
-                                                                                                                                                                                                        -->
-                                                                                                                                                                                                        <div id="am">
-                                                                                                                                                                                                        <fieldset>
-                                                                                                                                                                                                        <label for="Total Enc"  class="required">State(s): </label>
-                                                                                                                                                                                                        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters"/>&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('hstot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        </div>
+        <!--
+        <label   class="required">Did you include any encounters out side [State Name] &nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('am')" onMouseout="hideddrivetip()" style="cursor: hand"/></label>
+        <input type="radio"  name="radiostate" onClick = "jQuery('#am').show(); return false" value="Y" />Yes &nbsp; <input type="radio" name="radiostate" onClick = "jQuery('#am').hide(); return false" value="N" />No <br>
+        -->
+        <div id="am">
+        <fieldset>
+        <label for="Total Enc"  class="required">State(s): </label>
+        <input type="text" id="totalenc" name="totalenc" tabindex="1" value="" title="Total Encounters"/>&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('hstot')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
 
-                                                                                                                                                                                                        </fieldset>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        </fieldset>
-                                                                                                                                                                                                        <fieldset>
-                                                                                                                                                                                                        <legend>EHR Certification Information</legend>
-                                                                                                                                                                                                        <label for="Cert Num"  class="required" >EHR Investment Type: </label>
-                                                                                                                                                                                                        <input type="radio"  name="aiu"  value="a" class="required" />Adopt
-                                                                                                                                                                                                        <input type="radio" name="aiu"  value="I" class="required" />Implment
-                                                                                                                                                                                                        <input type="radio" name="aiu"  value="U" class="required" />Upgrade <br>
-                                                                                                                                                                                                        <label for="Cert Num"  class="required" >EHR Certification Number: </label>
-                                                                                                                                                                                                        <input type="text" id="certnum" name="certnum" tabindex="5" value="" title="Certification Number">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('cert')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
-                                                                                                                                                                                                        <label for="certamt" class="required">EHR Investment Amount: </label>
-                                                                                                                                                                                                        <input type="text" id="certamt" name="certamt" tabindex="6" value="" title="Investment Amount">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('invstamt')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        </fieldset>
+        </div>
+        </fieldset>
+        <fieldset>
+        <legend>EHR Certification Information</legend>
+        <label for="Cert Num"  class="required" >EHR Investment Type: </label>
+        <input type="radio"  name="aiu"  value="a" class="required" />Adopt
+        <input type="radio" name="aiu"  value="I" class="required" />Implment
+        <input type="radio" name="aiu"  value="U" class="required" />Upgrade <br>
+        <label for="Cert Num"  class="required" >EHR Certification Number: </label>
+        <input type="text" id="certnum" name="certnum" tabindex="5" value="" title="Certification Number">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('cert')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
+        <label for="certamt" class="required">EHR Investment Amount: </label>
+        <input type="text" id="certamt" name="certamt" tabindex="6" value="" title="Investment Amount">&nbsp;<img src="images\tool_tips_icon.gif" onMouseover="displaycontent('invstamt')" onMouseout="hideddrivetip()" style="cursor: hand"/><br>
 
-                                                                                                                                                                                                        </fieldset>
-                                                                                                                                                                                                        <div id="dhtmltooltip"></div>
-                                                                                                                                                                                                        <script type="text/javascript">
+        </fieldset>
+        <div id="dhtmltooltip"></div>
+        <script type="text/javascript">
             /***********************************************
              * Freejavascriptkit.com
              * Visit http://www.freejavascriptkit.com for more free Javascripts source code
@@ -1224,16 +1224,16 @@
 
             document.onmousemove = positiontip
 
-                                                                                                                                                                                                        </script>
-                                                                                                                                                                                                        <div id="dialog-upload" title="Upload File">
-                                                                                                                                                                                                        <p>Click on the Browse button to select a file , Click save to upload the file to EHR-MIPP application.</p><br>
-                                                                                                                                                                                                        <input type="file" name="upfile"/>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        </form>
-                                                                                                                                                                                                        <div id="dgSubmitReg" title="Submit Registration">
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                        <div id="dgAcceptTerms" title="Accept Terms">
-                                                                                                                                                                                                        </div>
+    </script>
+    <div id="dialog-upload" title="Upload File">
+    <p>Click on the Browse button to select a file , Click save to upload the file to EHR-MIPP application.</p><br>
+    <input type="file" name="upfile"/>
+    </div>
+    </form>
+    <div id="dgSubmitReg" title="Submit Registration">
+    </div>
+    <div id="dgAcceptTerms" title="Accept Terms">
+    </div>
 
-                                                                                                                                                                                                        </body>
-                                                                                                                                                                                                        </html>
+    </body>
+    </html>
