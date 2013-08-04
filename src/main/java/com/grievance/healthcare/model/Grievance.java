@@ -12,8 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
-import java.io.File;
-import java.sql.Blob;
+import java.sql.Timestamp;
 import javax.persistence.Lob;
 
 /**
@@ -30,7 +29,7 @@ public class Grievance implements Serializable {
     private Long ssn;
     private String memberName;
     private String requestType;
-    private Date requestDate;
+    private Timestamp requestDate;
     private String email;
     private Long contactNo;
     private String comments;
@@ -103,11 +102,11 @@ public class Grievance implements Serializable {
     }
 
     @Column(name="request_date")
-    public Date getRequestDate() {
+    public Timestamp getRequestDate() {
         return requestDate;
     }
 
-    public void setRequestDate(Date requestDate) {
+    public void setRequestDate(Timestamp requestDate) {
         this.requestDate = requestDate;
     }
 

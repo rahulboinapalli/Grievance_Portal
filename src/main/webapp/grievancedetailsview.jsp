@@ -6,7 +6,6 @@
 <!--[if gt IE 9]><html lang="en"><![endif]-->
 <!--[if !IE]>--><html lang="en"><!--<![endif]-->
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EHR - Provider Grievance</title>
@@ -57,10 +56,7 @@ $(function() {
               buttons: {
                'Save': function() {
 
-                document.forms[0].action = 'savegrievance';
-                document.forms[0].submit();
-
-               /* var v_rid=window.document.getElementById("rid").value;
+                var v_rid=window.document.getElementById("rid").value;
                 var v_npi=window.document.getElementById("npi").value;
                 var v_pname=window.document.getElementById("pname").value;
                 var v_date=window.document.getElementById("datepicker").value;
@@ -71,7 +67,7 @@ $(function() {
                 var v_attachFile=window.document.getElementById("attachFile").value;
 
                                             alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
-                    jQuery.ajax({
+                    /*jQuery.ajax({
                         url:'savegrievance',
                         type:'post',
                         data: "v_rid="+v_rid+"&v_npi="+v_npi+"&v_pname="+v_pname+"&v_date="+v_date+"&v_type="+v_type+"&v_email="+v_email+"&v_phone="+v_phone+"&v_comments="+v_comments+"&v_attachFile="+v_attachFile,
@@ -83,12 +79,12 @@ $(function() {
                                 for(var i=0;i<=mydata1.length;i++) {
                                         jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
                                     }
-                                    
+
 
                         }
                     });*/
 
-               
+
                },
 
                   Cancel: function() {
@@ -96,11 +92,10 @@ $(function() {
                   }
         }
           });
-       
 });
 
 function submitForm(method){
-    //alert("method="+method);
+    alert("method="+method);
     document.forms[0].action = method;
     document.forms[0].submit();
 }
@@ -124,7 +119,7 @@ function submitForm(method){
  rowList:[2,4,6],
  viewrecords: true,
  caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false});
- //var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
+// var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
  //for(var i=0;i<=mydata1.length;i++)
 //	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
  }
@@ -198,8 +193,6 @@ function submitForm(method){
 	</div>
 	<div class="section_w940">
 		<h3>&nbsp;<img src="images/add.gif" onclick="jQuery('#dialog-add').dialog('open'); return false" style="cursor: hand" />&nbsp;Click to add new grievance</h3>
-
-
         <div class="section_w450">
                 <table id="list4"></table>
 				<div id="pager1"></div>
@@ -210,7 +203,6 @@ function submitForm(method){
      <div class="section_w940">
     	<div class="cleaner"></div>
     </div>
-    
 </div>
 <div class="processor" id="showprocessor">
 	<table><tr><td><img src="images/red-processor-small1.gif"/></td><td><h4 class="redclass">&nbsp;&nbsp;Processing Request....</h4></td><tr></table>
@@ -283,17 +275,17 @@ function submitForm(method){
 				<td>:</td>
                                 <td><input type="file" name="attachFile" id="attachFile"/></td>-->
                                 <td><s:file name="attachFile" label="Attach File" size="40" /></td>
-                                
+
 			</tr>
 
 		</table>
 	</fieldset>
     <div id="buttons">
-        
-         <!--<button class="smallButton primaryCta" id="savegrievance" type="button" onclick="submitForm('savegrievance');" value="savegrievance">
+
+         <button class="smallButton primaryCta" id="savegrievance" type="button" onclick="submitForm('savegrievance');" value="savegrievance">
                                 <span>Save</span></button>
         <button tabindex="3" class="smallButton primaryCta" id="signIn" type="button" value="signIn">
-                                <span>Cancel</span></button>-->
+                                <span>Cancel</span></button>
 
     </div>
 </form>
@@ -301,4 +293,3 @@ function submitForm(method){
 </div>
 </body>
 </html>
-

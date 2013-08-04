@@ -61,11 +61,11 @@
 			<result name="success">/provgrievancelist.jsp</result>
 		</action>
                 <action name="savegrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="saveGrievanceDetails">
-                     <interceptor-ref name="basicStack"></interceptor-ref>
+                    <!-- <interceptor-ref name="basicStack"></interceptor-ref>
                      <interceptor-ref name="fileUpload">
                         <param name="maximumSize">10240</param>
                         <param name="allowedTypes">text/plain,image/jpeg,image/gif,image/jpg</param>
-                     </interceptor-ref>
+                     </interceptor-ref>-->
                        
                        <result name="success" type="redirectAction">
 				<param name="actionName">provGrievanceList</param>
@@ -78,6 +78,11 @@
 		<action name="startRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="showPage">
 			<result name="success">/startregistration.jsp</result>
 		</action>
+                <action name="saveRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="saveRegistration">
+			<result name="success">startRegistration</result>
+                        
+		</action>
+
 		<action name="stateReview" class="com.grievance.healthcare.action.StartReviewAction" method="showPage">
 			<result name="success">/statereview.jsp</result>
 		</action>

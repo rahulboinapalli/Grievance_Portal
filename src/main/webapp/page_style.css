@@ -351,6 +351,7 @@ h6 {
 
 #templatemo_content {
 	width: 940px;
+        height: 800px;
 	margin: 0 auto;
 	padding: 0px 25px;
         padding-top: 5px;
@@ -519,19 +520,19 @@ Tags: flexible, white, black, multi-color
     position: relative;
 	background: url('back.png') 0 0 no-repeat;
 	width: 900px;
-	height: 314px;
+	height: 414px;
 	padding: 28px 30px;
 }
 #slidedeck_frame dl {
     position: relative;
 	width: 900px;
-	height: 300px;
+	height: 400px;
 	margin: 0;
     padding: 0;
 }			
 .slidedeck dd {
     position: relative;
-	height: 294px;
+	height: 324px;
 	padding: 10px 15px;
     margin: 0;
 	border-right: 5px solid #d7d7d7;

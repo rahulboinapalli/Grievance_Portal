@@ -102,8 +102,8 @@
             $(function() {
                 $("#dgSubmitReg").dialog({
                     autoOpen: false,
-                    modal: true
-                   /*, buttons: {
+                    modal: true,
+                    buttons: {
                         Ok: function() {
                             $(this).dialog('close');
                             var myTimer = {};
@@ -111,8 +111,7 @@
                             myTimer = $.timer(2500, function() {
                                 // Display hello message when timer goes off
                                 //alert("hello");
-//                                window.open("registrationack.jsp", '_self');
-                                window.open("startregistration.jsp", '_self');
+                                window.open("registrationack.jsp", '_self');
                             });
 
                         },
@@ -120,7 +119,7 @@
                         {
                             $(this).dialog('close');
                         }
-                    }*/
+                    }
 
                 });
                 $('#submit').click(function() {
@@ -332,9 +331,9 @@
                     </div>
                     <div class="product_box margin_r_20">
                         <h2>Search Criteria</h2>
-                        <p>Registration ID:  <input type="text" name="memberId" value="1357924680" id="rid" maxlength="10" size="10"/></p>
-                            <p>NPI: <input type="text" name="memberId" value="1033366513" id="rid" maxlength="10" size="10"></p>
-                        <p>Tax ID / SSN: <input type="text" name="memberId" value=" 999-99-9999" id="rid" maxlength="10" size="10"/></p>
+                        <p>Registration ID: 1357924680</p>
+                        <p>NPI: 1033366513</p>
+                        <p>Tax ID / SSN: 999-99-9999</p>
                         <div class="cleaner"></div>
                     </div>
                     <div class="product_box">
@@ -358,28 +357,28 @@
                                                     <tr>
                                                         <td width="35%"><h4>First Name</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td width="25%"> <input type="text" name="memberFirstName" value="john" id="memberFirstName" maxlength="10" size="10"/></td>
+                                                        <td width="25%"><h5>John</h5></td>
                                                         <td><h4>Last Name</h4></td>
                                                         <td>:</td>
-                                                        <td> <input type="text" name="memberLastName" value="Doe" id="memberLastName" maxlength="10" size="10"/></td>
+                                                        <td><h5>Doe</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Middle Initial</h4></td>
                                                         <td>:</td>
-                                                        <td> <input type="text" name="memberMiddleInitail" value="A" id="memberMiddleInitail" maxlength="10" size="10"/></td>
+                                                        <td><h5>A</h5></td>
                                                         <td><h4>Suffix</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberSuffix" value="P" id="memberSuffix" maxlength="10" size="10"/></td>
+                                                        <td><h5>&nbsp;</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Type</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="memberProviderType" value="Doctor of Medicine" id="memberProviderType" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><h5>Doctor of Medicine</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Specialty </h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="memberProviderSpeciality" value="Specialty" id="memberProviderSpeciality" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><h5>Specialty</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -391,27 +390,27 @@
                                                     <tr>
                                                         <td width="25%"><h4>Address</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="memberStreet" value="1234 Michigan Ave" id="memberStreet" maxlength="10" size="10"/></td>
+                                                        <td><h5>1234 Michigan Ave</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>City</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberCity" value="Lansing" id="memberCity" maxlength="10" size="10"/></td>
+                                                        <td><h5>Lansing</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>State</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberAState" value="Michigan" id="memberAState" maxlength="10" size="10"/></td>
+                                                        <td><h5>Michigan</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Zip</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberzZipcode" value="48917" id="memberzZipcode" maxlength="10" size="10"/></td>
+                                                        <td><h5>48917</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Phone</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="memberPhone" value="517-111-2222" id="memberPhone" maxlength="10" size="10"/></td>
+                                                        <td><h5>517-111-2222</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -429,13 +428,12 @@
                                                     <tr>
                                                         <td><h4>NPI</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="npi" value="1033366513" id="npi" maxlength="10" size="10"/></td>
+                                                        <td><h5>1033366513</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td width="25%"><h4>SSN/Tax ID</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="taxId" value="999-99-9999"
-                                                                   id= "taxId" maxlength="10" size="10"/></td>
+                                                        <td><h5>999-99-9999</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -447,17 +445,17 @@
                                                     <tr>
                                                         <td width="40%"><h4>Code</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="exclusionsCode" value="1128Aa" id="exclusionsCode" maxlength="10" size="10"/></td>
+                                                        <td><h5>1128Aa</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Description</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="exclusionsDesc" value="Description" id="exclusionsDesc" maxlength="10" size="10"/></td>
+                                                        <td><h5>Description</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td width="25%"><h4>Date</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="exclusionsDate" value="12/31/2010" id="exclusionsDate" maxlength="10" size="10"/></td>
+                                                        <td><h5>12/31/2010</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -476,28 +474,28 @@
                                                     <tr>
                                                         <td width="35%"><h4>First Name</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="federalFirstName" value="John" id="federalFirstName" maxlength="10" size="10"/></td>
+                                                        <td><h5>John</h5></td>
                                                         <td><h4>Last Name</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalLastName" value="Doe" id="federalLastName" maxlength="10" size="10"/></td>
+                                                        <td><h5>Doe</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Middle Initial</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalMiddleInitail" value="A" id="federalMiddleInitail" maxlength="10" size="10"/></td>
+                                                        <td><h5>A</h5></td>
                                                         <td><h4>Suffix</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalSuffix" value="p" id="federalSuffix" maxlength="10" size="10"/></td>
+                                                        <td><h5>&nbsp;</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Provider Type</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="3"><input type="text" name="federalProviderType" value="Physician" id="federalProviderType" maxlength="10" size="10"/></td>
+                                                        <td colspan="3"><h5>Physician</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Date Of Birth</h4></td>
                                                         <td>:</td>
-                                                        <td colspan="2"><input type="text" name="federalDateOfBirth" value="05/03/1966" id="federalDateOfBirth" maxlength="10" size="10"/></td>
+                                                        <td colspan="2"><h5>05/03/1966</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -509,27 +507,27 @@
                                                     <tr>
                                                         <td width="25%"><h4>Address</h4></td>
                                                         <td width="2%">:</td>
-                                                        <td><input type="text" name="federalStreet" value="300 Michigan Ave" id="federalStreet" maxlength="10" size="10"/></td>
-                                                    </tr>300 Michigan Ave
+                                                        <td><h5>300 Michigan Ave</h5></td>
+                                                    </tr>
                                                     <tr>
                                                         <td><h4>City</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalCity" value="Lansing" id="federalCity" maxlength="10" size="10"/></td>
+                                                        <td><h5>Lansing</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>State</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalAState" value="Michigan" id="federalAState" maxlength="10" size="10"/></td>
+                                                        <td><h5>Michigan</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Zip</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="federalzZipcode" value="48917" id="federalzZipcode" maxlength="10" size="10"/></td>
+                                                        <td><h5>48917</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Phone</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="to.federalPhone" value="517-111-2222" id="federalPhone" maxlength="10" size="10"/></td>
+                                                        <td><h5>517-111-2222</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -543,12 +541,12 @@
                                                     <tr>
                                                         <td><h4>Specialty</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="providerSpecialty" value="Physician/General Practice" id="providerSpecialty" maxlength="10" size="10"/></td>
+                                                        <td><h5>Physician/General Practice</h5></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h4>Taxonomy</h4></td>
                                                         <td>:</td>
-                                                        <td><input type="text" name="taxonomy" value="208D00000X - General Practice" id="taxonomy" maxlength="10" size="10"/></td>
+                                                        <td><h5>208D00000X - General Practice</h5></td>
                                                     </tr>
                                                 </table>
 
@@ -564,19 +562,19 @@
                                                         <td><h4>Expiration Date</h4></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="exclusionsCode" value="MI License" id="exclusionsCode" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="exclusionsDesc" value="4704232724" id="exclusionsDesc" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="exclusionsDate" value="12/31/2012" id="exclusionsDate" maxlength="10" size="10"/></td>
+                                                        <td><h5>MI License</h5></td>
+                                                        <td><h5>4704232724</h5></td>
+                                                        <td><h5>12/31/2012</h5></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="memberId" value="CLIA" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="14D0413011" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="12/31/2012" id="rid" maxlength="10" size="10"/></td>
+                                                        <td><h5>CLIA</h5></td>
+                                                        <td><h5>14D0413011</h5></td>
+                                                        <td><h5>12/31/2012</h5></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" name="memberId" value="DEA" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="AA1005461" id="rid" maxlength="10" size="10"/></td>
-                                                        <td><input type="text" name="memberId" value="12/31/2999" id="rid" maxlength="10" size="10"/></td>
+                                                        <td><h5>DEA</h5></td>
+                                                        <td><h5>AA1005461</h5></td>
+                                                        <td><h5>12/31/2999</h5></td>
                                                     </tr>
                                                 </table>
                                             </fieldset>
@@ -655,12 +653,12 @@
                                             <td width="40%">
                                                 <input type=checkbox id="terms" name="terms1" > I accept the terms and conditions</input></td>
                                             <td align="center">
-                                                <a href="saveRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')"
+                                                <a href="startRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')"
                                                    onMouseOut="up_button('SubmitReg', 'images/Register_Up.png')"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></a>
 
                                             </td>
                                             <td align="right">
-                                                <input type="image" src="images/print-preview.png" alt="print preview" id="print1" title="Print Preview" />
+                                                <input type="image" src="images/print-preview.png" alt="print preview" id="print1" title="Print Preview" >
                                             </td>
                                         </tr>
                                     </table>
@@ -670,7 +668,7 @@
                                 <div id="users-contain" class="ui-widget">
                                     <h3>Click <input type="image" title="Click To Upload" src="images/file_upload.png" onclick="jQuery('#dialog-upload').dialog('open');
                 return false"> to upload supporting documents</h3>
-                                    <table id="fileupload" name="attachedFile" class="ui-widget ui-widget-content" cellpadding="1" cellspacing="1" width="100%">
+                                    <table id="fileupload" class="ui-widget ui-widget-content" cellpadding="1" cellspacing="1" width="100%">
                                         <thead>
                                             <tr class="ui-widget-header ">
                                                 <th>File Name</th>

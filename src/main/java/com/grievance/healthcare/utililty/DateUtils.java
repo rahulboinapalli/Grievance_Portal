@@ -29,5 +29,24 @@ public class DateUtils {
         }
         return sqlDate;
     }
+    public static java.sql.Timestamp convertStringToTimestamp(String dateStr){
+        java.sql.Timestamp  sqlDate = null;
+        java.util.Date date = null;
+        try{
+            SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
+            date = sdf1.parse(dateStr);
+            java.util.Calendar calendar = java.util.Calendar.getInstance();
+            calendar.setTime(calendar.getTime());
+            java.util.Date myDate = calendar.getTime();
+            sqlDate = new java.sql.Timestamp(myDate.getTime());
+            System.out.println("today date: ="+sqlDate);
+        }catch(ParseException ex){
+            ex.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return sqlDate;
+    }
+
 
 }

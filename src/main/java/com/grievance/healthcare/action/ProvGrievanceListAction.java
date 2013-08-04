@@ -6,13 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;
 import java.io.File;
 import com.grievance.healthcare.model.Grievance;
-import com.grievance.healthcare.to.GrievanceTO;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import org.apache.commons.io.FileUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 // implements ServletRequestAware
@@ -118,7 +115,11 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
 
 	 public String showPage()
 	    {
-           
+                HttpServletRequest request = ServletActionContext.getRequest();
+                HttpSession ssession = request.getSession();
+               List<String> list =(List<String>)ssession.getAttribute("grievanceListAll");
+               setGreivanceList(list);
+               request.setAttribute("greivanceList",list);
 	        return SUCCESS;
 	    }
 
@@ -139,41 +140,49 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                     contactPhone = request.getParameter("v_phone");
                     comments = request.getParameter("v_comments");*/
 //                    attachFile = request.getParameter("v_rid");
-                   List<Grievance> grievListAll= (List<Grievance>)ssession.getAttribute("grievanceList");
+                  
                    List<Grievance> grievList =grievanceService.saveGrievanceDetails(memberId,SSN,
                              memberName,requestType ,date,emailAddress,contactPhone,comments,getAttachFile(),list);
-                   if(grievListAll != null){
-                       grievListAll.addAll(grievList);
-                   }else{
-                       grievListAll = new ArrayList<Grievance>();
-                       grievListAll.addAll(grievList);
-                   }
+                   
                     StringBuffer strBuff=new StringBuffer("");
-                    if(grievListAll != null && grievListAll.size() > 0){
-                        ssession.setAttribute("grievanceList", grievListAll);
+                    if(grievList != null && grievList.size() > 0){
+                       
                         greivanceList = new ArrayList<String>();
-                        for(Grievance greivanceObj:grievList){
+//                        for(Grievance greivanceObj:grievList){
 //                            var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
                             strBuff.append("[")
                                     .append("{")
                                     .append("rid:")
-                                    .append(greivanceObj.getMemberId())
+                                    .append(memberId)
                                     .append(",pnpi:")
-                                    .append(greivanceObj.getSsn())
+                                    .append(SSN)
                                     .append(",pname:")
-                                    .append(greivanceObj.getMemberName())
+                                    .append(memberName)
                                     .append(",pyear:")
                                     .append("Self")
                                     .append(",gtype:")
-                                    .append(greivanceObj.getRequestType())
+                                    .append(requestType)
                                     .append(",date:")
-                                    .append(greivanceObj.getRequestDate())
+                                    .append(date)
                                     .append(",status:Submitted")
                                     .append("}").append("]");
                                  greivanceList.add(strBuff.toString());
-                        }
+
+//                        }
+
                     }
+                    List<String> grievListAll= (List<String>)ssession.getAttribute("grievanceList");
+                                   if(grievListAll != null && grievListAll.size() > 0){
+                                       grievListAll.add(strBuff.toString());
+                                       greivanceList.addAll(grievListAll);
+                                   }else{
+                                        grievListAll = new ArrayList<String>();
+                                        grievListAll.add(strBuff.toString());
+                                        greivanceList.addAll(grievListAll);
+                                   }
                     
+                    ssession.setAttribute("grievanceList", greivanceList);
+                    ssession.setAttribute("grievanceListAll", grievListAll);
 
 //                    response.getOutputStream().print(SUCCESS);
                 } catch (Exception e) {

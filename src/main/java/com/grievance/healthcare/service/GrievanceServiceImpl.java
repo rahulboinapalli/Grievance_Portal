@@ -8,10 +8,9 @@ package com.grievance.healthcare.service;
 import com.grievance.healthcare.dao.GrievanceDAO;
 import java.io.File;
 import com.grievance.healthcare.model.Grievance;
-import com.grievance.healthcare.utililty.DateUtils;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.io.FileUtils;
 
 
 /**
@@ -32,7 +31,8 @@ public class GrievanceServiceImpl implements GrievanceService{
             grievance.setSsn(Long.valueOf(SSN));
             grievance.setMemberName(memberName);
             grievance.setRequestType(requestType);
-            grievance.setRequestDate(DateUtils.convertStringToData(requestedDate));
+//            grievance.setRequestDate(DateUtils.convertStringToData(requestedDate));
+            grievance.setRequestDate(new Timestamp(new java.util.Date().getTime()));
             grievance.setEmail(emailAddress);
             grievance.setContactNo(Long.valueOf(contactPhone));
             grievance.setComments(comments);

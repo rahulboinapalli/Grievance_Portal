@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SignonAction extends ActionSupport{
 
-        private UserService userService ;
+        private UserService userService;
 	private User user;
 	private List<User> users;
 

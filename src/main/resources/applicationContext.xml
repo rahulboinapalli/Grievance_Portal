@@ -45,6 +45,8 @@
             <list>
                 <value>com.grievance.healthcare.model.User</value>
                 <value>com.grievance.healthcare.model.Grievance</value>
+                <value>com.grievance.healthcare.model.Registration</value>
+           
             </list>
         </property>
         <property name="hibernateProperties">
@@ -73,6 +75,14 @@
 
     <bean name="grievanceService" class="com.grievance.healthcare.service.GrievanceServiceImpl">
         <property name="grievanceDAO" ref="grievanceDAO" />
+    </bean>
+
+    <bean name="registrationService" class="com.grievance.healthcare.service.RegistrationServiceImpl">
+        <property name="registrationDAO" ref="registrationDAO" />
+    </bean>
+    
+    <bean name="registrationDAO" class="com.grievance.healthcare.dao.RegistrationDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <bean id="transactionManager"

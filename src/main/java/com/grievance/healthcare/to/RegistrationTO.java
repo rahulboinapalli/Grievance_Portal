@@ -1,15 +1,19 @@
-package com.grievance.healthcare.action;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-import com.grievance.healthcare.service.RegistrationService;
-import com.opensymphony.xwork2.ActionSupport;
+package com.grievance.healthcare.to;
+
 import java.io.File;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import org.apache.struts2.ServletActionContext;
 
-public class StartRegistrationAction extends ActionSupport{
+/**
+ *
+ * @author sabbani
+ */
+ public class RegistrationTO {
 
-     private Long regId;
+    private Long regId;
    //member address
     private String memberStreet;
     private String memberCity;
@@ -56,9 +60,6 @@ private String federalFirstName;
 
 
     private File attachedFile;
-
-    private RegistrationService registrationService;
-
 
     public File getAttachedFile() {
         return attachedFile;
@@ -347,35 +348,4 @@ private String federalFirstName;
     public void setTaxonomy(String taxonomy) {
         this.taxonomy = taxonomy;
     }
-
-	public String showPage()
-        {
-            return SUCCESS;
-        }
-
-    public RegistrationService getRegistrationService() {
-        return registrationService;
-    }
-
-    public void setRegistrationService(RegistrationService registrationService) {
-        this.registrationService = registrationService;
-    }
-
-    public String saveRegistration(){
-          HttpServletRequest request = ServletActionContext.getRequest();
-                HttpSession ssession = request.getSession();
-       String status=registrationService.saveRegistration(memberStreet,  memberCity, memberAState, memberzZipcode,
-                 memberPhone,  memberFirstName, memberLastName, memberMiddleInitail, memberSuffix,
-                 memberProviderType, memberProviderSpeciality, memberDateOfBirth, federalFirstName,
-                 federalLastName,  federalMiddleInitail, federalSuffix,  federalProviderType, federalProviderSpeciality,
-                  federalDateOfBirth,  federalStreet,  federalCity, federalAState,  federalzZipcode,
-                    federalPhone, licenseType, licenseNum,  expiryDate, npi,  taxId, exclusionsCode,
-                    exclusionsDesc,  exclusionsDate, providerSpecialty,  taxonomy, attachedFile);
-//        String status=registrationService.saveRegistration(request);
-        //System.out.println("status="+status);
-        return SUCCESS;
-    }
-
-
-
 }

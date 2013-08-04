@@ -5,6 +5,7 @@
 <!--[if IE 9]><html lang="en" class=”ie9”><![endif]-->
 <!--[if gt IE 9]><html lang="en"><![endif]-->
 <!--[if !IE]>--><html lang="en"><!--<![endif]-->
+    <%@ taglib prefix="s" uri="/struts-tags" %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Login</title>
