@@ -9,6 +9,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.grievance.healthcare.model.Registration;
+import java.util.List;
+import org.hibernate.Query;
 
 /**
  *
@@ -33,4 +35,16 @@ public class RegistrationDAOImpl extends HibernateDaoSupport implements Registra
         return Long.valueOf(0);
     }
 
+    @Transactional
+    public List<Registration> getRegistrationDetailsByStatus(){
+        List<Registration> list = null;
+        try{
+            Query query = getSession().getNamedQuery("reg.findByStatus");
+            query.setString("status", "currunt");
+            list = (List<Registration>) query.list();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 }

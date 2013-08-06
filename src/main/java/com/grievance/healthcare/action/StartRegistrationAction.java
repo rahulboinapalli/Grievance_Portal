@@ -1,21 +1,23 @@
 package com.grievance.healthcare.action;
 
 import com.grievance.healthcare.service.RegistrationService;
+import com.grievance.healthcare.to.RegistrationTO;
 import com.opensymphony.xwork2.ActionSupport;
 import java.io.File;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 public class StartRegistrationAction extends ActionSupport{
 
-     private Long regId;
+    private RegistrationTO to;
+
+    /*private Long regId;
    //member address
     private String memberStreet;
     private String memberCity;
     private String memberAState;
     private String memberzZipcode;
-    private Long memberPhone;
+    private String memberPhone;
     //member personal info
     private String memberFirstName;
     private String memberLastName;
@@ -25,7 +27,7 @@ public class StartRegistrationAction extends ActionSupport{
     private String memberProviderSpeciality;
     private String memberDateOfBirth;
 // federal basic info
-private String federalFirstName;
+    private String federalFirstName;
     private String federalLastName;
     private String federalMiddleInitail;
     private String federalSuffix;
@@ -37,15 +39,15 @@ private String federalFirstName;
     private String  federalCity;
     private String federalAState;
     private String  federalzZipcode;
-    private Long  federalPhone;
+    private String  federalPhone;
       // license info
     private String licenseType;
-    private Long licenseNum;
+    private String licenseNum;
     private String expiryDate;
 
 //member Identifiers
-    private Long npi;
-    private Long taxId;
+    private String npi;
+    private String taxId;
    //member exclusion
     private String exclusionsCode;
     private String exclusionsDesc;
@@ -55,298 +57,19 @@ private String federalFirstName;
     private String taxonomy;
 
 
-    private File attachedFile;
+    private File attachedFile;*/
 
     private RegistrationService registrationService;
 
-
-    public File getAttachedFile() {
-        return attachedFile;
-    }
-
-    public void setAttachedFile(File attachedFile) {
-        this.attachedFile = attachedFile;
-    }
-
-    public String getExclusionsCode() {
-        return exclusionsCode;
-    }
-
-    public void setExclusionsCode(String exclusionsCode) {
-        this.exclusionsCode = exclusionsCode;
-    }
-
-    public String getExclusionsDate() {
-        return exclusionsDate;
-    }
-
-    public void setExclusionsDate(String exclusionsDate) {
-        this.exclusionsDate = exclusionsDate;
-    }
-
-    public String getExclusionsDesc() {
-        return exclusionsDesc;
-    }
-
-    public void setExclusionsDesc(String exclusionsDesc) {
-        this.exclusionsDesc = exclusionsDesc;
-    }
-
-    public String getExpiryDate() {
-        return expiryDate;
-    }
-
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
-    }
-
-    public String getFederalAState() {
-        return federalAState;
-    }
-
-    public void setFederalAState(String federalAState) {
-        this.federalAState = federalAState;
-    }
-
-    public String getFederalCity() {
-        return federalCity;
-    }
-
-    public void setFederalCity(String federalCity) {
-        this.federalCity = federalCity;
-    }
-
-    public String getFederalDateOfBirth() {
-        return federalDateOfBirth;
-    }
-
-    public void setFederalDateOfBirth(String federalDateOfBirth) {
-        this.federalDateOfBirth = federalDateOfBirth;
-    }
-
-    public String getFederalFirstName() {
-        return federalFirstName;
-    }
-
-    public void setFederalFirstName(String federalFirstName) {
-        this.federalFirstName = federalFirstName;
-    }
-
-    public String getFederalLastName() {
-        return federalLastName;
-    }
-
-    public void setFederalLastName(String federalLastName) {
-        this.federalLastName = federalLastName;
-    }
-
-    public String getFederalMiddleInitail() {
-        return federalMiddleInitail;
-    }
-
-    public void setFederalMiddleInitail(String federalMiddleInitail) {
-        this.federalMiddleInitail = federalMiddleInitail;
-    }
-
-    public Long getFederalPhone() {
-        return federalPhone;
-    }
-
-    public void setFederalPhone(Long federalPhone) {
-        this.federalPhone = federalPhone;
-    }
-
-    public String getFederalProviderSpeciality() {
-        return federalProviderSpeciality;
-    }
-
-    public void setFederalProviderSpeciality(String federalProviderSpeciality) {
-        this.federalProviderSpeciality = federalProviderSpeciality;
-    }
-
-    public String getFederalProviderType() {
-        return federalProviderType;
-    }
-
-    public void setFederalProviderType(String federalProviderType) {
-        this.federalProviderType = federalProviderType;
-    }
-
-    public String getFederalStreet() {
-        return federalStreet;
-    }
-
-    public void setFederalStreet(String federalStreet) {
-        this.federalStreet = federalStreet;
-    }
-
-    public String getFederalSuffix() {
-        return federalSuffix;
-    }
-
-    public void setFederalSuffix(String federalSuffix) {
-        this.federalSuffix = federalSuffix;
-    }
-
-    public String getFederalzZipcode() {
-        return federalzZipcode;
-    }
-
-    public void setFederalzZipcode(String federalzZipcode) {
-        this.federalzZipcode = federalzZipcode;
-    }
-
-    public Long getLicenseNum() {
-        return licenseNum;
-    }
-
-    public void setLicenseNum(Long licenseNum) {
-        this.licenseNum = licenseNum;
-    }
-
-    public String getLicenseType() {
-        return licenseType;
-    }
-
-    public void setLicenseType(String licenseType) {
-        this.licenseType = licenseType;
-    }
-
-    public String getMemberAState() {
-        return memberAState;
-    }
-
-    public void setMemberAState(String memberAState) {
-        this.memberAState = memberAState;
-    }
-
-    public String getMemberCity() {
-        return memberCity;
-    }
-
-    public void setMemberCity(String memberCity) {
-        this.memberCity = memberCity;
-    }
-
-    public String getMemberDateOfBirth() {
-        return memberDateOfBirth;
-    }
-
-    public void setMemberDateOfBirth(String memberDateOfBirth) {
-        this.memberDateOfBirth = memberDateOfBirth;
-    }
-
-    public String getMemberFirstName() {
-        return memberFirstName;
-    }
-
-    public void setMemberFirstName(String memberFirstName) {
-        this.memberFirstName = memberFirstName;
-    }
-
-    public String getMemberLastName() {
-        return memberLastName;
-    }
-
-    public void setMemberLastName(String memberLastName) {
-        this.memberLastName = memberLastName;
-    }
-
-    public String getMemberMiddleInitail() {
-        return memberMiddleInitail;
-    }
-
-    public void setMemberMiddleInitail(String memberMiddleInitail) {
-        this.memberMiddleInitail = memberMiddleInitail;
-    }
-
-    public Long getMemberPhone() {
-        return memberPhone;
-    }
-
-    public void setMemberPhone(Long memberPhone) {
-        this.memberPhone = memberPhone;
-    }
-
-    public String getMemberProviderSpeciality() {
-        return memberProviderSpeciality;
+    public RegistrationTO getTo() {
+        return to;
     }
 
-    public void setMemberProviderSpeciality(String memberProviderSpeciality) {
-        this.memberProviderSpeciality = memberProviderSpeciality;
+    public void setTo(RegistrationTO to) {
+        this.to = to;
     }
 
-    public String getMemberProviderType() {
-        return memberProviderType;
-    }
-
-    public void setMemberProviderType(String memberProviderType) {
-        this.memberProviderType = memberProviderType;
-    }
-
-    public String getMemberStreet() {
-        return memberStreet;
-    }
-
-    public void setMemberStreet(String memberStreet) {
-        this.memberStreet = memberStreet;
-    }
-
-    public String getMemberSuffix() {
-        return memberSuffix;
-    }
-
-    public void setMemberSuffix(String memberSuffix) {
-        this.memberSuffix = memberSuffix;
-    }
-
-    public String getMemberzZipcode() {
-        return memberzZipcode;
-    }
-
-    public void setMemberzZipcode(String memberzZipcode) {
-        this.memberzZipcode = memberzZipcode;
-    }
-
-    public Long getNpi() {
-        return npi;
-    }
-
-    public void setNpi(Long npi) {
-        this.npi = npi;
-    }
-
-    public String getProviderSpecialty() {
-        return providerSpecialty;
-    }
-
-    public void setProviderSpecialty(String providerSpecialty) {
-        this.providerSpecialty = providerSpecialty;
-    }
-
-    public Long getRegId() {
-        return regId;
-    }
-
-    public void setRegId(Long regId) {
-        this.regId = regId;
-    }
-
-    public Long getTaxId() {
-        return taxId;
-    }
-
-    public void setTaxId(Long taxId) {
-        this.taxId = taxId;
-    }
-
-    public String getTaxonomy() {
-        return taxonomy;
-    }
-
-    public void setTaxonomy(String taxonomy) {
-        this.taxonomy = taxonomy;
-    }
+    
 
 	public String showPage()
         {
@@ -363,16 +86,32 @@ private String federalFirstName;
 
     public String saveRegistration(){
           HttpServletRequest request = ServletActionContext.getRequest();
-                HttpSession ssession = request.getSession();
-       String status=registrationService.saveRegistration(memberStreet,  memberCity, memberAState, memberzZipcode,
+        try{
+       /*String status=registrationService.saveRegistration(memberStreet,  memberCity, memberAState, memberzZipcode,
                  memberPhone,  memberFirstName, memberLastName, memberMiddleInitail, memberSuffix,
                  memberProviderType, memberProviderSpeciality, memberDateOfBirth, federalFirstName,
                  federalLastName,  federalMiddleInitail, federalSuffix,  federalProviderType, federalProviderSpeciality,
                   federalDateOfBirth,  federalStreet,  federalCity, federalAState,  federalzZipcode,
                     federalPhone, licenseType, licenseNum,  expiryDate, npi,  taxId, exclusionsCode,
-                    exclusionsDesc,  exclusionsDate, providerSpecialty,  taxonomy, attachedFile);
-//        String status=registrationService.saveRegistration(request);
-        //System.out.println("status="+status);
+                    exclusionsDesc,  exclusionsDate, providerSpecialty,  taxonomy, attachedFile);*/
+         
+//                    System.out.println("StartRegistrationAction saveRegistration:::" +to.getMemberCity()+"-"+to.getMemberFirstName()+"-"+to.getMemberMiddleInitail()+"-"+to.getMemberPhone()
+//                +"-"+to.getMemberProviderSpeciality()+"-"+to.getMemberProviderType()+"-"+to.getMemberAState()+"-"+to.getMemberStreet()
+//                +"-"+to.getMemberSuffix()+"-"+to.getMemberzZipcode());
+
+                String status=registrationService.saveRegistration(to);
+                
+                System.out.println("status="+status);
+                if(status!=null && !status.equals("") && status.equalsIgnoreCase("SUCCESS")){
+                    request.setAttribute("SUBMIT_STATUS", "Registration Successfully Completed!");
+                }else{
+                    request.setAttribute("SUBMIT_STATUS", "Registration Not Success!");
+                }
+                
+         }catch(Exception e){
+             e.printStackTrace();
+         }
+        
         return SUCCESS;
     }
 

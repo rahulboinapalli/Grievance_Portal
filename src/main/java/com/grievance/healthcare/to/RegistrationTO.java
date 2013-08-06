@@ -19,7 +19,7 @@ import java.io.File;
     private String memberCity;
     private String memberAState;
     private String memberzZipcode;
-    private Long memberPhone;
+    private String memberPhone;
     //member personal info
     private String memberFirstName;
     private String memberLastName;
@@ -261,11 +261,11 @@ private String federalFirstName;
         this.memberMiddleInitail = memberMiddleInitail;
     }
 
-    public Long getMemberPhone() {
+    public String getMemberPhone() {
         return memberPhone;
     }
 
-    public void setMemberPhone(Long memberPhone) {
+    public void setMemberPhone(String memberPhone) {
         this.memberPhone = memberPhone;
     }
 

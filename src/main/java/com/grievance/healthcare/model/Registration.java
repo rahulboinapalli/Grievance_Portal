@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 import javax.persistence.Table;
 
@@ -20,7 +21,8 @@ import javax.persistence.Table;
  * @author sabbani
  */
 @Entity
-@Table(name="greiv_registration")
+@Table(name="greivance_registration")
+@NamedQuery(name="reg.findByStatus", query="from Registration where status = :status")
 public class Registration implements Serializable {
 
     @Id
@@ -101,6 +103,9 @@ public class Registration implements Serializable {
 
    @Column(name="attach_file")
     private byte[] attachedFile;
+
+    @Column(name="reg_status")
+    private String status;
 
   
     public Long getRegId() {
@@ -363,7 +368,12 @@ public class Registration implements Serializable {
         this.setAttachedFile(attachedFile);
     }
 
-   
+    public String getStatus() {
+        return status;
+    }
 
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
 }
