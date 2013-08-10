@@ -12,11 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import com.grievance.healthcare.to.GrievanceTO;
-import com.grievance.healthcare.utililty.JasonConverterUtils;
-import java.util.HashMap;
-import java.util.Map;
-import net.sf.json.JSONObject;
-import net.sf.json.JSONSerializer;
 
 // implements ServletRequestAware
 public class ProvGrievanceListAction extends ActionSupport implements ServletRequestAware{
@@ -48,7 +43,7 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
     private String contactPhone;
     private String comments;
 
-    public transient JSONSerializer serializer;
+   // public transient JSONSerializer serializer;
   
     public String getComments() {
         return comments;
@@ -141,8 +136,6 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                 HttpServletRequest request = ServletActionContext.getRequest();
                 HttpSession ssession = request.getSession();
                 HttpServletResponse response = ServletActionContext.getResponse();
-                JSONObject json = null;
-//                ServletOutputStream out = null;
                 
                 try {
                     /*memberId=Long.valueOf(request.getParameter("v_rid"));

@@ -1,7 +1,5 @@
 package com.grievance.healthcare.action;
 
-import com.grievance.healthcare.model.Grievance;
-import com.grievance.healthcare.service.GrievanceService;
 import com.grievance.healthcare.to.GrievanceTO;
 import java.util.List;
 
@@ -26,11 +24,13 @@ public class JSONDataAction extends ActionSupport{
         public List<GrievanceTO> getGreivanceList() {
             return greivanceList;
         }
-        Map<String, String> grievance = new HashMap<String, String> ();
+
+        Map<String, String> grievance = null;
 
 	public JSONDataAction(){
             System.out.println("start JSONDataAction constructor");
             greivanceList = new ArrayList<GrievanceTO>();
+            grievance = new HashMap<String, String> ();
 	    HttpServletRequest request = ServletActionContext.getRequest();
                HttpSession ssession = request.getSession();
                GrievanceTO grievanceTo =(GrievanceTO)ssession.getAttribute("grievance");

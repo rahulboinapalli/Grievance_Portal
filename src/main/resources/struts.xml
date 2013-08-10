@@ -102,7 +102,9 @@
 
                 <action name="getJSONResult" method="getJson"
                             class="com.grievance.healthcare.action.JSONDataAction">
-                        <result type="json" name="success" >provGrievanceList</result>
+                        <result type="json" >
+                            <param name="root">greivanceMap</param>
+                        </result>
                </action>
                
                 

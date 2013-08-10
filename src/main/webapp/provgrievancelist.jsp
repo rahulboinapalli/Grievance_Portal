@@ -46,7 +46,6 @@ $(document).ready(function()
 		var myDate = new Date();   var prettyDate =(myDate.getMonth()+1) + '/' + myDate.getDate() + '/' +  myDate.getFullYear();
 
                var mydata1 = '${grievance}';
-               alert("grievance to from session::"+mydata1);
                //var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
                // for(var i=0;i<=mydata1.length;i++) {
                   //  jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
