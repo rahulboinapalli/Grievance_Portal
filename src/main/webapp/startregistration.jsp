@@ -60,19 +60,20 @@
             }
         </style>
         <script type="text/javascript">
-            jQuery.timer = function(time, func, callback) {
-                var a = {timer: setTimeout(func, time), callback: null}
-                if (typeof(callback) == 'function') {
-                    a.callback = callback;
-                }
-                return a;
-            };
+            //jQuery.timer = function(time, func, callback) {
+                //var a = {timer: setTimeout(func, time), callback: null}
+                //if (typeof(callback) == 'function') {
+                   // a.callback = callback;
+                //}
+                //return a;
+            //};
         </script>
         <script type="text/javascript">
             $(document).ready(function()
             {
                var status = '${SUBMIT_STATUS}';
-               alert("status::-"+status);
+               if(status != null)
+               alert(status);
                 //timer();
                 links();
                 showprocessor();
@@ -106,7 +107,7 @@
                             OpenProcessor();
                             myTimer = $.timer(2500, function() {
                                 // Display hello message when timer goes off
-                                //alert("hello");
+                                //alert("Saved successfully!");
 //                                window.open("registrationack.jsp", '_self');
                                 window.open("startregistration.jsp", '_self');
                             });
@@ -655,10 +656,10 @@
                                             <td width="40%">
                                                 <input type=checkbox id="terms" name="terms1" > I accept the terms and conditions</input></td>
                                             <td align="center">
-                                                <input type="submit" value="Register" id="submit" onmouseover="over_button('SubmitReg', 'images/Register_Down.png')"
-                                                       onmouseout="up_button('SubmitReg', 'images/Register_Up.png')" onclick="submitForm('saveRegistration');"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></input>
-                                                <!--<a href="saveRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')" onclick="submitForm('saveRegistration');"
-                                                   onMouseOut="up_button('SubmitReg', 'images/Register_Up.png')"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></a>-->
+                                                <input type="submit" value="Register" name="SubmitReg" id="SubmitReg" onmouseover="over_button('SubmitReg', 'images/Register_Down.png')"
+                                                       onmouseout="up_button('SubmitReg', 'images/Register_Up.png')" src="./images/Register_Up.png" onclick="submitForm('saveRegistration');"></input>
+                                                <%--<a href="saveRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')" onclick="submitForm('saveRegistration');"
+                                                   onMouseOut="up_button('SubmitReg', 'images/Register_Up.png')"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></a>--%>
 
                                             </td>
                                             <td align="right">

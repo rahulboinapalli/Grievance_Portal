@@ -73,6 +73,9 @@ public class StartRegistrationAction extends ActionSupport{
 
 	public String showPage()
         {
+            HttpServletRequest request = ServletActionContext.getRequest();
+
+            request.setAttribute("SUBMIT_STATUS", "Registration Successfully Completed!");
             return SUCCESS;
         }
 
@@ -100,7 +103,8 @@ public class StartRegistrationAction extends ActionSupport{
 //                +"-"+to.getMemberSuffix()+"-"+to.getMemberzZipcode());
 
                 String status=registrationService.saveRegistration(to);
-                
+
+
                 System.out.println("status="+status);
                 if(status!=null && !status.equals("") && status.equalsIgnoreCase("SUCCESS")){
                     request.setAttribute("SUBMIT_STATUS", "Registration Successfully Completed!");

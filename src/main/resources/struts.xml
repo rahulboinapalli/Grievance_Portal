@@ -8,7 +8,7 @@
    <constant name="struts.devMode" value="true" />
     
 	<!-- Configuration for the default package. -->
-	<package name="default" extends="struts-default" >	
+	<package name="default" extends="struts-default,json-default" >
 		
 		<action name="index" class="com.grievance.healthcare.action.UserAction" method="list">
 			<result name="success">/jsp/users.jsp</result>
@@ -58,15 +58,15 @@
 		</action>
 
 		<action name="provGrievanceList" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="showPage">
-			<result name="success">/provgrievancelist.jsp</result>
-		</action>
+			<result name="success" >/provgrievancelist.jsp</result>
+                </action>
+                
                 <action name="savegrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="saveGrievanceDetails">
                     <!-- <interceptor-ref name="basicStack"></interceptor-ref>
                      <interceptor-ref name="fileUpload">
                         <param name="maximumSize">10240</param>
                         <param name="allowedTypes">text/plain,image/jpeg,image/gif,image/jpg</param>
                      </interceptor-ref>-->
-                       
                        <result name="success" type="redirectAction">
 				<param name="actionName">provGrievanceList</param>
 			</result>
@@ -79,7 +79,10 @@
 			<result name="success">/startregistration.jsp</result>
 		</action>
                 <action name="saveRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="saveRegistration">
-			<result name="success">startRegistration</result>
+			<result name="success" type="redirectAction">
+				<param name="actionName">startRegistration</param>
+			</result>
+                       <!-- <result name="success">/startregistration.jsp</result> -->
                         
 		</action>
 
@@ -97,6 +100,12 @@
 			<result name="success">/index.jsp</result>
 		</action>
 
+                <action name="getJSONResult" method="getJson"
+                            class="com.grievance.healthcare.action.JSONDataAction">
+                        <result type="json" name="success" >provGrievanceList</result>
+               </action>
+               
+                
 </package>
 
 </struts>

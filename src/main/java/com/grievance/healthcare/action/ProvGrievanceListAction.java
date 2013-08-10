@@ -11,6 +11,12 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
+import com.grievance.healthcare.to.GrievanceTO;
+import com.grievance.healthcare.utililty.JasonConverterUtils;
+import java.util.HashMap;
+import java.util.Map;
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
 
 // implements ServletRequestAware
 public class ProvGrievanceListAction extends ActionSupport implements ServletRequestAware{
@@ -20,11 +26,18 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
     private String attachFileContentType;
     private String attachFileFileName;
 
+    private GrievanceTO grievanceTo;
 
+    public GrievanceTO getGrievanceTo() {
+        return grievanceTo;
+    }
+
+    public void setGrievanceTo(GrievanceTO grievanceTo) {
+        this.grievanceTo = grievanceTo;
+    }
     List<Grievance> list = new ArrayList<Grievance>();
     private GrievanceService grievanceService;
     private Grievance grievance;
-    
     
     private Long memberId;
     private String SSN;
@@ -35,7 +48,7 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
     private String contactPhone;
     private String comments;
 
-//    public transient JSONSerializer serializer;
+    public transient JSONSerializer serializer;
   
     public String getComments() {
         return comments;
@@ -128,10 +141,11 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                 HttpServletRequest request = ServletActionContext.getRequest();
                 HttpSession ssession = request.getSession();
                 HttpServletResponse response = ServletActionContext.getResponse();
+                JSONObject json = null;
 //                ServletOutputStream out = null;
                 
                 try {
-                   /* memberId=Long.valueOf(request.getParameter("v_rid"));
+                    /*memberId=Long.valueOf(request.getParameter("v_rid"));
                     SSN =request.getParameter("v_npi");
                     memberName = request.getParameter("v_pname");
                     requestType = request.getParameter("v_type");
@@ -143,12 +157,19 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                   
                    List<Grievance> grievList =grievanceService.saveGrievanceDetails(memberId,SSN,
                              memberName,requestType ,date,emailAddress,contactPhone,comments,getAttachFile(),list);
-                   
-                    StringBuffer strBuff=new StringBuffer("");
+                   grievanceTo = new GrievanceTO();
+                   grievanceTo.setMemberId(memberId);
+                   grievanceTo.setSSN(SSN);
+                   grievanceTo.setMemberName(memberName);
+                   grievanceTo.setRequestType(requestType);
+                   grievanceTo.setDate(date);
+                   grievanceTo.setEmailAddress(emailAddress);
+                   grievanceTo.setContactPhone(contactPhone);
+                   grievanceTo.setComments(comments);
+                   System.out.println(grievanceTo);
+                    /*StringBuffer strBuff=new StringBuffer("");
                     if(grievList != null && grievList.size() > 0){
-                       
                         greivanceList = new ArrayList<String>();
-//                        for(Grievance greivanceObj:grievList){
 //                            var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
                             strBuff.append("[")
                                     .append("{")
@@ -168,23 +189,12 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                                     .append("}").append("]");
                                  greivanceList.add(strBuff.toString());
 
-//                        }
+                    }*/
+                     ssession.setAttribute("grievanceList", greivanceList);
+                    ssession.setAttribute("grievance", grievanceTo);
 
-                    }
-                    List<String> grievListAll= (List<String>)ssession.getAttribute("grievanceList");
-                                   if(grievListAll != null && grievListAll.size() > 0){
-                                       grievListAll.add(strBuff.toString());
-                                       greivanceList.addAll(grievListAll);
-                                   }else{
-                                        grievListAll = new ArrayList<String>();
-                                        grievListAll.add(strBuff.toString());
-                                        greivanceList.addAll(grievListAll);
-                                   }
-                    
-                    ssession.setAttribute("grievanceList", greivanceList);
-                    ssession.setAttribute("grievanceListAll", grievListAll);
+                   // response.getOutputStream().print(strBuff.toString());
 
-//                    response.getOutputStream().print(SUCCESS);
                 } catch (Exception e) {
                     e.printStackTrace();
                    return "failed";

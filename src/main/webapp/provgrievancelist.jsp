@@ -7,8 +7,10 @@
 <!--[if !IE]>--><html lang="en"><!--<![endif]-->
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <sj:head jqueryui="true"/>
 <title>EHR - Provider Grievance</title>
 <link href="page_style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" />
@@ -38,11 +40,19 @@
 <script type="text/javascript">
 $(document).ready(function()
 	{
-		timer();
+		//timer();
 		links();
 		showprocessor();
 		var myDate = new Date();   var prettyDate =(myDate.getMonth()+1) + '/' + myDate.getDate() + '/' +  myDate.getFullYear();
+
+               var mydata1 = '${grievance}';
+               alert("grievance to from session::"+mydata1);
+               //var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
+               // for(var i=0;i<=mydata1.length;i++) {
+                  //  jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
+                //}
 	}
+        
 );
 
 $(function() {
@@ -57,10 +67,8 @@ $(function() {
               buttons: {
                'Save': function() {
 
-                document.forms[0].action = 'savegrievance';
-                document.forms[0].submit();
 
-               /* var v_rid=window.document.getElementById("rid").value;
+                /*var v_rid=window.document.getElementById("rid").value;
                 var v_npi=window.document.getElementById("npi").value;
                 var v_pname=window.document.getElementById("pname").value;
                 var v_date=window.document.getElementById("datepicker").value;
@@ -70,25 +78,30 @@ $(function() {
                 var v_comments=window.document.getElementById("comments").value;
                 var v_attachFile=window.document.getElementById("attachFile").value;
 
-                                            alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
+                alert("v_rid:="+v_rid+" : v_npi= "+v_npi+" :v_pname= "+v_pname+" :v_type="+v_type+" :v_comments="+v_comments);
+               // var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
+                
+//required comments strart from here
                     jQuery.ajax({
                         url:'savegrievance',
                         type:'post',
                         data: "v_rid="+v_rid+"&v_npi="+v_npi+"&v_pname="+v_pname+"&v_date="+v_date+"&v_type="+v_type+"&v_email="+v_email+"&v_phone="+v_phone+"&v_comments="+v_comments+"&v_attachFile="+v_attachFile,
                         success:function(data){
                             var response = data.responseText;
+                            alert("response= ::: "+response);
+                            for(var i=0;i<=response.length;i++) {
+                                jQuery("#list4").jqGrid('addRowData',i+1,response[i])
+                            }
                                     alert("Transaction successfully saved!");
                                     $("#dialog").dialog("destroy");
-                                var mydata1 = [ {rid:v_rid,pnpi:v_npi,pname:v_pname,pyear:"Self",gtype:v_type,date:v_date,status:"Submitted"}];
-                                for(var i=0;i<=mydata1.length;i++) {
-                                        jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
-                                    }
-                                    
+
 
                         }
                     });*/
+        //required comments ends  here
+                    document.forms[0].action = 'savegrievance';
+                    document.forms[0].submit();
 
-               
                },
 
                   Cancel: function() {
@@ -96,7 +109,7 @@ $(function() {
                   }
         }
           });
-       
+
 });
 
 function submitForm(method){
@@ -107,7 +120,7 @@ function submitForm(method){
 
 </script>
 <script type="text/javascript">
- jQuery().ready(function (){
+ /*jQuery().ready(function (){
  jQuery("#list4").jqGrid({
  datatype: "local", height:100,
  colNames:['Member ID','Member SSN', 'Member Name','Insurance Type','Grievance Type', 'Date','Status'],
@@ -128,7 +141,33 @@ function submitForm(method){
  //for(var i=0;i<=mydata1.length;i++)
 //	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
  }
+ );*/
+  jQuery().ready(function (){
+  jQuery("#list4").jqGrid({
+  url:'/GrievanceApp/getJSONResult.action',
+  datatype: "json",
+  height:100,
+ colNames:['Member ID','Member SSN', 'Member Name','Insurance Type','Grievance Type', 'Date','Status'],
+ colModel:[ {name:'memberId',index:'memberId', width:50, sorttype:"int",align:"center"},
+ {name:'ssn',index:'ssn', width:50, sorttype:"string",align:"center"},
+ {name:'memberName',index:'memberName', width:50, sorttype:"int",align:"center"},
+ {name:'requestType',index:'requestType', width:50, sorttype:"int",align:"center"},
+ {name:'gtype',index:'gtype', width:50,sorttype:"date",align:"center"},
+ {name:'requestDate',index:'requestDate', width:50, align:"center",sorttype:"date",align:"center"},
+ {name:'status',index:'status', width:50, align:"center",formatter:formateadorimg1}],
+ pager: '#pager1',
+ rowNum:4,
+ autowidth: true,
+ rowList:[2,4,6],
+ viewrecords: true,
+ gridview: true,
+ caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false});
+ //var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
+ //for(var i=0;i<=mydata1.length;i++)
+//	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
+ }
  );
+
 
 		function formateadorimg1(cellvalue, options, rowObject) {
 
@@ -144,9 +183,9 @@ function submitForm(method){
 		   {
 			   var myTimer = {};
 			   OpenProcessor();
-				myTimer = $.timer(2500,function(){
-					window.open("grievancedetails.jsp",'_self');
-				});
+				//myTimer = $.timer(2500,function(){
+				//	window.open("grievancedetails.jsp",'_self');
+				//});
 
 		   }
 
@@ -210,7 +249,7 @@ function submitForm(method){
      <div class="section_w940">
     	<div class="cleaner"></div>
     </div>
-    
+
 </div>
 <div class="processor" id="showprocessor">
 	<table><tr><td><img src="images/red-processor-small1.gif"/></td><td><h4 class="redclass">&nbsp;&nbsp;Processing Request....</h4></td><tr></table>
@@ -283,22 +322,20 @@ function submitForm(method){
 				<td>:</td>
                                 <td><input type="file" name="attachFile" id="attachFile"/></td>-->
                                 <td><s:file name="attachFile" label="Attach File" size="40" /></td>
-                                
+
 			</tr>
 
 		</table>
 	</fieldset>
     <div id="buttons">
-        
+
          <!--<button class="smallButton primaryCta" id="savegrievance" type="button" onclick="submitForm('savegrievance');" value="savegrievance">
                                 <span>Save</span></button>
         <button tabindex="3" class="smallButton primaryCta" id="signIn" type="button" value="signIn">
-                                <span>Cancel</span></button>-->
-
-    </div>
+                                <span>Cancel</span></button>
+         -->
+       </div>
 </form>
-
 </div>
 </body>
 </html>
-

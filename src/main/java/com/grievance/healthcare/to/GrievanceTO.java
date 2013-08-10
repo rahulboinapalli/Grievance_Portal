@@ -22,6 +22,8 @@ public class GrievanceTO {
     private String emailAddress;
     private String contactPhone;
     private String comments;
+    private String gType="Self";
+    private String status="Currunt";
 
     /**
      * @return the memberId
@@ -133,6 +135,22 @@ public class GrievanceTO {
      */
     public void setComments(String comments) {
         this.comments = comments;
+    }
+
+    public String getgType() {
+        return gType;
+    }
+
+    public void setgType(String gType) {
+        this.gType = gType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
 

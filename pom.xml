@@ -35,7 +35,18 @@
     	<artifactId>struts2-core</artifactId>
     	<version>2.2.1</version>
     </dependency>
-        <dependency>
+    <!--<dependency>
+	<groupId>com.jgeppert.struts2.jquery</groupId>
+	<artifactId>struts2-jquery-plugin</artifactId>
+	<version>2.2.1</version>
+    </dependency>-->
+    <!-- Struts 2 JSON Plugins -->
+    <dependency>
+          <groupId>org.apache.struts</groupId>
+	  <artifactId>struts2-json-plugin</artifactId>
+	  <version>2.2.1</version>
+    </dependency>
+    <dependency>
     	<groupId>org.apache.struts</groupId>
     	<artifactId>struts2-spring-plugin</artifactId>
     	<version>2.2.1</version>
@@ -137,7 +148,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
         </dependency>
-
         <dependency>
         	<groupId>org.hibernate</groupId>
         	<artifactId>hibernate-annotations</artifactId>
@@ -145,7 +155,23 @@
         	<type>jar</type>
         	<scope>compile</scope>
         </dependency>
-       
+       <!-- <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0</version>
+        </dependency> -->
+        <!-- Struts 2 JSON Plugins -->
+       <!-- <dependency>
+              <groupId>org.apache.struts</groupId>
+              <artifactId>struts2-json-plugin</artifactId>
+              <version>2.2.1</version>
+        </dependency>-->
+
+     <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>json-lib</artifactId>
+      <version>2.1</version>
+    </dependency>
   </dependencies>
   <developers>
 	<developer>
@@ -177,4 +203,7 @@
       </plugin>
       </plugins>
   </build>
+    <properties>
+        <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
+    </properties>
 </project>

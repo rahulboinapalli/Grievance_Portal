@@ -23,7 +23,7 @@ public class GrievanceServiceImpl implements GrievanceService{
     @Override
     public List<Grievance> saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String requestedDate,
             String emailAddress,String contactPhone,String comments,File attachFile,List<Grievance> list) {
-        
+        System.out.println("saveGrievanceDetails GrievanceServiceImple::: start ");
         try{
            
             grievance = new Grievance();
@@ -46,6 +46,7 @@ public class GrievanceServiceImpl implements GrievanceService{
                     list = new ArrayList<Grievance>();
                list.add(grievance);
             }
+            System.out.println("saveGrievanceDetails GrievanceServiceImple::: end "+id);
         }catch(Exception e){
             e.printStackTrace();
         }
