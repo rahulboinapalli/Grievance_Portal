@@ -19,6 +19,7 @@
         <script type="text/javascript" src="ui/jquery.effects.core.js"></script>
         <link type="text/css" href="jquery_dialog.css" rel="stylesheet" />
         <script type="text/javascript" src="js/slidedeck.jquery.lite.js"></script>
+        <script type="text/javascript" src="ui/jquery.ui.datepicker.js"></script>
         
         <style type="text/css">
             div#users-contain { width: 650px; margin: 10px 0; }
@@ -67,13 +68,19 @@
                 //}
                 //return a;
             //};
+            $(function() {
+		$("#exclusionsDate").datepicker();
+                $("#federalDateOfBirth").datepicker();
+                $("#expiryDate").datepicker();
+
+            });
         </script>
         <script type="text/javascript">
             $(document).ready(function()
             {
                var status = '${SUBMIT_STATUS}';
-               if(status != null)
-               alert(status);
+               if(status != null && status != "")
+                alert(status);
                 //timer();
                 links();
                 showprocessor();
@@ -283,7 +290,7 @@
 
             });
         function submitForm(method){
-            alert("method="+method);
+           // alert("method="+method);
             document.forms[0].action = method;
             document.forms[0].submit();
         }

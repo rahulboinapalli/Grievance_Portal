@@ -46,6 +46,18 @@
 
             }
         </script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+               var status = '${SUBMIT_STATUS}';
+               if(status != null && status != "")
+                alert(status);
+                //timer();
+//                links();
+//                showprocessor();
+            }
+            );
+        </script>
     </head>
     <body>
         <div id="templatemo_banner_wrapper">
@@ -76,22 +88,24 @@
                     <div id="paddedContent">
                         <div id="tabs">
                             <ul>
-                                <li><a href="http://localhost:8080/Grievance_Portal/signon.jsp">Sign in</a> </li>
-                                <li class="active"><a href="http://localhost:8080/Grievance_Portal/Signup.jsp">Create an account</a></li>
+                                <li><a href="signon">Sign in</a> </li>
+                                <li class="active"><a href="signup">Create an account</a></li>
                             </ul>
                         </div>
-                        <form name="signUpForm" class="ajaxForm isValidated" id="signUpForm" action="http://localhost:8080/Grievance_Portal/Signup.jsp" method="post">
+                        <form class="ajaxForm isValidated" id="signUpForm" action="saveuser" method="post">
                             <div id="partnerLogins1">
                                 <div id="alternativeSignInTitle">Skip this step by signing in with your Microsoft or Facebook account</div>
                                 <a tabindex="4" id="microsoftLogin" href="https://login.skype.com/login/oauth/microsoft?application=account">Microsoft account</a><p id="microsoftLoginHint">A Messenger, Hotmail or Outlook.com account.</p>
                                 <a tabindex="5" id="facebookLogin" href="https://login.skype.com/login/oauth/facebook?application=account">Facebook</a></div>
                             <div class="formContainer">
+
                                 <div class="fieldRow noMargin">
                                     <div class="specialRow leftRow">
                                         <label for="firstName">First name*</label>
-                                        <input name="firstname" class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="firstName" type="text" maxlength="50">
-                                        <div class="fieldError"></div></div><div class="specialRow rightRow"><label for="lastName">Last name*</label> 
-                                        <input name="lastname" class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="lastName" type="text" maxlength="50" >
+                                        <input name="to.firstName" class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="firstName" type="text" maxlength="50">
+                                        <div class="fieldError"></div></div>
+                                         <div class="specialRow rightRow"><label for="lastName">Last name*</label>
+                                        <input name="to.lastName" class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="lastName" type="text" maxlength="50" >
                                         <div class="fieldError">
 
                                         </div>
@@ -99,13 +113,30 @@
                                     </div>
 
                                 </div>
+                             <div class="fieldRow noMargin">
+                                 <div class="specialRow leftRow">
+                                          <label for="login">Login Name*</label>
+                                        <input name="to.loginName"class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="login" type="text" ></div>
+                                       <div class="fieldError"></div>
+                                       <div class="specialRow rightRow">
+                                           <label for="login">Password*</label>
+                                        <input name="to.password" class="Skypelogin_Wbr_Name noMessageWhenEmpty" id="pwd" type="text" ></div>
+                                           <div class="fieldError">
+
+                                        </div>
+
+                                   </div>
                                 <div class="fieldRow noMargin">
+
                                     <div class="specialRow leftRow">
-                                        <label for="email">Your email address*</label>
-                                        <input name="email" class="Skypelogin_Wbr_Email hasFormat fillFirst requires-emailRepeat noMessageWhenEmpty mustBeLtr" id="email" type="text" ></div>
+
+                                    <label for="email">Your email address*</label>
+
+
+                                        <input name="to.emailAddress" class="Skypelogin_Wbr_Email hasFormat fillFirst requires-emailRepeat noMessageWhenEmpty mustBeLtr" id="email" type="text" ></div>
                                     <div class="specialRow rightRow disabled">
-                                        <label for="emailRepeat">Repeat email*</label> 
-                                        <input name="email_repeat" disabled="disabled" class="Skypelogin_Wbr_Email hasFormat fillSecond requires-email clearDetailsOnBlur noMessageWhenEmpty mustBeLtr" id="emailRepeat" type="text"></div>
+                                        <label for="emailRepeat">Repeat email*</label>
+                                        <input name="to.repeatEmail" disabled="disabled" class="Skypelogin_Wbr_Email hasFormat fillSecond requires-email clearDetailsOnBlur noMessageWhenEmpty mustBeLtr" id="emailRepeat" type="text"></div>
                                     <div class="fieldDetails clear"></div>
                                     <div class="fieldError clear"></div>
 
@@ -121,7 +152,7 @@
                                 </div>
                                 <div class="fieldRow labelLeft">
                                     <label for="day">Birthday</label>
-                                    <select name="day" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday" id="day">
+                                    <select name="to.birthday" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday" id="day">
                                         <option selected="selected" value="">Day</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -155,7 +186,7 @@
                                         <option value="30">30</option>
                                         <option value="31">31</option>
                                     </select>
-                                    <select name="month" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday" id="month">
+                                    <select name="to.month" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday" id="month">
                                         <option selected="selected" value="">Month</option>
                                         <option value="1">January</option>
                                         <option value="2">February</option>
@@ -171,10 +202,10 @@
                                         <option value="12">December</option>
                                     </select>
                                     <label class="inRow" for="year">Year</label>
-                                    <input name="year" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday short" id="year" type="text" size="4" maxlength="4" autocomplete="off">
+                                    <input name="to.year" class="noMessageWhenEmpty Skypelogin_Wbr_Birthday short" id="year" type="text" size="4" maxlength="4" autocomplete="off">
                                     <div class="fieldError"></div>
                                     <label for="gender">Gender</label>
-                                    <select name="gender" class="noMessageWhenEmpty Skypelogin_Wbr_Gender" id="gender">
+                                    <select name="to.gender" class="noMessageWhenEmpty Skypelogin_Wbr_Gender" id="gender">
                                         <option selected="selected" value="">Select</option>
                                         <option value="1">Male</option>
                                         <option value="2">Female</option>
@@ -184,7 +215,7 @@
                                 </div>
                                 <div class="fieldRow labelLeft">
                                     <label for="country">Country/Region*</label>
-                                    <select name="country" class="noMessageWhenEmpty Skypelogin_Wbr_Country" id="country">
+                                    <select name="to.contryRegion"  value=""class="noMessageWhenEmpty Skypelogin_Wbr_Country" id="country">
                                         <option value="">Select</option>
                                         <option selected="selected" value="us">United States</option>
                                     </select>
@@ -195,11 +226,11 @@
                                 </div>
                                 <div class="fieldRow labelLeft">
                                     <label for="city">City</label>
-                                    <input name="city" class="noMessageWhenEmpty Skypelogin_Wbr_City" id="city" type="text" autocomplete="off">
+                                    <input name="to.city" class="noMessageWhenEmpty Skypelogin_Wbr_City" id="city" type="text" autocomplete="off">
                                     <div class="fieldError"></div></div>
                                 <div class="fieldRow labelLeft noMargin">
                                     <label for="country">Language*</label>
-                                    <select name="lang" class="noMessageWhenEmpty Skypelogin_Wbr_Language" id="lang">
+                                    <select name="to.languege" class="noMessageWhenEmpty Skypelogin_Wbr_Language" id="lang">
                                         <option value="">Select</option>
                                         <option selected="selected" value="en">English</option>
                                     </select>
@@ -209,8 +240,8 @@
                             <div class="formContainer">
                                 <div class="fieldRow noMargin">
                                     <label for="skypeName">Skype Name*</label>
-                                    <input name="skypeNameHelper" id="skypeNameHelper" type="hidden" value="false"> 
-                                    <input name="new_username" class="hasFormat mandatory requires-firstName requires-lastName requires-skypeNameHelper validateOnFocus noMessageWhenEmpty mustBeLtr" id="skypeName" type="text" autocomplete="off"> 
+                                    <input name="to.skypeNameHelper" id="skypeNameHelper" type="hidden" value="false">
+                                    <input name="to.skypeName" class="hasFormat mandatory requires-firstName requires-lastName requires-skypeNameHelper validateOnFocus noMessageWhenEmpty mustBeLtr" id="skypeName" type="text" autocomplete="off">
                                     <span class="helpButton topRight" rel="helpBubble-0"></span>
                                     <div class="fieldError"></div>
                                     <div class="fieldDetails"></div>
@@ -218,12 +249,12 @@
                                 </div>
                                 <div class="fieldRow noMargin">
                                     <div class="specialRow leftRow">
-                                        <label for="password">Password*</label> 
-                                        <input name="password" class="hasFormat mandatory fillFirst requires-repeatPassword noMessageWhenEmpty" id="password" type="password" autocomplete="off">
+                                        <label for="password">Password*</label>
+                                        <input name="to.skypePassword" class="hasFormat mandatory fillFirst requires-repeatPassword noMessageWhenEmpty" id="password" type="password" autocomplete="off">
                                     </div>
                                     <div class="specialRow rightRow disabled">
                                         <label for="repeatPassword">Repeat password*</label>
-                                        <input name="repeat_password" disabled="disabled" class="hasFormat mandatory fillSecond requires-password noMessageWhenEmpty" id="repeatPassword" type="password" autocomplete="off">
+                                        <input name="to.repeatPassword" disabled="disabled" class="hasFormat mandatory fillSecond requires-password noMessageWhenEmpty" id="repeatPassword" type="password" autocomplete="off">
                                     </div>
                                     <div class="fieldError clear"></div>
                                     <div class="fieldDetails clear"></div>
@@ -239,15 +270,15 @@
                         <input name="checkOnSubmit" id="checkOnSubmit" type="hidden" value="formError" >
                         <input name="id" type="hidden" value="6270000000023887836" >
                         <input name="partner_id" type="hidden" value="8494fd242840c79b12e7eb62e2b10868" >
-                        <input name="application" type="hidden" value="account" > 
-                        <input name="return_url" type="hidden" value=""> 
-                        <input name="token" type="hidden" value="" > 
+                        <input name="application" type="hidden" value="account" >
+                        <input name="return_url" type="hidden" value="">
+                        <input name="token" type="hidden" value="" >
                         <input name="intsrc" type="hidden" value="" >
                         <input name="intcmp" type="hidden" value="" >
                         <input name="cm_mmc" type="hidden" value="" >
                         <input name="nu" type="hidden" value="" >
                         <input name="acq" id="acq" type="hidden" >
-                        <div id="cookieFlashDiv"><div id="player"></div></div> 
+                        <div id="cookieFlashDiv"><div id="player"></div></div>
                         <button class="smallButton primaryCta checkOnSubmit" id="signUp" type="submit"> <span>Submit</span></button>
                         <div class="submitSpinner hidden"></div></div>
                     <div>

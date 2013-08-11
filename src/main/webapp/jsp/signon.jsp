@@ -45,6 +45,15 @@ for (var i=0; i < document.loginfrm.usertype.length; i++)
 
 }
 </script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+       var status = '${SUBMIT_STATUS}';
+       if(status != null && status != "")
+        alert(status);
+    }
+    );
+</script>
 </head>
 <body>
      <div id="templatemo_banner_wrapper">

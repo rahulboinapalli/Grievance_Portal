@@ -46,7 +46,7 @@
                 <value>com.grievance.healthcare.model.User</value>
                 <value>com.grievance.healthcare.model.Grievance</value>
                 <value>com.grievance.healthcare.model.Registration</value>
-           
+                <value>com.grievance.healthcare.model.SignIn</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -85,6 +85,14 @@
     	<property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <bean name="signInService" class="com.grievance.healthcare.service.SignInServiceImpl">
+        <property name="signInDAO" ref="signInDAO" />
+    </bean>
+
+    <bean name="signInDAO" class="com.grievance.healthcare.dao.SignInDAOImpl">
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
     <bean id="transactionManager"
         class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />

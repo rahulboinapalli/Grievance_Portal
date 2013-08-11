@@ -86,6 +86,13 @@
 			<result name="success">/jsp/Signup.jsp</result>
 		</action>
 
+                <action name="saveuser" class="com.grievance.healthcare.action.SignupAction" method="saveDetails">
+			<result name="success" type="redirectAction">
+				<param name="actionName">signon</param>
+			</result>
+                        <result name="failure">/jsp/error.jsp</result>
+		</action>
+
                 <action name="startRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="showPage">
 			<result name="success">/jsp/startregistration.jsp</result>
 		</action>

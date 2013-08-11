@@ -267,25 +267,25 @@ function submitForm(method){
 			<tr>
 				<td>Member ID*</td>
 				<td>:</td>
-				<td><input type="text" name="memberId" id="rid" maxlength="10" size="10"/></td>
+				<td><input type="text" name="grievanceTo.memberId" id="rid" maxlength="10" size="10"/></td>
 
 			</tr>
 			<tr>
 				<td>SSN *</td>
 				<td>:</td>
-				<td><input type="text" name="SSN" id="npi" maxlength="10" size="10"/></td>
+				<td><input type="text" name="grievanceTo.SSN" id="npi" maxlength="10" size="10"/></td>
 
 			</tr>
 			<tr>
 				<td>Member Name *</td>
 				<td>:</td>
-				<td><input type="text" name="memberName" id="pname" maxlength="30" size="30" /></td>
+				<td><input type="text" name="grievanceTo.memberName" id="pname" maxlength="30" size="30" /></td>
 
 			</tr>
 			<tr>
 				<td>Request Type*</td>
 				<td>:</td>
-                                <td><select id="type" name="requestType">
+                                <td><select id="type" name="grievanceTo.requestType">
 						<option>Select an option</option>
 						<option>Appeal</option>
 						<option>Compliant</option>
@@ -298,42 +298,34 @@ function submitForm(method){
 			<tr>
 				<td>Date *</td>
 				<td>:</td>
-                                <td><input type="text" name="date" id="datepicker"></td>
+                                <td><input type="text" name="grievanceTo.date" id="datepicker"></td>
 
 			</tr>
 			<tr>
 				<td>E-mail Address *</td>
 				<td>:</td>
-				<td><input type="text" name="emailAddress" id="email" size="30"/></td>
+				<td><input type="text" name="grievanceTo.emailAddress" id="email" size="30"/></td>
 			</tr>
 			<tr>
 				<td>Contact Phone *</td>
 				<td>:</td>
-				<td><input type="text" name="contactPhone" id="phone"  /></td>
+				<td><input type="text" name="grievanceTo.contactPhone" id="phone"  /></td>
 			</tr>
 			<tr valign="top">
 				<td>Comments *</td>
 				<td>:</td>
-                                <td><textarea  rows="5" cols="55" name="comments" id="comments"> </textarea></td>
+                                <td><textarea  rows="5" cols="55" name="grievanceTo.comments" id="comments"> </textarea></td>
 			</tr>
 			<tr valign="top">
-				<!--<td>Attach File</td>
-				<td>:</td>
-                                <td><input type="file" name="attachFile" id="attachFile"/></td>-->
-                                <td><s:file name="attachFile" label="Attach File" size="40" /></td>
-
+                                <td>&nbsp;</td>
+				<td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td><s:file name="grievanceTo.attachFile" label="Attach File" size="40" /></td>
 			</tr>
-
 		</table>
 	</fieldset>
     <div id="buttons">
-
-         <!--<button class="smallButton primaryCta" id="savegrievance" type="button" onclick="submitForm('savegrievance');" value="savegrievance">
-                                <span>Save</span></button>
-        <button tabindex="3" class="smallButton primaryCta" id="signIn" type="button" value="signIn">
-                                <span>Cancel</span></button>
-         -->
-       </div>
+    </div>
 </form>
 </div>
 </body>
