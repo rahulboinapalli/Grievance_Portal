@@ -7,9 +7,9 @@ package com.grievance.healthcare.service;
 import com.grievance.healthcare.dao.RegistrationDAO;
 import com.grievance.healthcare.model.Registration;
 import com.grievance.healthcare.to.RegistrationTO;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
+import com.grievance.healthcare.utililty.ApplicationConstants;
+import com.grievance.healthcare.utililty.DateUtils;
+import java.lang.reflect.InvocationTargetException;
 /**
  *
  * @author sabbani
@@ -18,25 +18,22 @@ public class RegistrationServiceImpl implements RegistrationService{
     private RegistrationDAO registrationDAO;
     private Registration registration;
     
-    /*public String saveRegistration(String memberStreet, String memberCity,String memberState,String memberZipcode,
-            Long memberPhone, String memberFirstName,String memberLastName,String memberMiddleInitail,
-            String memberSuffix,String memberProviderType,String memberProviderSpeciality,String memberDateOfBirth,
-            String federalFirstName, String federalLastName, String federalMiddleInitail,String federalSuffix,
-            String federalProviderType,String federalProviderSpeciality, String federalDateOfBirth,
-            String  federalStreet,String  federalCity,String federalAState,String  federalZipcode, Long  federalPhone,
-            String licenseType,Long licenseNum, String expiryDate,Long npi, Long taxId,String exclusionsCode,
-            String exclusionsDesc, String exclusionsDate,String providerSpecialty, String taxonomy,File attachedFile)*/
     @Override
-    public String saveRegistration(RegistrationTO to)
+    public String saveRegistration(RegistrationTO to) throws Exception, InvocationTargetException
     {
         Long id=0L;
        try{
             registration = new Registration();
         registration.setExclusionsCode(to.getExclusionsCode());
-        registration.setExclusionsDate(new Timestamp(new Date().getTime()));
+//        registration.setExclusionsDate(new Timestamp(new Date().getTime()));
+        System.out.println("to exclusion date:::-"+ to.getExclusionsDate());
+        registration.setExclusionsDate(DateUtils.convertStringToTimestamp(to.getExclusionsDate()));
+        System.out.println("registration exclusion date:::-"+ registration.getExclusionsDate());
         registration.setExclusionsDesc(to.getExclusionsDesc());
         registration.setFederalCity(to.getFederalCity());
-        registration.setFederalDateOfBirth(new Timestamp(new Date().getTime()));
+        System.out.println("to federal date:::-"+ to.getFederalDateOfBirth());
+        registration.setFederalDateOfBirth(DateUtils.convertStringToTimestamp(to.getFederalDateOfBirth()));
+        System.out.println("registration federal date:::-"+ registration.getFederalDateOfBirth());
         registration.setFederalFirstName(to.getFederalFirstName());
         registration.setFederalLastName(to.getFederalFirstName());
         registration.setFederalMiddleInitail(to.getFederalMiddleInitail());
@@ -46,36 +43,38 @@ public class RegistrationServiceImpl implements RegistrationService{
         registration.setFederalState(to.getFederalAState());
         registration.setFederalStreet(to.getFederalStreet());
         registration.setFederalSuffix(to.getFederalSuffix());
-        registration.setFederalZip((to.getFederalzZipcode() != null && !to.getFederalzZipcode().equals(""))?Integer.valueOf(to.getFederalzZipcode()):Integer.valueOf(0));
+        registration.setFederalZip((to.getFederalzZipcode() != null && !to.getFederalzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getFederalzZipcode()):null);
         registration.setMemberCity(to.getMemberCity());
         registration.setMemberFirstName(to.getMemberFirstName());
         registration.setMemberLastName(to.getMemberLastName());
         registration.setMemberMiddleInitail(to.getMemberMiddleInitail());
-        registration.setMemberPhone((to.getMemberPhone() != null && !to.getMemberPhone().equals(""))?Long.valueOf(to.getMemberPhone()):Long.valueOf(0));
+        registration.setMemberPhone((to.getMemberPhone() != null && !to.getMemberPhone().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getMemberPhone()):null);
         registration.setMemberProviderSpeciality(to.getMemberProviderSpeciality());
         registration.setMemberProviderType(to.getMemberProviderType());
         registration.setMemberState(to.getMemberAState());
         registration.setMemberStreet(to.getMemberStreet());
         registration.setMemberSuffix(to.getMemberSuffix());
-        registration.setMemberZip((to.getMemberzZipcode() != null && !to.getMemberzZipcode().equals(""))?Integer.valueOf(to.getMemberzZipcode()):0);
+        registration.setMemberZip((to.getMemberzZipcode() != null && !to.getMemberzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getMemberzZipcode()):null);
 
-        registration.setNpi(to.getNpi());
+        registration.setNpi((to.getNpi() != null && !to.getNpi().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getNpi()):null);
         registration.setProviderSpecialty(to.getProviderSpecialty());
-        registration.setTaxId(to.getTaxId());
+        registration.setTaxId((to.getTaxId() != null && !to.getTaxId().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getTaxId()):null);
         registration.setTaxonomy(to.getTaxonomy());
-        //        registration.setAttachedFile(null);
-        registration.setStatus("currunt");
+//        registration.setAttachedFile(new byte[1024]);
+        registration.setStatus(ApplicationConstants.CURRUNT);
         //System.out.println("RegistrationServiceImpl saveRegistration:::" +to.getMemberCity()+"-"+to.getMemberFirstName()+"-"+to.getMemberMiddleInitail()+"-"+to.getMemberPhone()
           //      +"-"+to.getMemberProviderSpeciality()+"-"+to.getMemberProviderType()+"-"+to.getMemberAState()+"-"+to.getMemberStreet()
             //    +"-"+to.getMemberSuffix()+"-"+to.getMemberzZipcode());
             id=registrationDAO.saveRegistration(registration);
+         if(id > 0){
+            return ApplicationConstants.SUCCESS ;
+         }else{
+            return ApplicationConstants.FAILED;
+         }
        }catch(Exception e){
            e.printStackTrace();
+           throw  new Exception(ApplicationConstants.FAILED);
        }
-        if(id > 0){
-            return "SUCCESS";
-        }
-        return "FAILED";
     }
 
     @Override

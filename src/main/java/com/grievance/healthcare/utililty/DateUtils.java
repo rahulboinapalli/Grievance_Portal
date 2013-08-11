@@ -35,10 +35,12 @@ public class DateUtils {
         try{
             SimpleDateFormat sdf1 = new SimpleDateFormat("mm/dd/yyyy");
             date = sdf1.parse(dateStr);
-            java.util.Calendar calendar = java.util.Calendar.getInstance();
-            calendar.setTime(calendar.getTime());
-            java.util.Date myDate = calendar.getTime();
-            sqlDate = new java.sql.Timestamp(myDate.getTime());
+             sqlDate = new java.sql.Timestamp(date.getTime());
+//            java.sql.Timestamp ts2 = java.sql.Timestamp.valueOf("2005-04-06 09:01:10");
+//            java.util.Calendar calendar = java.util.Calendar.getInstance();
+//            calendar.set(date.getYear()+1900, date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds());
+//            java.util.Date myDate = calendar.getTime();
+//            sqlDate = new java.sql.Timestamp(myDate.getTime());
             System.out.println("today date: ="+sqlDate);
         }catch(ParseException ex){
             ex.printStackTrace();

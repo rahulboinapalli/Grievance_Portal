@@ -6,8 +6,9 @@
 package com.grievance.healthcare.service;
 
 import com.grievance.healthcare.dao.GrievanceDAO;
-import java.io.File;
 import com.grievance.healthcare.model.Grievance;
+import com.grievance.healthcare.to.GrievanceTO;
+import com.grievance.healthcare.utililty.DateUtils;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,21 +22,20 @@ public class GrievanceServiceImpl implements GrievanceService{
     private Grievance grievance;
     private GrievanceDAO grievanceDAO;
     @Override
-    public List<Grievance> saveGrievanceDetails(Long memberId,String SSN,String memberName,String requestType,String requestedDate,
-            String emailAddress,String contactPhone,String comments,File attachFile,List<Grievance> list) {
+    public List<Grievance> saveGrievanceDetails(GrievanceTO to,List<Grievance> list) {
         System.out.println("saveGrievanceDetails GrievanceServiceImple::: start ");
         try{
            
             grievance = new Grievance();
-            grievance.setMemberId(memberId);
-            grievance.setSsn(Long.valueOf(SSN));
-            grievance.setMemberName(memberName);
-            grievance.setRequestType(requestType);
-//            grievance.setRequestDate(DateUtils.convertStringToData(requestedDate));
-            grievance.setRequestDate(new Timestamp(new java.util.Date().getTime()));
-            grievance.setEmail(emailAddress);
-            grievance.setContactNo(Long.valueOf(contactPhone));
-            grievance.setComments(comments);
+            grievance.setMemberId(to.getMemberId());
+            grievance.setSsn((to.getSSN() != null && !to.getSSN().equals(""))?Long.valueOf(to.getSSN()):null);
+            grievance.setMemberName(to.getMemberName());
+            grievance.setRequestType(to.getRequestType());
+            grievance.setRequestDate(DateUtils.convertStringToTimestamp(to.getDate()));
+//            grievance.setRequestDate(new Timestamp(new java.util.Date().getTime()));
+            grievance.setEmail(to.getEmailAddress());
+            grievance.setContactNo((to.getContactPhone() != null && !to.getContactPhone().equals(""))?Long.valueOf(to.getContactPhone()):null);
+            grievance.setComments(to.getComments());
             // Convert FormFile to a byte Array
 //            byte[] byteArray=FileUtils.readFileToByteArray(attachFile);
             grievance.setAttachedFile(null);

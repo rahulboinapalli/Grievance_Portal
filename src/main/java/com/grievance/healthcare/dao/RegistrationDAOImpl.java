@@ -9,6 +9,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.grievance.healthcare.model.Registration;
+import com.grievance.healthcare.utililty.ApplicationConstants;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.hibernate.Query;
 
@@ -21,18 +23,22 @@ public class RegistrationDAOImpl extends HibernateDaoSupport implements Registra
 
     @Override
     @Transactional
-    public Long saveRegistration(Registration registration) {
+    public Long saveRegistration(Registration registration) throws InvocationTargetException{
         try {
             getHibernateTemplate().save(registration);
-            if(registration != null)
-            System.out.println("reg id="+registration.getRegId());
-            else
+            if(registration != null){
+                System.out.println("reg id="+registration.getRegId());
+                return registration.getRegId();
+            } else {
                 System.out.println("reg id="+0);
-            return Long.valueOf(registration.getRegId());
+                return Long.valueOf(0);
+            }
+            
         } catch (Exception e) {
             e.printStackTrace();
+            throw new InvocationTargetException(e);
         }
-        return Long.valueOf(0);
+        
     }
 
     @Transactional
@@ -40,7 +46,7 @@ public class RegistrationDAOImpl extends HibernateDaoSupport implements Registra
         List<Registration> list = null;
         try{
             Query query = getSession().getNamedQuery("reg.findByStatus");
-            query.setString("status", "currunt");
+            query.setString(ApplicationConstants.SUCCESS , ApplicationConstants.CURRUNT);
             list = (List<Registration>) query.list();
         }catch(Exception e){
             e.printStackTrace();

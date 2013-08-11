@@ -44,12 +44,12 @@ private String federalFirstName;
     private Long  federalPhone;
       // license info
     private String licenseType;
-    private Long licenseNum;
+    private String licenseNum;
     private String expiryDate;
 
 //member Identifiers
-    private Long npi;
-    private Long taxId;
+    private String npi;
+    private String taxId;
    //member exclusion
     private String exclusionsCode;
     private String exclusionsDesc;
@@ -197,11 +197,11 @@ private String federalFirstName;
         this.federalzZipcode = federalzZipcode;
     }
 
-    public Long getLicenseNum() {
+    public String getLicenseNum() {
         return licenseNum;
     }
 
-    public void setLicenseNum(Long licenseNum) {
+    public void setLicenseNum(String licenseNum) {
         this.licenseNum = licenseNum;
     }
 
@@ -309,11 +309,11 @@ private String federalFirstName;
         this.memberzZipcode = memberzZipcode;
     }
 
-    public Long getNpi() {
+    public String getNpi() {
         return npi;
     }
 
-    public void setNpi(Long npi) {
+    public void setNpi(String npi) {
         this.npi = npi;
     }
 
@@ -333,11 +333,11 @@ private String federalFirstName;
         this.regId = regId;
     }
 
-    public Long getTaxId() {
+    public String getTaxId() {
         return taxId;
     }
 
-    public void setTaxId(Long taxId) {
+    public void setTaxId(String taxId) {
         this.taxId = taxId;
     }
 

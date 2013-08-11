@@ -30,87 +30,11 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
     public void setGrievanceTo(GrievanceTO grievanceTo) {
         this.grievanceTo = grievanceTo;
     }
-    List<Grievance> list = new ArrayList<Grievance>();
+    
+    private List<Grievance> list = new ArrayList<Grievance>();
     private GrievanceService grievanceService;
     private Grievance grievance;
     
-    private Long memberId;
-    private String SSN;
-    private String memberName;
-    private String requestType;
-    private String date;
-    private String emailAddress;
-    private String contactPhone;
-    private String comments;
-
-   // public transient JSONSerializer serializer;
-  
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getSSN() {
-        return SSN;
-    }
-
-    public void setSSN(String SSN) {
-        this.SSN = SSN;
-    }
-
-    
-
-    public String getContactPhone() {
-        return contactPhone;
-    }
-
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public String getMemberName() {
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public String getRequestType() {
-        return requestType;
-    }
-
-    public void setRequestType(String requestType) {
-        this.requestType = requestType;
-    }
-
     private List<String> greivanceList;
 
     public void setGreivanceList(List<String> greivanceList) {
@@ -123,34 +47,24 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
 
 	 public String showPage()
 	    {
+                System.out.println("prov grievance action showpage method start");
                 HttpServletRequest request = ServletActionContext.getRequest();
                 HttpSession ssession = request.getSession();
                List<String> list =(List<String>)ssession.getAttribute("grievanceListAll");
                setGreivanceList(list);
                request.setAttribute("greivanceList",list);
+               System.out.println("prov grievance action showpage method end");
 	        return SUCCESS;
 	    }
 
      public String saveGrievanceDetails()
 	    {
+                System.out.println("prov grievance action saveGrievanceDetails method start");
                 HttpServletRequest request = ServletActionContext.getRequest();
                 HttpSession ssession = request.getSession();
-                HttpServletResponse response = ServletActionContext.getResponse();
-                
                 try {
-                    /*memberId=Long.valueOf(request.getParameter("v_rid"));
-                    SSN =request.getParameter("v_npi");
-                    memberName = request.getParameter("v_pname");
-                    requestType = request.getParameter("v_type");
-                    date = request.getParameter("v_date");
-                    emailAddress = request.getParameter("v_email");
-                    contactPhone = request.getParameter("v_phone");
-                    comments = request.getParameter("v_comments");*/
-//                    attachFile = request.getParameter("v_rid");
-                  
-                   List<Grievance> grievList =grievanceService.saveGrievanceDetails(memberId,SSN,
-                             memberName,requestType ,date,emailAddress,contactPhone,comments,getAttachFile(),list);
-                   grievanceTo = new GrievanceTO();
+                   grievanceService.saveGrievanceDetails(grievanceTo,list);
+                   /*grievanceTo = new GrievanceTO();
                    grievanceTo.setMemberId(memberId);
                    grievanceTo.setSSN(SSN);
                    grievanceTo.setMemberName(memberName);
@@ -158,8 +72,8 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                    grievanceTo.setDate(date);
                    grievanceTo.setEmailAddress(emailAddress);
                    grievanceTo.setContactPhone(contactPhone);
-                   grievanceTo.setComments(comments);
-                   System.out.println(grievanceTo);
+                   grievanceTo.setComments(comments);*/
+                   
                     /*StringBuffer strBuff=new StringBuffer("");
                     if(grievList != null && grievList.size() > 0){
                         greivanceList = new ArrayList<String>();
@@ -192,6 +106,7 @@ public class ProvGrievanceListAction extends ActionSupport implements ServletReq
                     e.printStackTrace();
                    return "failed";
                 }
+                System.out.println("prov grievance action saveGrievanceDetails method end");
                 return SUCCESS;
             }
          public GrievanceService getGrievanceService() {

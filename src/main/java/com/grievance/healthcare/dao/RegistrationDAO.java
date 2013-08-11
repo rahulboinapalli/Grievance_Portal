@@ -5,12 +5,13 @@
 
 package com.grievance.healthcare.dao;
 import com.grievance.healthcare.model.Registration;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 /**
  *
  * @author sabbani
  */
 public interface RegistrationDAO {
-    public Long saveRegistration(Registration registration);
+    public Long saveRegistration(Registration registration) throws InvocationTargetException;
     public List<Registration> getRegistrationDetailsByStatus();
 }

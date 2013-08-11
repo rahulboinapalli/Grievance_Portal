@@ -102,7 +102,7 @@ public class Registration implements Serializable {
 
 
    @Column(name="attach_file")
-    private byte[] attachedFile;
+    private byte[] attachedFile = new byte[1024];
 
     @Column(name="reg_status")
     private String status;

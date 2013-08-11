@@ -47,4 +47,14 @@ public interface ApplicationConstants {
 	/** The CHARACTE r_ dot. */
 	String CHARACTER_DOT = ".";
 
+        String SUBMIT_STATUS = "SUBMIT_STATUS";
+
+        String ERR_MSG = "ERR_MSG";
+
+        String FAILED = "failure";
+
+        String CURRUNT = "currunt";
+
+        String SUCCESS = "SUCCESS";
+
 }

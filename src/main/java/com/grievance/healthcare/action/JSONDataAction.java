@@ -46,10 +46,18 @@ public class JSONDataAction extends ActionSupport{
                System.out.println("end of JSONDataAction constructor::"+grievance);
       }
 
-	public String getJson() {
-             
-               return Action.SUCCESS;
-        }
+    public String getJson() {
+
+           return Action.SUCCESS;
+    }
+
+    public Map<String, String> getGrievance() {
+        return grievance;
+    }
+
+    public void setGrievance(Map<String, String> grievance) {
+        this.grievance = grievance;
+    }
 
 	
 
