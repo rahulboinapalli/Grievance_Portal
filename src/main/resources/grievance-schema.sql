@@ -1,4 +1,4 @@
-CREATE TABLE `grievance_details` (
+    CREATE TABLE `grievance_details` (
                      `member_id` bigint(20) NOT NULL AUTO_INCREMENT,
                      `SSN` bigint(15) DEFAULT '0',
                      `member_name` varchar(765) DEFAULT 'NULL',
