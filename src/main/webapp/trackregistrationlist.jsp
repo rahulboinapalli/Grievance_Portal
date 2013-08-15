@@ -141,8 +141,8 @@ $(document).ready(function()
 
 <div id="templatemo_content">
 	<div class="section_w940">
-        <div class="section_w450">
-               <table id="list4"></table>
+            <div class="section_w450" style="width: 848px;">
+               <table id="list4" style="width: 848px;"></table>
 				<div id="pager1"></div>
                 <input id="JQGrid1_SelectedRow" name="list4" type="hidden"></input><input id="JQGrid1_CurrentPage" name="JQGrid1" type="hidden"></input>
 

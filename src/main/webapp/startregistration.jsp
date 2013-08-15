@@ -79,8 +79,20 @@
             $(document).ready(function()
             {
                var status = '${SUBMIT_STATUS}';
-               if(status != null && status != "")
-                alert(status);
+               if(status != null && status != ""){
+                   $(function() {
+                    $( "#dialog-success-message" ).css("display","block");
+                    $( "#dialog-success-message" ).dialog({
+                      modal: true,
+                      buttons: {
+                        Ok: function() {
+                          $( this ).dialog( "close" );
+                        }
+                      }
+                    });
+                  });
+               }
+                
                 //timer();
                 links();
                 showprocessor();
@@ -437,6 +449,12 @@
                         <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"> Please enter all mandatory fields (*) </span>
                         </p>
                     </div>
+                    <div id="dialog-success-message" title="Success Message" style="display:none">
+                        <p>
+                        <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"> Please enter all mandatory fields (*) </span>
+                            Registration Successfully Completed!
+                        </p>
+                    </div>
                     <div class="product_box margin_r_20">
                         <h2>Success</h2>
                         <img src="images/Checkmark.png" alt="image 1" />
@@ -445,9 +463,12 @@
                     </div>
                     <div class="product_box margin_r_20">
                         <h2>Search Criteria</h2>
-                        <p>Registration ID:  <input type="text" name="regId" value="1357924680" id="regId" size="10"/></p>
-                            <p>NPI: <input type="text" name="npi" value="1033366513" id="npi" size="10"></p>
-                        <p>Tax ID / SSN: <input type="text" name="taxId" value=" 999-99-9999" id="taxId"  size="10"/></p>
+                        <p>Registration ID: 1357924680 </p>
+                            <p>NPI: 1033366513</p>
+                        <p>Tax ID / SSN: 999-99-9999</p>
+                        <%-- <input type="text" name="regId" value="1357924680" id="regId" size="10"/>
+                        <input type="text" name="npi" value="1033366513" id="npi" size="10"/>
+                        <input type="text" name="taxId" value=" 999-99-9999" id="taxId"  size="10"/> --%>
                         <div class="cleaner"></div>
                     </div>
                     <div class="product_box">

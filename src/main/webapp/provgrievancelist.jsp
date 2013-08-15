@@ -202,33 +202,7 @@
             //	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
         }
     );
-        /* jQuery().ready(function (){
-      jQuery("#list4").jqGrid({
-      url:'/GrievanceApp/getJSONResult.action',
-      datatype: "json",
-      height:100,
-     colNames:['Member ID','Member SSN', 'Member Name','Insurance Type','Grievance Type', 'Date','Status'],
-     colModel:[ {name:'memberId',index:'memberId', width:50, sorttype:"int",align:"center"},
-     {name:'ssn',index:'ssn', width:50, sorttype:"string",align:"center"},
-     {name:'memberName',index:'memberName', width:50, sorttype:"int",align:"center"},
-     {name:'requestType',index:'requestType', width:50, sorttype:"int",align:"center"},
-     {name:'gtype',index:'gtype', width:50,sorttype:"date",align:"center"},
-     {name:'requestDate',index:'requestDate', width:50, align:"center",sorttype:"date",align:"center"},
-     {name:'status',index:'status', width:50, align:"center",formatter:formateadorimg1}],
-     pager: '#pager1',
-     rowNum:4,
-     autowidth: true,
-     rowList:[2,4,6],
-     viewrecords: true,
-     gridview: true,
-     caption: " Provider Grievance List" }).navGrid('#pager1',{edit:false,add:false,del:false});
-     //var mydata = [ {rid:"1357924680",pnpi:"1231231231",pname:"John Smith",pyear:"1",gtype:"Complaint",date:"02/15/2011",status:"Submitted"}];
-     //for(var i=0;i<=mydata1.length;i++)
-    //	jQuery("#list4").jqGrid('addRowData',i+1,mydata1[i])
-     }
-     );*/
-
-
+        
         function formateadorimg1(cellvalue, options, rowObject) {
 
             return" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "+cellvalue +" <input type='image' src=images/search_button.png valign='center' align='center' onclick='generatelink()'/></a>";
@@ -299,8 +273,8 @@
             <h3>&nbsp;<img src="images/add.gif" onclick="jQuery('#dialog-add').dialog('open'); return false" style="cursor: hand" />&nbsp;Click to add new grievance</h3>
 
 
-            <div class="section_w450">
-                <table id="list4"></table>
+            <div class="section_w450" style="width: 848px;">
+                <table id="list4" style="width: 848px;"></table>
                 <div id="pager1"></div>
                 <div class="cleaner"></div>
             </div>
