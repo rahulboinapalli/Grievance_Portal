@@ -10,61 +10,62 @@ import com.grievance.healthcare.to.RegistrationTO;
 import com.grievance.healthcare.utililty.ApplicationConstants;
 import com.grievance.healthcare.utililty.DateUtils;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 /**
  *
  * @author sabbani
  */
 public class RegistrationServiceImpl implements RegistrationService{
+    
     private RegistrationDAO registrationDAO;
     private Registration registration;
-    
+
+    /*
+     *  saveRegistration accepts
+     *  used to call save the registration details to db.
+     *  @param RegistrationTO to
+     *  @return status
+     *  @throws Exception, InvocationTargetException
+     */
     @Override
     public String saveRegistration(RegistrationTO to) throws Exception, InvocationTargetException
     {
         Long id=0L;
        try{
             registration = new Registration();
-        registration.setExclusionsCode(to.getExclusionsCode());
-//        registration.setExclusionsDate(new Timestamp(new Date().getTime()));
-        System.out.println("to exclusion date:::-"+ to.getExclusionsDate());
-        registration.setExclusionsDate(DateUtils.convertStringToTimestamp(to.getExclusionsDate()));
-        System.out.println("registration exclusion date:::-"+ registration.getExclusionsDate());
-        registration.setExclusionsDesc(to.getExclusionsDesc());
-        registration.setFederalCity(to.getFederalCity());
-        System.out.println("to federal date:::-"+ to.getFederalDateOfBirth());
-        registration.setFederalDateOfBirth(DateUtils.convertStringToTimestamp(to.getFederalDateOfBirth()));
-        System.out.println("registration federal date:::-"+ registration.getFederalDateOfBirth());
-        registration.setFederalFirstName(to.getFederalFirstName());
-        registration.setFederalLastName(to.getFederalFirstName());
-        registration.setFederalMiddleInitail(to.getFederalMiddleInitail());
-        registration.setFederalPhone(to.getFederalPhone());
-        registration.setFederalProviderSpeciality(to.getFederalProviderSpeciality());
-        registration.setFederalProviderType(to.getFederalProviderType());
-        registration.setFederalState(to.getFederalAState());
-        registration.setFederalStreet(to.getFederalStreet());
-        registration.setFederalSuffix(to.getFederalSuffix());
-        registration.setFederalZip((to.getFederalzZipcode() != null && !to.getFederalzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getFederalzZipcode()):null);
-        registration.setMemberCity(to.getMemberCity());
-        registration.setMemberFirstName(to.getMemberFirstName());
-        registration.setMemberLastName(to.getMemberLastName());
-        registration.setMemberMiddleInitail(to.getMemberMiddleInitail());
-        registration.setMemberPhone((to.getMemberPhone() != null && !to.getMemberPhone().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getMemberPhone()):null);
-        registration.setMemberProviderSpeciality(to.getMemberProviderSpeciality());
-        registration.setMemberProviderType(to.getMemberProviderType());
-        registration.setMemberState(to.getMemberAState());
-        registration.setMemberStreet(to.getMemberStreet());
-        registration.setMemberSuffix(to.getMemberSuffix());
-        registration.setMemberZip((to.getMemberzZipcode() != null && !to.getMemberzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getMemberzZipcode()):null);
-
-        registration.setNpi((to.getNpi() != null && !to.getNpi().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getNpi()):null);
-        registration.setProviderSpecialty(to.getProviderSpecialty());
-        registration.setTaxId((to.getTaxId() != null && !to.getTaxId().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getTaxId()):null);
-        registration.setTaxonomy(to.getTaxonomy());
-//        registration.setAttachedFile(new byte[1024]);
-        registration.setStatus(ApplicationConstants.CURRUNT);
-        //System.out.println("RegistrationServiceImpl saveRegistration:::" +to.getMemberCity()+"-"+to.getMemberFirstName()+"-"+to.getMemberMiddleInitail()+"-"+to.getMemberPhone()
-          //      +"-"+to.getMemberProviderSpeciality()+"-"+to.getMemberProviderType()+"-"+to.getMemberAState()+"-"+to.getMemberStreet()
-            //    +"-"+to.getMemberSuffix()+"-"+to.getMemberzZipcode());
+            registration.setExclusionsCode(to.getExclusionsCode());
+            registration.setExclusionsDate(DateUtils.convertStringToTimestamp(to.getExclusionsDate()));
+            registration.setExclusionsDesc(to.getExclusionsDesc());
+            registration.setFederalCity(to.getFederalCity());
+            registration.setFederalDateOfBirth(DateUtils.convertStringToTimestamp(to.getFederalDateOfBirth()));
+            registration.setFederalFirstName(to.getFederalFirstName());
+            registration.setFederalLastName(to.getFederalFirstName());
+            registration.setFederalMiddleInitail(to.getFederalMiddleInitail());
+            registration.setFederalPhone(to.getFederalPhone());
+            registration.setFederalProviderSpeciality(to.getFederalProviderSpeciality());
+            registration.setFederalProviderType(to.getFederalProviderType());
+            registration.setFederalState(to.getFederalAState());
+            registration.setFederalStreet(to.getFederalStreet());
+            registration.setFederalSuffix(to.getFederalSuffix());
+            registration.setFederalZip((to.getFederalzZipcode() != null && !to.getFederalzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getFederalzZipcode()):null);
+            registration.setMemberCity(to.getMemberCity());
+            registration.setMemberFirstName(to.getMemberFirstName());
+            registration.setMemberLastName(to.getMemberLastName());
+            registration.setMemberMiddleInitail(to.getMemberMiddleInitail());
+            registration.setMemberPhone((to.getMemberPhone() != null && !to.getMemberPhone().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getMemberPhone()):null);
+            registration.setMemberProviderSpeciality(to.getMemberProviderSpeciality());
+            registration.setMemberProviderType(to.getMemberProviderType());
+            registration.setMemberState(to.getMemberAState());
+            registration.setMemberStreet(to.getMemberStreet());
+            registration.setMemberSuffix(to.getMemberSuffix());
+            registration.setMemberZip((to.getMemberzZipcode() != null && !to.getMemberzZipcode().equals(ApplicationConstants.EMPTY_STRING))?Integer.valueOf(to.getMemberzZipcode()):null);
+            registration.setNpi((to.getNpi() != null && !to.getNpi().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getNpi()):null);
+            registration.setProviderSpecialty(to.getProviderSpecialty());
+            registration.setTaxId((to.getTaxId() != null && !to.getTaxId().equals(ApplicationConstants.EMPTY_STRING))?Long.valueOf(to.getTaxId()):null);
+            registration.setTaxonomy(to.getTaxonomy());
+            registration.setStatus(ApplicationConstants.CURRUNT);
+            
+            /**calling save registration of dao class.*/
             id=registrationDAO.saveRegistration(registration);
          if(id > 0){
             return ApplicationConstants.SUCCESS ;
@@ -72,7 +73,7 @@ public class RegistrationServiceImpl implements RegistrationService{
             return ApplicationConstants.FAILED;
          }
        }catch(Exception e){
-           e.printStackTrace();
+           System.out.println("exception occured in RegistrationServiceImpl saveRegistration method ::" + e.getMessage());
            throw  new Exception(ApplicationConstants.FAILED);
        }
     }
@@ -104,21 +105,46 @@ public class RegistrationServiceImpl implements RegistrationService{
         return null;
     }
 
+    /**
+     *
+     * retrieve registration records,
+     * @param 
+     * @returns List of Registration records.
+     * @throws Exception
+     **/
+    @Override
+    public List<Registration> getCuuruntRegistrations() throws Exception{
+        System.out.println("RegistrationServiceImpl getCuuruntRegistration::: start");
+        List<Registration> list = registrationDAO.getRegistrationDetailsByStatus();
+        System.out.println("RegistrationServiceImpl getCuuruntRegistration::: end");
+        return list;
+    }
+
+    /**
+     * @return the registrationDAO
+     **/
     public RegistrationDAO getRegistrationDAO() {
         return registrationDAO;
     }
 
+    /**
+     * @param registrationDAO the registrationDAO to set for setter injection
+     */
     public void setRegistrationDAO(RegistrationDAO registrationDAO) {
         this.registrationDAO = registrationDAO;
     }
 
+    /**
+     * @return the registration
+     **/
     public Registration getRegistration() {
         return registration;
     }
 
+    /**
+     * @param registration the registration to set
+     */
     public void setRegistration(Registration registration) {
         this.registration = registration;
     }
-
-    
 }

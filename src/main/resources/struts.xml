@@ -5,129 +5,133 @@
 
 <struts>
 
-   <constant name="struts.devMode" value="true" />
+    <constant name="struts.devMode" value="true" />
     
 	<!-- Configuration for the default package. -->
-	<package name="default" extends="struts-default,json-default" >
+    <package name="default" extends="struts-default,json-default" >
 		
-		<action name="index" class="com.grievance.healthcare.action.UserAction" method="list">
-			<result name="success">/jsp/users.jsp</result>
-		</action>
+        <action name="index" class="com.grievance.healthcare.action.UserAction" method="list">
+            <result name="success">/jsp/users.jsp</result>
+        </action>
 		
-                <action name="addUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
+        <action name="addUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
+            <result name="input">/jsp/userForm.jsp</result>
+        </action>
 		
-		<action name="addUserSave" class="com.grievance.healthcare.action.UserAction" method="save">
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-			</result>
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
+        <action name="addUserSave" class="com.grievance.healthcare.action.UserAction" method="save">
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+            </result>
+            <result name="input">/jsp/userForm.jsp</result>
+        </action>
 
-                <action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
+        <action name="editUserInput" class="com.grievance.healthcare.action.UserAction" method="input">
+            <result name="input">/jsp/userForm.jsp</result>
+        </action>
 		
-		<action name="deleteUser" class="com.grievance.healthcare.action.UserAction" method="delete">
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-			</result>
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
+        <action name="deleteUser" class="com.grievance.healthcare.action.UserAction" method="delete">
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+            </result>
+            <result name="input">/jsp/userForm.jsp</result>
+        </action>
 
-                <action name="submitGrievance" class="com.grievance.healthcare.action.UserAction" method="input">
-			<result name="input">/jsp/userForm.jsp</result>
-		</action>
+        <action name="submitGrievance" class="com.grievance.healthcare.action.UserAction" method="input">
+            <result name="input">/jsp/userForm.jsp</result>
+        </action>
 
-                <action name="signon" class="com.grievance.healthcare.action.SignonAction" method="showPage">
-			<result name="success">/jsp/signon.jsp</result>
-		</action>
+        <action name="signon" class="com.grievance.healthcare.action.SignonAction" method="showPage">
+            <result name="success">/jsp/signon.jsp</result>
+        </action>
 
-                <action name="signIn" class="com.grievance.healthcare.action.SignonAction" method="checkUserCredentials">
-			<result name="success" type="redirectAction">
-				<param name="actionName">index</param>
-			</result>
-                        <result name="failure">/jsp/signon.jsp</result>
-		</action>
+        <action name="signIn" class="com.grievance.healthcare.action.SignonAction" method="checkUserCredentials">
+            <result name="success" type="redirectAction">
+                <param name="actionName">index</param>
+            </result>
+            <result name="failure">/jsp/signon.jsp</result>
+        </action>
 
-                <action name="findRegistration" class="com.grievance.healthcare.action.FindRegistartionAction" method="showPage">
-			<result name="success">/jsp/findregistration.jsp</result>
-		</action>
+        <action name="findRegistration" class="com.grievance.healthcare.action.FindRegistartionAction" method="showPage">
+            <result name="success">/jsp/findregistration.jsp</result>
+        </action>
 
-		<action name="grievanceDetails" class="com.grievance.healthcare.action.GrievanceDetailsAction" method="showPage">
-			<result name="success">/jsp/grievancedetails.jsp</result>
-		</action>
+        <action name="grievanceDetails" class="com.grievance.healthcare.action.GrievanceDetailsAction" method="showPage">
+            <result name="success">/jsp/grievancedetails.jsp</result>
+        </action>
 
-		<action name="provGrievanceList" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="showPage">
-			<result name="success" >/jsp/provgrievancelist.jsp</result>
-                </action>
+        <action name="provGrievanceList" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="showPage">
+            <result name="success" >/jsp/provgrievancelist.jsp</result>
+        </action>
 
-                <action name="provGrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="showPage">
-                        <result name="success" type="redirectAction">
-				<param name="actionName">provGrievanceList</param>
-			</result>
-                        <result name="failure">/jsp/error.jsp</result>
-		</action>
+        <action name="provGrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="showPage">
+            <result name="success" type="redirectAction">
+                <param name="actionName">provGrievanceList</param>
+            </result>
+            <result name="failure">/jsp/error.jsp</result>
+        </action>
 
-                <action name="savegrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="saveGrievanceDetails">
-                     <interceptor-ref name="basicStack"></interceptor-ref>
-                     <interceptor-ref name="fileUpload">
-                        <param name="maximumSize">10240</param>
-                        <param name="allowedTypes">text/plain,image/jpeg,image/gif,image/jpg</param>
-                     </interceptor-ref>
-                       <result name="success" type="redirectAction">
-				<param name="actionName">provGrievanceList</param>
-			</result>
-                        <result name="failed">signon</result>
-                </action>
+        <action name="savegrievance" class="com.grievance.healthcare.action.ProvGrievanceListAction" method="saveGrievanceDetails">
+            <interceptor-ref name="basicStack"></interceptor-ref>
+            <interceptor-ref name="fileUpload">
+                <param name="maximumSize">10240</param>
+                <param name="allowedTypes">text/plain,image/jpeg,image/gif,image/jpg</param>
+            </interceptor-ref>
+            <result name="success" type="redirectAction">
+                <param name="actionName">provGrievanceList</param>
+            </result>
+            <result name="failed">signon</result>
+        </action>
 
-                <action name="signup" class="com.grievance.healthcare.action.SignupAction" method="showPage">
-			<result name="success">/jsp/Signup.jsp</result>
-		</action>
+        <action name="signup" class="com.grievance.healthcare.action.SignupAction" method="showPage">
+            <result name="success">/jsp/Signup.jsp</result>
+        </action>
 
-                <action name="saveuser" class="com.grievance.healthcare.action.SignupAction" method="saveDetails">
-			<result name="success" type="redirectAction">
-				<param name="actionName">signon</param>
-			</result>
-                        <result name="failure">/jsp/error.jsp</result>
-		</action>
+        <action name="saveuser" class="com.grievance.healthcare.action.SignupAction" method="saveDetails">
+            <result name="success" type="redirectAction">
+                <param name="actionName">signon</param>
+            </result>
+            <result name="failure">/jsp/error.jsp</result>
+        </action>
 
-                <action name="startRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="showPage">
-			<result name="success">/jsp/startregistration.jsp</result>
-		</action>
+        <action name="startRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="showPage">
+            <result name="success">/jsp/startregistration.jsp</result>
+        </action>
 
-                <action name="saveRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="saveRegistration">
-			<result name="success" type="redirectAction">
-				<param name="actionName">startRegistration</param>
-			</result>
-                        <result name="failure">/jsp/error.jsp</result>
+        <action name="saveRegistration" class="com.grievance.healthcare.action.StartRegistrationAction" method="saveRegistration">
+            <result name="success" type="redirectAction">
+                <param name="actionName">startRegistration</param>
+            </result>
+            <result name="failure">/jsp/error.jsp</result>
                         
-		</action>
+        </action>
 
-		<action name="stateReview" class="com.grievance.healthcare.action.StartReviewAction" method="showPage">
-			<result name="success">/jsp/statereview.jsp</result>
-		</action>
+        <action name="stateReview" class="com.grievance.healthcare.action.StartReviewAction" method="showPage">
+            <result name="success">/jsp/statereview.jsp</result>
+        </action>
 
-                <action name="trackRegistrationList" class="com.grievance.healthcare.action.TrackRegistrationListAction" method="showPage">
-			<result name="success">/jsp/trackregistrationlist.jsp</result>
-		</action>
+        <action name="trackRegistrationList" class="com.grievance.healthcare.action.TrackRegistrationListAction" method="showPage">
+            <result name="success">/jsp/trackregistrationlist.jsp</result>
+        </action>
 
-                <action name="viewRegistration" class="com.grievance.healthcare.action.ViewRegistrationAction" method="showPage">
-			<result name="success">/jsp/viewregistration.jsp</result>
-		</action>
+        <action name="viewRegistration" class="com.grievance.healthcare.action.ViewRegistrationAction" method="showPage">
+            <result name="success">/jsp/viewregistration.jsp</result>
+        </action>
 
-                <action name="index" class="com.grievance.healthcare.action.IndexAction" method="showPage">
-			<result name="success">/jsp/index.jsp</result>
-		</action>
+        <action name="index" class="com.grievance.healthcare.action.IndexAction" method="showPage">
+            <result name="success">/jsp/index.jsp</result>
+        </action>
 
-                <action name="getJSONResult" method="getJson"
+        <action name="getJSONResult" method="getJson"
                             class="com.grievance.healthcare.action.JSONDataAction">
-                        <result type="json" >
-                            <param name="root">greivanceMap</param>
-                        </result>
-               </action>
+            <result type="json" >
+                <param name="root">greivanceMap</param>
+            </result>
+        </action>
+        <action name="getregistrations" method="getJson"
+                            class="com.grievance.healthcare.action.RegJSONAction">
+            <result name="success" type="json" />
+        </action>
                 
-</package>
+    </package>
 
 </struts>

@@ -1,8 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
+<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Registration List</title>
+<sj:head jqueryui="true" jquerytheme="redmond" />
 <link href="page_style.css" rel="stylesheet" type="text/css" />
 <link type="text/css" href="themes/base/jquery.ui.all.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" />
@@ -16,9 +20,9 @@
 <script type="text/javascript">
 $(document).ready(function()
 	{
-		timer();
-		links();
-		showprocessor();
+//		timer();
+//		links();
+//		showprocessor();
 	}
 );
 </script>
@@ -138,16 +142,39 @@ $(document).ready(function()
 <div id="templatemo_content">
 	<div class="section_w940">
         <div class="section_w450">
-                <table id="list4"></table>
+               <table id="list4"></table>
 				<div id="pager1"></div>
                 <input id="JQGrid1_SelectedRow" name="list4" type="hidden"></input><input id="JQGrid1_CurrentPage" name="JQGrid1" type="hidden"></input>
 
             <div class="cleaner"></div>
         </div>
-    	<div class="cleaner"></div>
+    	<div class="cleaner"></div> 
+        <s:label>Start Registration Details currunt status</s:label>
+            <s:url var="remoteurl" action="getregistrations"/>
+            <sjg:grid
+                id="gridtable"
+                caption="Registration Details"
+                dataType="json"
+                href="%{remoteurl}"
+                pager="true"
+                gridModel="gridModel"
+                rowList="10,15,20"
+                rowNum="15"
+                rownumbers="true">
+
+                <sjg:gridColumn name="regId" index="regId" title="Registration ID" formatter="integer" sortable="false"/>
+                <sjg:gridColumn name="npi" index="npi" title="NPI" sortable="true"/>
+                <sjg:gridColumn name="taxId" index="taxId" title="Tax ID/SSN" sortable="false"/>
+                <sjg:gridColumn name="federalFirstName" index="federalFirstName" title="Provider Name" sortable="false"/>
+                <sjg:gridColumn name="status" index="status" title="Registration Status" sortable="false"/>
+            </sjg:grid>
     </div>
      <div class="section_w940">
     	<div class="cleaner"></div>
+    </div>
+    <div>
+    
+
     </div>
 </div>
 <div class="processor" id="showprocessor">

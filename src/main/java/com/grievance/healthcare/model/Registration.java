@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.grievance.healthcare.model;
 
 import java.io.Serializable;
@@ -21,93 +20,79 @@ import javax.persistence.Table;
  * @author sabbani
  */
 @Entity
-@Table(name="greivance_registration")
-@NamedQuery(name="reg.findByStatus", query="from Registration where status = :status")
+@Table(name = "greivance_registration")
+@NamedQuery(name = "reg.findByStatus", query = "from Registration where status = :status")
 public class Registration implements Serializable {
 
     @Id
-    @Column(name="reg_id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "reg_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long regId;
-
-    @Column(name="mem_first_name")
+    @Column(name = "mem_first_name")
     private String memberFirstName;
-    @Column(name="mem_last_name")
+    @Column(name = "mem_last_name")
     private String memberLastName;
-    @Column(name="mem_middle_initial")
+    @Column(name = "mem_middle_initial")
     private String memberMiddleInitail;
-    @Column(name="mem_suffix")
+    @Column(name = "mem_suffix")
     private String memberSuffix;
-    @Column(name="mem_provider_type")
+    @Column(name = "mem_provider_type")
     private String memberProviderType;
-    @Column(name="mem_provider_speciality")
+    @Column(name = "mem_provider_speciality")
     private String memberProviderSpeciality;
-    @Column(name="fed_first_name")
+    @Column(name = "fed_first_name")
     private String federalFirstName;
-    @Column(name="fed_last_name")
+    @Column(name = "fed_last_name")
     private String federalLastName;
-    @Column(name="fed_middle_initail")
+    @Column(name = "fed_middle_initail")
     private String federalMiddleInitail;
-    @Column(name="fed_suffix")
+    @Column(name = "fed_suffix")
     private String federalSuffix;
-    @Column(name="fed_provider_type")
+    @Column(name = "fed_provider_type")
     private String federalProviderType;
-    @Column(name="fed_provider_speciality")
+    @Column(name = "fed_provider_speciality")
     private String federalProviderSpeciality;
-    @Column(name="fed_date_of_birth")
+    @Column(name = "fed_date_of_birth")
     private Timestamp federalDateOfBirth;
-
-    @Column(name="mem_street")
+    @Column(name = "mem_street")
     private String memberStreet;
-    @Column(name="mem_city")
+    @Column(name = "mem_city")
     private String memberCity;
-    @Column(name="mem_state")
+    @Column(name = "mem_state")
     private String memberState;
-    @Column(name="mem_zip")
+    @Column(name = "mem_zip")
     private Integer memberZip;
-    @Column(name="mem_phone")
+    @Column(name = "mem_phone")
     private Long memberPhone;
-
-    @Column(name="fed_street")
+    @Column(name = "fed_street")
     private String federalStreet;
-    @Column(name="fed_city")
+    @Column(name = "fed_city")
     private String federalCity;
-    @Column(name="fed_state")
+    @Column(name = "fed_state")
     private String federalState;
-    @Column(name="fed_zip")
+    @Column(name = "fed_zip")
     private Integer federalZip;
-    @Column(name="fed_phone")
+    @Column(name = "fed_phone")
     private Long federalPhone;
-
-    @Column(name="npi")
+    @Column(name = "npi")
     private Long npi;
-
-    @Column(name="tax_id")
+    @Column(name = "tax_id")
     private Long taxId;
-
-    @Column(name="exclusion_code")
+    @Column(name = "exclusion_code")
     private String exclusionsCode;
-    
-    @Column(name="exclusion_desc")
+    @Column(name = "exclusion_desc")
     private String exclusionsDesc;
-
-    @Column(name="exclusion_date")
+    @Column(name = "exclusion_date")
     private Timestamp exclusionsDate;
-
-    @Column(name="prov_speciality")
+    @Column(name = "prov_speciality")
     private String providerSpecialty;
-    
-    @Column(name="taxonomy")
+    @Column(name = "taxonomy")
     private String taxonomy;
-
-
-   @Column(name="attach_file")
+    @Column(name = "attach_file")
     private byte[] attachedFile = new byte[1024];
-
-    @Column(name="reg_status")
+    @Column(name = "reg_status")
     private String status;
 
-  
     public Long getRegId() {
         return regId;
     }
@@ -324,8 +309,6 @@ public class Registration implements Serializable {
         this.exclusionsDesc = exclusionsDesc;
     }
 
-   
-
     public Long getNpi() {
         return npi;
     }
@@ -358,8 +341,6 @@ public class Registration implements Serializable {
         this.taxonomy = taxonomy;
     }
 
-    
-
     public byte[] getAttachedFile() {
         return attachedFile;
     }
@@ -375,5 +356,4 @@ public class Registration implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
-
 }

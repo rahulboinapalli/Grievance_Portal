@@ -86,6 +86,8 @@
                 showprocessor();
             }
             );
+
+          
         </script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -289,10 +291,108 @@
 
 
             });
+
+             function validateForm(){
+                     if($("#memberFirstName").val()){
+                     if($("#memberLastName").val()){
+                     if($("#memberMiddleInitail").val()){
+                     if($("#memberSuffix").val()){
+                     if($("#memberProviderType").val()){
+                     if($("#memberProviderSpeciality").val()){
+                     if($("#memberStreet").val()){
+                     if($("#memberCity").val()){
+                     if($("#memberAState").val()){
+                     if($("#memberzZipcode").val()){
+                     if($("#memberPhone").val()){
+                     if($("#npi").val()){
+                     if($("#taxId").val()){
+                     if($("#exclusionsCode").val()){
+                     if($("#exclusionsDesc").val()){
+                     if($("#exclusionsDate").val()){
+                             return true;
+                       }else{
+                       $("#exclusionsDate").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#exclusionsDesc").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#exclusionsCode").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#taxId").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#npi").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberPhone").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#memberzZipcode").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberAState").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#memberCity").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberStreet").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#memberProviderSpeciality").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberProviderType").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#memberSuffix").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberMiddleInitail").focus();
+                      return false;
+                          }
+                      }else{
+                       $("#memberLastName").focus();
+                       return false;
+                          }
+                      }else{
+                      $("#memberFirstName").focus();
+                      return false;
+                          }
+                      }
         function submitForm(method){
            // alert("method="+method);
-            document.forms[0].action = method;
-            document.forms[0].submit();
+           if(validateForm()){
+                document.forms[0].action = method;
+                document.forms[0].submit();
+           }else{
+                $(function() {
+                    $( "#dialog-message" ).css("display","block");
+                    $( "#dialog-message" ).dialog({
+                      modal: true,
+                      buttons: {
+                        Ok: function() {
+                          $( this ).dialog( "close" );
+                        }
+                      }
+                    });
+                  });
+            }
         }
         </script>
 
@@ -332,6 +432,11 @@
 
             <div id="templatemo_content">
                 <div class="section_w940">
+                    <div id="dialog-message" title="Error Message" style="display:none">
+                        <p>Please enter all mandatory fields (*)
+                        <span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"> Please enter all mandatory fields (*) </span>
+                        </p>
+                    </div>
                     <div class="product_box margin_r_20">
                         <h2>Success</h2>
                         <img src="images/Checkmark.png" alt="image 1" />
@@ -663,9 +768,9 @@
                                             <td width="40%">
                                                 <input type=checkbox id="terms" name="terms1" > I accept the terms and conditions</input></td>
                                             <td align="center">
-                                                <input type="submit" value="Register" name="SubmitReg" id="SubmitReg" onmouseover="over_button('SubmitReg', 'images/Register_Down.png')"
+                                                <input type="button" value="Register" name="SubmitReg" id="SubmitReg" onmouseover="over_button('SubmitReg', 'images/Register_Down.png')"
                                                        onmouseout="up_button('SubmitReg', 'images/Register_Up.png')" src="./images/Register_Up.png" onclick="submitForm('saveRegistration');"></input>
-                                                <%--<a href="saveRegistration" id="submit" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')" onclick="submitForm('saveRegistration');"
+                                                <%--<a href="saveRegistration" id="submit" name="SubmitReg" onMouseOver="over_button('SubmitReg', 'images/Register_Down.png')" onclick="submitForm('saveRegistration');"
                                                    onMouseOut="up_button('SubmitReg', 'images/Register_Up.png')"><img src="./images/Register_Up.png" name="SubmitReg" id="SubmitReg" /></a>--%>
 
                                             </td>

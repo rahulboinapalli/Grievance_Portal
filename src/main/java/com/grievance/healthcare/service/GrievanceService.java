@@ -5,8 +5,6 @@
 
 package com.grievance.healthcare.service;
 
-import java.util.List;
-import com.grievance.healthcare.model.Grievance;
 import com.grievance.healthcare.to.GrievanceTO;
 
 /**
@@ -14,5 +12,5 @@ import com.grievance.healthcare.to.GrievanceTO;
  * @author sabbani
  */
 public interface GrievanceService {
-    public List<Grievance> saveGrievanceDetails(GrievanceTO grievanceTO,List<Grievance> list);
+    public Long saveGrievanceDetails(GrievanceTO grievanceTO);
 }

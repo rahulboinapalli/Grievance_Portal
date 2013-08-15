@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.grievance.healthcare.to;
 
 import java.io.File;
@@ -11,10 +10,10 @@ import java.io.File;
  *
  * @author sabbani
  */
- public class RegistrationTO {
+public class RegistrationTO {
 
     private Long regId;
-   //member address
+    //member address
     private String memberStreet;
     private String memberCity;
     private String memberAState;
@@ -28,37 +27,34 @@ import java.io.File;
     private String memberProviderType;
     private String memberProviderSpeciality;
     private String memberDateOfBirth;
-// federal basic info
-private String federalFirstName;
+    // federal basic info
+    private String federalFirstName;
     private String federalLastName;
     private String federalMiddleInitail;
     private String federalSuffix;
     private String federalProviderType;
     private String federalProviderSpeciality;
     private String federalDateOfBirth;
- // federal address
-     private String  federalStreet;
-    private String  federalCity;
+    // federal address
+    private String federalStreet;
+    private String federalCity;
     private String federalAState;
-    private String  federalzZipcode;
-    private Long  federalPhone;
-      // license info
+    private String federalzZipcode;
+    private Long federalPhone;
+    // license info
     private String licenseType;
     private String licenseNum;
     private String expiryDate;
-
-//member Identifiers
+    //member Identifiers
     private String npi;
     private String taxId;
-   //member exclusion
+    //member exclusion
     private String exclusionsCode;
     private String exclusionsDesc;
     private String exclusionsDate;
     //federal
     private String providerSpecialty;
     private String taxonomy;
-
-
     private File attachedFile;
 
     public File getAttachedFile() {

@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Date;
 import java.sql.Timestamp;
 import javax.persistence.Lob;
 
@@ -20,10 +19,10 @@ import javax.persistence.Lob;
  * @author Anil
  */
 @Entity
-@Table(name="grievance_details")
+@Table(name = "grievance_details")
 public class Grievance implements Serializable {
-    private static final long serialVersionUID = 1L;
 
+    private static final long serialVersionUID = 1L;
     private int id;
     private Long memberId;
     private Long ssn;
@@ -35,12 +34,9 @@ public class Grievance implements Serializable {
     private String comments;
     private byte[] attachedFile;
 
-    
-    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Id
-
     public int getId() {
         return id;
     }
@@ -57,7 +53,7 @@ public class Grievance implements Serializable {
     public void setMemberId(Long memberId) {
         this.memberId = memberId;
     }
-    
+
     @Column(name = "SSN")
     public Long getSsn() {
         return ssn;
@@ -66,14 +62,13 @@ public class Grievance implements Serializable {
     public void setSsn(Long ssn) {
         this.ssn = ssn;
     }
-    
 
     /**
      * Get the value of name
      *
      * @return the value of name
      */
-    @Column(name="member_name")
+    @Column(name = "member_name")
     public String getMemberName() {
         return memberName;
     }
@@ -87,11 +82,7 @@ public class Grievance implements Serializable {
         this.memberName = memberName;
     }
 
-
-    
 //   private enum  RequestType{Appeal,PaymentIssue,Compliant,InsuranceRejection};
-    
-        
     @Column(name = "request_type")
     public String getRequestType() {
         return requestType;
@@ -101,7 +92,7 @@ public class Grievance implements Serializable {
         this.requestType = requestType;
     }
 
-    @Column(name="request_date")
+    @Column(name = "request_date")
     public Timestamp getRequestDate() {
         return requestDate;
     }
@@ -115,20 +106,18 @@ public class Grievance implements Serializable {
      *
      * @return the value of requestType
      */
-  /*  public RequestType getRequestType() {
-        return requestType;
-   */
-
+    /*  public RequestType getRequestType() {
+    return requestType;
+     */
     /**
      * Set the value of requestType
      *
      * @param requestType new value of requestType
      */
-   /* public void setRequestType(RequestType requestType) {
-        this.requestType = requestType;
+    /* public void setRequestType(RequestType requestType) {
+    this.requestType = requestType;
     }*/
-
-    @Column(name="email_id")
+    @Column(name = "email_id")
     public String getEmail() {
         return email;
     }
@@ -137,8 +126,7 @@ public class Grievance implements Serializable {
         this.email = email;
     }
 
-    
-    @Column(name="contact_no")
+    @Column(name = "contact_no")
     public Long getContactNo() {
         return contactNo;
     }
@@ -146,8 +134,6 @@ public class Grievance implements Serializable {
     public void setContactNo(Long contactNo) {
         this.contactNo = contactNo;
     }
-   
-    
 
     /**
      * Get the value of comments
@@ -169,13 +155,13 @@ public class Grievance implements Serializable {
 
     }
 
-/**
+    /**
      * Get the value of comments
      *
      * @return the value of comments
      */
     @Lob
-    @Column(name="file", columnDefinition="mediumblob")
+    @Column(name = "file", columnDefinition = "mediumblob")
     public byte[] getAttachedFile() {
         return attachedFile;
     }
@@ -189,6 +175,7 @@ public class Grievance implements Serializable {
         this.attachedFile = attachedFile;
 
     }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -213,6 +200,4 @@ public class Grievance implements Serializable {
     public String toString() {
         return "com.grievance.healthcare.model.Grievance[ id=" + memberId + " ]";
     }
-
-
 }

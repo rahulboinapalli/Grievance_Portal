@@ -35,11 +35,19 @@
     	<artifactId>struts2-core</artifactId>
     	<version>2.2.1</version>
     </dependency>
-    <!--<dependency>
+
+    <dependency>
 	<groupId>com.jgeppert.struts2.jquery</groupId>
 	<artifactId>struts2-jquery-plugin</artifactId>
 	<version>2.2.1</version>
-    </dependency>-->
+    </dependency>
+
+    <dependency>
+	<groupId>com.jgeppert.struts2.jquery</groupId>
+	<artifactId>struts2-jquery-grid-plugin</artifactId>
+	<version>2.2.1</version>
+    </dependency>
+
     <!-- Struts 2 JSON Plugins -->
     <dependency>
           <groupId>org.apache.struts</groupId>

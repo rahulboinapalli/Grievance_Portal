@@ -57,4 +57,8 @@ public interface ApplicationConstants {
 
         String SUCCESS = "SUCCESS";
 
+        String REG_SUCCESS = "Registration Successfully Completed!";
+
+        String REG_NOT_SUCCESS = "Registration Not Success!";
+
 }

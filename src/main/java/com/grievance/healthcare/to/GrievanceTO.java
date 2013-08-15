@@ -2,10 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.grievance.healthcare.to;
-
-import java.io.File;
 
 /**
  *
@@ -13,8 +10,7 @@ import java.io.File;
  */
 public class GrievanceTO {
 
-
-     private Long memberId;
+    private Long memberId;
     private String SSN;
     private String memberName;
     private String requestType;
@@ -22,8 +18,8 @@ public class GrievanceTO {
     private String emailAddress;
     private String contactPhone;
     private String comments;
-    private String gType="Self";
-    private String status="Currunt";
+    private String gType = "Self";
+    private String status = "Currunt";
 
     /**
      * @return the memberId
@@ -152,6 +148,4 @@ public class GrievanceTO {
     public void setStatus(String status) {
         this.status = status;
     }
-    
-
 }

@@ -6,7 +6,6 @@
 package com.grievance.healthcare.service;
 
 import com.grievance.healthcare.dao.SignInDAO;
-import com.grievance.healthcare.dao.SignInDAOImpl;
 import com.grievance.healthcare.model.SignIn;
 import com.grievance.healthcare.to.SignInTO;
 
@@ -16,19 +15,19 @@ import com.grievance.healthcare.to.SignInTO;
  * @author sabbani
  */
 public class SignInServiceImpl implements SignInService{
-   private  SignInDAO signInDAO;
 
-    public SignInDAO getSignInDAO() {
-        return signInDAO;
-    }
+    private  SignInDAO signInDAO;
 
-    public void setSignInDAO(SignInDAO signInDAO) {
-        this.signInDAO = signInDAO;
-    }
+     /*
+     * used to save the sign in details.
+     * @param signInTO
+     * @return Boolean 
+     *  
+     */
     @Override
     public Boolean saveSignInDetails(SignInTO  signInTO) {
-        SignIn signin=null;
        System.out.println("this is from service");
+       SignIn signin=null;
        try{
              signin=new SignIn();
              signin.setFirstName(signInTO.getFirstName());
@@ -46,17 +45,28 @@ public class SignInServiceImpl implements SignInService{
              signin.setSkypeName(signInTO.getSkypeName());
              signin.setSkypeNameHelper(signInTO.getSkypeNameHelper());
              signin.setSkypePassword(signInTO.getSkypePassword());
-
-             System.out.println(signInTO.getFirstName());
-             Boolean flag = signInDAO.save(signin);
-             System.out.println("this is from service end::-"+flag);
-            return flag;
+             /** calls dao save method, returns status*/
+             return signInDAO.save(signin);
+             
        }
        catch(Exception e){
-         e.printStackTrace();
+         System.out.println("exception occured in SignInServiceImpl saveSignInDetails method ::" + e.getMessage());
          return  false;
        }
     
+    }
+
+    /**
+     * @return the signInDAO
+     **/
+    public SignInDAO getSignInDAO() {
+        return signInDAO;
+    }
+    /**
+     * @param signInDAO the signInDAO to set
+     */
+    public void setSignInDAO(SignInDAO signInDAO) {
+        this.signInDAO = signInDAO;
     }
 
 }
