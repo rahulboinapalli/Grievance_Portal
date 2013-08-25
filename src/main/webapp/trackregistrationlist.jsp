@@ -1,3 +1,5 @@
+<%@page import="com.grievance.healthcare.to.RegistrationTO"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags"%>
@@ -12,7 +14,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="css/ui-lightness/jquery-ui-1.8.2.custom.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="js/css/ui.jqgrid.css" />
 <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
-<script src="./js/jquery.tools.min.js"></script>
+<script src="./js/jquery.tools.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/myutils.js"></script>
 <script src="js/grid.locale-en.js" type="text/javascript"></script>
 <script src="js/jquery.jqGrid.min.js" type="text/javascript"></script>
@@ -20,9 +22,9 @@
 <script type="text/javascript">
 $(document).ready(function()
 	{
-//		timer();
-//		links();
-//		showprocessor();
+		timer();
+		links();
+		showprocessor();
 	}
 );
 </script>
@@ -50,11 +52,36 @@ $(document).ready(function()
    {pid:"1357924685",taxid:"333356789",regid:"345699003",pname:"Allan Donald",regstatus:"State Review                 "},
 	{pid:"1357924681",taxid:"2222567893",regid:"345689900",pname:"Kevin Pieterson",regstatus:"Payment Approved        "}
  ];
- for(var i=0;i<=mydata.length;i++)
-	jQuery("#list4").jqGrid('addRowData',i+1,mydata[i])
- }
- );
- 		function formateadorLink(cellvalue, options, rowObject) {
+ 
+ var taskListData = [
+ <%
+    List<RegistrationTO> regList=(List<RegistrationTO>)request.getAttribute("REG_LIST");
+    if(regList != null && regList.size() > 0) {
+        RegistrationTO registrationTO = null;
+        for(int i=0;i<regList.size();i++){
+          registrationTO = (RegistrationTO)regList.get(i);
+
+%>
+            {pid:"<%=registrationTO.getRegId()%>",
+            taxid:"<%=registrationTO.getTaxId()%>",
+            regid:"<%=registrationTO.getRegId()%>",
+            pname:"<%=registrationTO.getFederalFirstName()%>",
+            regstatus:"Currunt"},
+
+<%}}%>
+    ];
+    
+    if(taskListData != null&&taskListData.length > 0) {
+            for(var i=0;i<taskListData.length;i++){
+                jQuery("#list4").jqGrid('addRowData',i+1,taskListData[i]);
+            }
+	 } else {
+	 	for(var i=0;i<=mydata.length;i++)
+			jQuery("#list4").jqGrid('addRowData',i+1,mydata[i]);
+	 }
+    }
+    );
+ 	function formateadorLink(cellvalue, options, rowObject) {
 
             return "<a href=./trackresults.jsp title='View Status'><u>" + cellvalue + "</u></a>";
         }
@@ -144,36 +171,18 @@ $(document).ready(function()
             <div class="section_w450" style="width: 848px;">
                <table id="list4" style="width: 848px;"></table>
 				<div id="pager1"></div>
-                <input id="JQGrid1_SelectedRow" name="list4" type="hidden"></input><input id="JQGrid1_CurrentPage" name="JQGrid1" type="hidden"></input>
+               
 
             <div class="cleaner"></div>
         </div>
-    	<div class="cleaner"></div> 
-        <s:label>Start Registration Details currunt status</s:label>
-            <s:url var="remoteurl" action="getregistrations"/>
-            <sjg:grid
-                id="gridtable"
-                caption="Registration Details"
-                dataType="json"
-                href="%{remoteurl}"
-                pager="true"
-                gridModel="gridModel"
-                rowList="10,15,20"
-                rowNum="15"
-                rownumbers="true">
-
-                <sjg:gridColumn name="regId" index="regId" title="Registration ID" formatter="integer" sortable="false"/>
-                <sjg:gridColumn name="npi" index="npi" title="NPI" sortable="true"/>
-                <sjg:gridColumn name="taxId" index="taxId" title="Tax ID/SSN" sortable="false"/>
-                <sjg:gridColumn name="federalFirstName" index="federalFirstName" title="Provider Name" sortable="false"/>
-                <sjg:gridColumn name="status" index="status" title="Registration Status" sortable="false"/>
-            </sjg:grid>
+    	<div class="cleaner"></div>
+        
     </div>
      <div class="section_w940">
     	<div class="cleaner"></div>
     </div>
     <div>
-    
+
 
     </div>
 </div>

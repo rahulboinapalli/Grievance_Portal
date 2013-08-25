@@ -8,10 +8,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.grievance.healthcare.model.Registration;
-import com.grievance.healthcare.utililty.ApplicationConstants;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import org.hibernate.Query;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 /**
  *
@@ -49,20 +50,22 @@ public class RegistrationDAOImpl extends HibernateDaoSupport implements Registra
      * @returns List of Registration records.
      * 
      **/
+    @Override
     @Transactional
     public List<Registration> getRegistrationDetailsByStatus() {
         System.out.println("RegistrationDAOImpl getRegistrationDetailsByStatus::: start");
-        List<Registration> list = null;
+        List<Registration> results = null;
         try {
-            /**creating findByStatus query*/
-            Query query = getSession().getNamedQuery("reg.findByStatus");
-            /**setting the status */
-            query.setString(ApplicationConstants.SUCCESS, ApplicationConstants.CURRUNT);
-            /** execution of findByStatus query*/
-            list = (List<Registration>) query.list();
+ 
+            Session session=getHibernateTemplate().getSessionFactory().openSession();
+            Criteria criteria =session.createCriteria(Registration.class);
+            criteria.add(Restrictions.eq("status", "currunt"));
+            results = criteria.setMaxResults(10).list();
+            
         } catch (Exception e) {
             System.out.println("exception occured in RegistrationDAOImpl getRegistrationDetailsByStatus method ::" + e.getMessage());
         }
-        return list;
+        System.out.println("RegistrationDAOImpl getRegistrationDetailsByStatus::: end");
+        return results;
     }
 }

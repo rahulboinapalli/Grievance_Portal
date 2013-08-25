@@ -10,6 +10,7 @@ import com.grievance.healthcare.to.RegistrationTO;
 import com.grievance.healthcare.utililty.ApplicationConstants;
 import com.grievance.healthcare.utililty.DateUtils;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 import java.util.List;
 /**
  *
@@ -113,11 +114,33 @@ public class RegistrationServiceImpl implements RegistrationService{
      * @throws Exception
      **/
     @Override
-    public List<Registration> getCuuruntRegistrations() throws Exception{
+    public List<RegistrationTO> getCuuruntRegistrations() throws Exception{
         System.out.println("RegistrationServiceImpl getCuuruntRegistration::: start");
         List<Registration> list = registrationDAO.getRegistrationDetailsByStatus();
         System.out.println("RegistrationServiceImpl getCuuruntRegistration::: end");
-        return list;
+        return convertToStringList(list);
+    }
+
+    private List<RegistrationTO> convertToStringList(List<Registration> list){
+        System.out.println("RegistrationServiceImpl convertToStringList::: start");
+        List<RegistrationTO> strList = new ArrayList<RegistrationTO>();
+        RegistrationTO to=null;
+        if(list != null && list.size() > 0){
+            System.out.println("RegistrationServiceImpl convertToStringList::: list size::"+ list.size());
+              for(Registration reg:list){
+                to=new RegistrationTO();
+                to.setRegId((reg.getRegId() != null && reg.getRegId() >0)?reg.getRegId():000000);
+                to.setNpi((reg.getNpi() != null && reg.getNpi() >0)?reg.getNpi().toString():"&&&&&&&&&&");
+                to.setTaxId((reg.getRegId() != null && reg.getRegId() >0)?reg.getRegId().toString():"########");
+                to.setFederalFirstName((reg.getFederalFirstName() != null && !reg.getFederalFirstName().equals(""))?reg.getFederalFirstName():"******");
+                strList.add(to);
+              }
+              System.out.println("RegistrationServiceImpl convertToStringList::: to list size::"+ strList.size());
+        }else{
+            System.out.println("RegistrationServiceImpl convertToStringList::: list size::"+ 0);
+        }
+        System.out.println("RegistrationServiceImpl convertToStringList::: end");
+        return strList;
     }
 
     /**

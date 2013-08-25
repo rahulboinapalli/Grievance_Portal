@@ -21,7 +21,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "greivance_registration")
-@NamedQuery(name = "reg.findByStatus", query = "from Registration where status = :status")
 public class Registration implements Serializable {
 
     @Id

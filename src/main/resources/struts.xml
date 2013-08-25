@@ -110,8 +110,16 @@
         </action>
 
         <action name="trackRegistrationList" class="com.grievance.healthcare.action.TrackRegistrationListAction" method="showPage">
-            <result name="success">/jsp/trackregistrationlist.jsp</result>
+            <result name="success">/trackregistrationlist.jsp</result>
+            
         </action>
+
+       <!-- <action name="trackRegistration" class="com.grievance.healthcare.action.TrackRegistrationListAction" method="showPage">
+            <result name="success" type="redirectAction">
+                <param name="actionName">trackRegistrationList</param>
+            </result>
+            <result name="failure">/jsp/error.jsp</result>
+        </action> -->
 
         <action name="viewRegistration" class="com.grievance.healthcare.action.ViewRegistrationAction" method="showPage">
             <result name="success">/jsp/viewregistration.jsp</result>
