@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>EHR- Track Registration</title>
+        <title>Grievance Portal</title>
         <link href="page_style.css" rel="stylesheet" type="text/css" />
         <link type="text/css" href="themes/base/jquery.ui.all.css" rel="stylesheet" />
         <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
@@ -200,7 +200,7 @@
                         Cancel: function() {
                             $(this).dialog('close');
                         }
-                    },
+                    }
                 });
 
 
@@ -267,7 +267,7 @@
                         Cancel: function() {
                             $(this).dialog('close');
                         }
-                    },
+                    }
                 });
                 $('#uploadBtn')
                         .button()
@@ -291,7 +291,7 @@
                         Close: function() {
                             $(this).dialog('close');
                         }
-                    },
+                    }
                 });
 
                 $('#print1')
@@ -464,7 +464,7 @@
                     <div class="product_box margin_r_20">
                         <h2>Search Criteria</h2>
                         <p>Registration ID: 1357924680 </p>
-                            <p>NPI: 1033366513</p>
+                           
                         <p>Tax ID / SSN: 999-99-9999</p>
                         <%-- <input type="text" name="regId" value="1357924680" id="regId" size="10"/>
                         <input type="text" name="npi" value="1033366513" id="npi" size="10"/>
@@ -474,7 +474,7 @@
                     <div class="product_box">
                         <h2>Login Information</h2>
                         <p>User ID: doej</p>
-                        <p>Profile: Provider Admin</p>
+                        <p>Profile: Member Admin</p>
                         <div class="cleaner"></div>
                     </div>
                 </div><!-- End of section_w940 -->

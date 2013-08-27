@@ -1,7 +1,7 @@
 package com.grievance.healthcare.action;
 
+import com.grievance.healthcare.model.Registration;
 import com.grievance.healthcare.service.RegistrationService;
-import com.grievance.healthcare.to.RegistrationTO;
 import com.grievance.healthcare.utililty.ApplicationConstants;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.List;
@@ -25,7 +25,7 @@ public class TrackRegistrationListAction extends ActionSupport {
         System.out.println("TrackRegistrationAction details showPage:: start ");
         HttpServletRequest request = ServletActionContext.getRequest();
         try {
-            List<RegistrationTO> gridModel = registrationService.getCuuruntRegistrations();
+            List<Registration> gridModel = registrationService.getCuuruntRegistrations();
             if (gridModel != null) {
                 System.out.println("TrackRegistrationAction details list size:: " + gridModel.size());
                 request.setAttribute("REG_LIST", gridModel);

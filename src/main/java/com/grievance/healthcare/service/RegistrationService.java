@@ -4,6 +4,7 @@
  */
 
 package com.grievance.healthcare.service;
+import com.grievance.healthcare.model.Registration;
 import com.grievance.healthcare.to.RegistrationTO;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -16,5 +17,5 @@ public interface RegistrationService {
     
     public String saveRegistration(RegistrationTO to) throws Exception,InvocationTargetException;
     public Object getRegistrationJsonArray();
-    public List<RegistrationTO> getCuuruntRegistrations() throws Exception;
+    public List<Registration> getCuuruntRegistrations() throws Exception;
 }

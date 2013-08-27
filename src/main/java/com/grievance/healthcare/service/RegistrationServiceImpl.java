@@ -114,11 +114,12 @@ public class RegistrationServiceImpl implements RegistrationService{
      * @throws Exception
      **/
     @Override
-    public List<RegistrationTO> getCuuruntRegistrations() throws Exception{
+    public List<Registration> getCuuruntRegistrations() throws Exception{
         System.out.println("RegistrationServiceImpl getCuuruntRegistration::: start");
         List<Registration> list = registrationDAO.getRegistrationDetailsByStatus();
         System.out.println("RegistrationServiceImpl getCuuruntRegistration::: end");
-        return convertToStringList(list);
+        return list;
+       // return convertToStringList(list);
     }
 
     private List<RegistrationTO> convertToStringList(List<Registration> list){
