@@ -39,7 +39,7 @@
                     height: 250,
                     width: 400,
                     buttons: {
-                        OK: function() {
+                               OK: function() {
                             $(this).dialog('close');
                             if (document.frmreg.txtregid.value != "")
                             {
